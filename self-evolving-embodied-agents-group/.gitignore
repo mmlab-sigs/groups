@@ -1,0 +1,16 @@
+# Jekyll generated site
+_site/
+
+# Dependencies
+vendor/
+.bundle/
+node_modules/
+
+# Archived files
+_archive/
+
+# macOS
+.DS_Store
+
+# Ruby
+Gemfile.lock

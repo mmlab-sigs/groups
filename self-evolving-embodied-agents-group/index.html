@@ -1,13 +1,848 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Self-Evolving Embodied Agents Group</title>
-    <script type="module" crossorigin src="./assets/index-hmwNgSzv.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-DlozL5hh.css">
-  </head>
-  <body>
-    <div id="root"></div>
-  </body>
-</html>
+---
+layout: default
+---
+
+<style>
+    .hero-wrapper {
+        width: 100vw;
+        margin-left: calc(-50vw + 50%);
+        /* Offset the default 2rem body padding from default.html */
+        margin-top: -2rem;
+        position: relative;
+        /* Absolute full viewport height */
+        height: 100vh;
+        min-height: 600px;
+        background: linear-gradient(135deg, #020b18 0%, #0a192f 100%);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    #particle-canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        color: #ffffff;
+        max-width: 900px;
+        padding: 0 2rem;
+        pointer-events: none;
+    }
+
+    .hero-content h1 {
+        font-size: 3.2rem;
+        border-bottom: none;
+        color: #ffffff;
+        margin-bottom: 1.5rem;
+        text-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        line-height: 1.2;
+    }
+
+    .hero-content p.hero-subtitle {
+        font-size: 1.25rem;
+        color: #a8b2d1;
+        font-weight: 300;
+        margin-bottom: 0;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        line-height: 1.6;
+    }
+
+    @media screen and (max-width: 768px) {
+        .hero-content h1 {
+            font-size: 1.8rem;
+        }
+
+        .hero-content p.hero-subtitle {
+            font-size: 0.9rem;
+            padding: 0 1rem;
+        }
+
+        .hero-wrapper {
+            height: 85vh;
+        }
+
+        .hero-actions {
+            bottom: 7rem;
+        }
+    }
+
+    /* Hero action buttons */
+    .hero-actions {
+        position: absolute;
+        bottom: 10rem;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 5;
+        display: flex;
+        gap: 1.5rem;
+    }
+
+    .hero-btn {
+        padding: 0.8rem 2rem;
+        border-radius: 30px;
+        font-size: 1rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
+        text-decoration: none;
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+    }
+
+    .hero-btn-primary {
+        background: rgba(255, 255, 255, 0.95);
+        color: #0a192f;
+        box-shadow: 0 4px 15px rgba(255, 255, 255, 0.2);
+    }
+
+    .hero-btn-primary:hover {
+        background: #ffffff;
+        color: #ee4505;
+        box-shadow: 0 6px 20px rgba(255, 255, 255, 0.4);
+        transform: translateY(-2px);
+        text-decoration: none !important;
+    }
+
+    .hero-btn-secondary {
+        background: rgba(255, 255, 255, 0.1);
+        color: #ffffff;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .hero-btn-secondary:hover {
+        background: rgba(255, 255, 255, 0.2);
+        color: #ffffff;
+        border-color: rgba(255, 255, 255, 0.6);
+        transform: translateY(-2px);
+        text-decoration: none !important;
+    }
+
+    @media screen and (max-width: 600px) {
+        .hero-actions {
+            flex-direction: column;
+            gap: 1rem;
+            width: 80%;
+        }
+
+        .hero-btn {
+            text-align: center;
+        }
+    }
+
+    /* About / Mission Section */
+    .about-section {
+        width: 100vw;
+        margin-left: calc(-50vw + 50%);
+        background-color: #eef1f5;
+        padding: 4rem 2rem;
+    }
+
+    .about-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        gap: 4rem;
+    }
+
+    .about-text {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .about-photo {
+        flex: 0 0 460px;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    }
+
+    .about-photo img {
+        width: 100%;
+        height: auto;
+        display: block;
+        object-fit: cover;
+    }
+
+    .about-label {
+        font-size: 1rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        color: #cc0000;
+        letter-spacing: 0.15em;
+        margin: 0 0 0.3rem 0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+
+    .about-title {
+        font-size: 3rem;
+        font-weight: 900;
+        color: #0a192f;
+        margin: 0 0 2rem 0;
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+        border-bottom: none;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        display: block;
+        text-align: left;
+    }
+
+    .about-title::after,
+    .about-title::before {
+        display: none;
+    }
+
+    .mission-text {
+        font-size: 1.15rem;
+        line-height: 1.8;
+        color: #4a5568;
+        margin: 0;
+        text-align: left;
+    }
+
+    @media screen and (max-width: 800px) {
+        .about-inner {
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .about-photo {
+            flex: none;
+            width: 100%;
+            max-width: 460px;
+            margin: 0 auto;
+            order: -1;
+        }
+
+        .about-title {
+            font-size: 2rem;
+        }
+
+        .about-section {
+            padding: 3rem 1.5rem;
+        }
+    }
+</style>
+
+<!-- Cover macOS top overscroll gap with dark background -->
+<div class="overscroll-cover"
+    style="position: absolute; top: -100vh; left: 0; width: 100vw; height: 100vh; background-color: #0a192f; z-index: -1;">
+</div>
+
+<div class="hero-wrapper">
+    <canvas id="particle-canvas"></canvas>
+    <div class="hero-content">
+        <h1 id="home">
+            <span class="lang-en">Self-Evolving Embodied Agents Group</span>
+            <span class="lang-zh">自我进化具身智能体小组</span>
+        </h1>
+        <p class="hero-subtitle">
+            <span class="lang-en">Building the foundation for the next generation of intelligent systems through world
+                models and multimodal perception.</span>
+            <span class="lang-zh">通过世界模型和多模态感知，奠基下一代智能系统。</span>
+        </p>
+    </div>
+
+    <div class="hero-actions">
+        <a href="#about" class="hero-btn hero-btn-primary"
+            onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'}); return false;">
+            <span class="lang-en">Explore</span>
+            <span class="lang-zh">探索详情</span>
+        </a>
+        <a href="#publications" class="hero-btn hero-btn-secondary"
+            onclick="document.getElementById('publications').scrollIntoView({behavior: 'smooth'}); return false;">
+            <span class="lang-en">Publications</span>
+            <span class="lang-zh">代表成果</span>
+        </a>
+    </div>
+</div>
+
+<span id="about" style="display: block; position: relative; top: -5rem; visibility: hidden;"></span>
+<div class="about-section">
+    <div class="about-inner">
+        <div class="about-text">
+            <p class="about-label">
+                <span class="lang-en">About</span>
+                <span class="lang-zh">关于我们</span>
+            </p>
+            <h2 class="about-title">MMLab@SIGS</h2>
+            <p class="mission-text">
+                <span class="lang-en">We are a dynamic research collective at the forefront of artificial intelligence,
+                    dedicated to solving the fundamental challenges of embodied intelligence. Our vision is to create
+                    self-evolving agents capable of perceiving, reasoning, and acting in complex, real-world
+                    environments—agents that continuously learn and adapt to seamlessly bridge the digital and physical
+                    worlds.
+                    <br><br>
+                    Our mission is to establish a complete pipeline for these agents, forming a closed loop of efficient
+                    data preparation, multimodal perception, spatiotemporal decision-making, and continuous learning. By
+                    integrating cutting-edge research in 3D vision, world models, and large language models, we are
+                    building the foundation for the next generation of intelligent systems.
+                    <br><br>
+                    We are always looking for motivated PhD students, postdocs, and research assistants who share our
+                    vision. Check out the <a href="#join-us"
+                        onclick="document.getElementById('join-us').scrollIntoView({behavior: 'smooth'}); return false;">Join
+                        Us</a> section and follow us on
+                    Wechat.</span>
+                <span
+                    class="lang-zh">我们是一个走在人工智能前沿的充满活力的研究集体，致力于解决具身智能的根本挑战。我们的愿景是创造能够在复杂的现实世界环境中感知、推理和行动的自我进化智能体——能够持续学习和适应，无缝连接数字与物理世界的智能体。
+                    <br><br>
+                    我们的使命是为这些智能体建立一个完整的创建流程，形成高效数据制备、多模态感知、时空决策和持续学习的闭环。通过整合3D视觉、世界模型和大型语言模型领域的最前沿研究，我们正在为下一代智能系统奠定基础。
+                    <br><br>
+                    我们随时欢迎有共同愿景的博士生、博士后和研究助理加入我们。请查看我们的<a href="#join-us"
+                        onclick="document.getElementById('join-us').scrollIntoView({behavior: 'smooth'}); return false;">加入我们</a>栏目并关注我们的微信公众号。</span>
+            </p>
+        </div>
+        <div class="about-photo">
+            <img src="{{ site.baseurl }}/assets/images/about_photo.jpg" alt="Lab Photo">
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const canvas = document.getElementById('particle-canvas');
+        const ctx = canvas.getContext('2d');
+        let width, height;
+        let particles = [];
+
+        function resize() {
+            width = canvas.width = canvas.offsetWidth;
+            height = canvas.height = canvas.offsetHeight;
+        }
+        window.addEventListener('resize', resize);
+        resize();
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * width;
+                this.y = Math.random() * height;
+                this.vx = (Math.random() - 0.5) * 0.7;
+                this.vy = (Math.random() - 0.5) * 0.7;
+                this.baseRadius = Math.random() * 1.5 + 0.5;
+                this.radius = this.baseRadius;
+            }
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+                if (this.x < 0 || this.x > width) this.vx *= -1;
+                if (this.y < 0 || this.y > height) this.vy *= -1;
+            }
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                ctx.fillStyle = 'rgba(100, 200, 255, 0.6)';
+                ctx.fill();
+            }
+        }
+
+        function init() {
+            particles = [];
+            // Dynamically adjust particle count based on screen size
+            let numParticles = Math.floor((width * height) / 12000);
+            if (numParticles > 150) numParticles = 150; // cap max particles for performance
+            for (let i = 0; i < numParticles; i++) {
+                particles.push(new Particle());
+            }
+        }
+
+        let mouse = { x: null, y: null, radius: 120 };
+        canvas.addEventListener('mousemove', function (e) {
+            let rect = canvas.getBoundingClientRect();
+            mouse.x = e.clientX - rect.left;
+            mouse.y = e.clientY - rect.top;
+        });
+        canvas.addEventListener('mouseleave', function () {
+            mouse.x = null;
+            mouse.y = null;
+        });
+
+        function animate() {
+            ctx.clearRect(0, 0, width, height);
+
+            for (let i = 0; i < particles.length; i++) {
+                particles[i].update();
+                particles[i].draw();
+
+                // Mouse interaction repulsion/attraction
+                if (mouse.x != null) {
+                    let dx = mouse.x - particles[i].x;
+                    let dy = mouse.y - particles[i].y;
+                    let distance = Math.sqrt(dx * dx + dy * dy);
+                    if (distance < mouse.radius) {
+                        particles[i].radius = particles[i].baseRadius + (mouse.radius - distance) * 0.04;
+                    } else {
+                        particles[i].radius = particles[i].baseRadius;
+                    }
+                } else {
+                    particles[i].radius = particles[i].baseRadius;
+                }
+
+                // Draw connections
+                for (let j = i + 1; j < particles.length; j++) {
+                    let dx = particles[i].x - particles[j].x;
+                    let dy = particles[i].y - particles[j].y;
+                    let distance = Math.sqrt(dx * dx + dy * dy);
+                    if (distance < 100) {
+                        ctx.beginPath();
+                        ctx.strokeStyle = `rgba(100, 200, 255, ${0.25 - distance / 400})`;
+                        ctx.lineWidth = 0.6;
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+            requestAnimationFrame(animate);
+        }
+
+        init();
+        animate();
+
+        // Re-init on resize to adjust particle density
+        window.addEventListener('resize', function () {
+            clearTimeout(window.resizeTimer);
+            window.resizeTimer = setTimeout(init, 200);
+        });
+    });
+</script>
+
+<h2 id="research"><span class="lang-en">Research Directions</span><span class="lang-zh">研究方向</span></h2>
+<div class="research-grid">
+    <div class="research-item">
+        <div class="research-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <ellipse cx="12" cy="5" rx="9" ry="3" />
+                <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" />
+                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
+            </svg>
+        </div>
+        <div class="research-content">
+            <h3>
+                <span class="lang-en en-title">Efficient Embodied Data Preparation</span>
+                <span class="lang-zh zh-title">高效具身数据制备</span>
+            </h3>
+            <p>
+                <span class="lang-en">We develop innovative methods for efficient collection, annotation, and
+                    preprocessing of embodied AI data. We focus on creating high-quality datasets that enable robust
+                    robot learning in real-world environments.</span>
+                <span class="lang-zh">我们开发创新的方法以前沿、高效的方式收集、标注和处理具身AI数据。我们专注于创建高质量数据集，以在现实环境中实现鲁棒的机器人学习。</span>
+            </p>
+        </div>
+        <div class="research-tags">
+            <span class="research-tag">Automated Pipelines</span>
+            <span class="research-tag">Synthetic-to-Real</span>
+            <span class="research-tag">Active Learning</span>
+        </div>
+    </div>
+
+    <div class="research-item">
+        <div class="research-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" />
+                <circle cx="12" cy="12" r="3" />
+            </svg>
+        </div>
+        <div class="research-content">
+            <h3>
+                <span class="lang-en en-title">Multimodal Perception & World Models</span>
+                <span class="lang-zh zh-title">多模态感知与世界模型</span>
+            </h3>
+            <p>
+                <span class="lang-en">We build comprehensive world models through multimodal sensory fusion and
+                    understanding. Our research enables agents to perceive and reason about complex 3D environments
+                    using multiple modalities.</span>
+                <span class="lang-zh">我们通过多模态感知融合建立全面的世界模型。我们的研究使智能体能够使用多模态感知和推理复杂的3D环境。</span>
+            </p>
+        </div>
+        <div class="research-tags">
+            <span class="research-tag">3D Vision</span>
+            <span class="research-tag">Sensor Fusion</span>
+            <span class="research-tag">World Modeling</span>
+        </div>
+    </div>
+
+    <div class="research-item">
+        <div class="research-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path
+                    d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 1.98-3A2.5 2.5 0 0 1 9.5 2Z" />
+                <path
+                    d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-1.98-3A2.5 2.5 0 0 0 14.5 2Z" />
+            </svg>
+        </div>
+        <div class="research-content">
+            <h3>
+                <span class="lang-en en-title">Spatiotemporal Decision Making</span>
+                <span class="lang-zh zh-title">时空决策与机器人策略学习</span>
+            </h3>
+            <p>
+                <span class="lang-en">We train robot policies that can make intelligent decisions in complex
+                    spatiotemporal environments. Our work bridges the gap between simulation and real-world
+                    deployment
+                    through robust policy learning.</span>
+                <span class="lang-zh">我们致力于训练能够在复杂时空环境中做出智能决策的机器人策略模型。我们的研究通过鲁棒策略学习弥合了仿真与现实部署的差距。</span>
+            </p>
+        </div>
+        <div class="research-tags">
+            <span class="research-tag">Imitation Learning</span>
+            <span class="research-tag">Reinforcement Learning</span>
+            <span class="research-tag">Sim-to-Real</span>
+        </div>
+    </div>
+
+    <div class="research-item">
+        <div class="research-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
+                <path d="M3 3v5h5" />
+            </svg>
+        </div>
+        <div class="research-content">
+            <h3>
+                <span class="lang-en en-title">Agent Continuous Learning</span>
+                <span class="lang-zh zh-title">智能体持续学习</span>
+            </h3>
+            <p>
+                <span class="lang-en">We enable agents to continuously learn and adapt to new environments and tasks
+                    without catastrophic forgetting. Our research addresses the fundamental challenges of lifelong
+                    learning in embodied AI.</span>
+                <span class="lang-zh">我们让智能体能够不断学习并适应新环境和新任务。我们的研究应对了具身AI的持续学习的基础挑战，从而避免灾难性遗忘。</span>
+            </p>
+        </div>
+        <div class="research-tags">
+            <span class="research-tag">Test-time Adaptation</span>
+            <span class="research-tag">Continual Learning</span>
+            <span class="research-tag">LLM Adaptation</span>
+        </div>
+    </div>
+</div>
+
+<h2 id="news"><span class="lang-en">Recent News</span><span class="lang-zh">近期动态</span></h2>
+<ul class="news-list">
+    {% for item in site.data.news %}
+    <li>
+        <span class="date">{{ item.date }}</span>
+        <span class="lang-en">{{ item.en_html }}</span>
+        <span class="lang-zh">{{ item.zh_html }}</span>
+    </li>
+    {% endfor %}
+</ul>
+
+<h2 id="publications"><span class="lang-en">Selected Publications</span><span class="lang-zh">代表性成果</span></h2>
+
+{% assign selected_pubs = site.data.publications | where: "selected", true | sort: "date" | reverse %}
+{% for pub in selected_pubs %}
+<div class="publication">
+    <div class="pub-image">
+        <img src="{{ site.baseurl }}/assets/images/publications/{{ pub.image }}" alt="{{ pub.title | escape }}"
+            loading="lazy">
+    </div>
+    <div class="pub-details">
+        <p class="pub-title">{{ pub.title }}</p>
+        <p class="pub-venue">{{ pub.venue_html }}</p>
+        <div class="pub-links">
+            {% for link in pub.links %}
+            [<a href="{{ link.url }}" target="_blank">{{ link.label }}</a>]
+            {% endfor %}
+        </div>
+        <p class="pub-abstract">
+            {{ pub.abstract }}
+        </p>
+    </div>
+</div>
+{% endfor %}
+
+<div class="see-all-container">
+    <a href="{{ site.baseurl }}/publications.html" class="see-all-btn">
+        <span class="lang-en">See All Publications &rarr;</span>
+        <span class="lang-zh">查看全部成果 &rarr;</span>
+    </a>
+</div>
+
+<h2 id="team"><span class="lang-en">Team</span><span class="lang-zh">团队</span></h2>
+
+<h3><span class="lang-en">Principal Investigator</span><span class="lang-zh">指导老师</span></h3>
+<div class="team-section">
+    <!-- Zhi Wang -->
+    <div class="team-member">
+        <img src="{{ site.baseurl }}/assets/images/team/zhi_wang.jpg" alt="Zhi Wang" class="team-photo"
+            style="object-position: 70% 20%;" loading="lazy">
+        <div class="team-info">
+            <h4>Zhi Wang (王智)</h4>
+            <p>
+                <span class="lang-en">Associate Professor, Tsinghua University Shenzhen
+                    International Graduate School</span>
+                <span class="lang-zh">副教授，清华大学深圳国际研究生院</span>
+            </p>
+            <p>
+                <a href="https://www.mmlab.top/" target="_blank">
+                    <span class="lang-en">Personal Website</span>
+                    <span class="lang-zh">个人主页</span>
+                </a> |
+                <span class="lang-en">Email: wangzhi@sz.tsinghua.edu.cn</span>
+                <span class="lang-zh">邮箱: wangzhi@sz.tsinghua.edu.cn</span>
+            </p>
+        </div>
+    </div>
+    <!-- Add more PIs here if needed -->
+</div>
+
+
+<div class="team-section">
+    <!-- Jingyan Jiang -->
+    <div class="team-member">
+        <img src="{{ site.baseurl }}/assets/images/team/jingyan_jiang.jpg" alt="Jingyan Jiang" class="team-photo"
+            loading="lazy" style="object-position: 70% 20%;">
+        <div class="team-info">
+            <h4>Jingyan Jiang (姜婧妍)</h4>
+            <p>
+                <span class="lang-en">Researcher</span>
+                <span class="lang-zh">研究员</span>
+            </p>
+            <p>
+                <a href="https://www.jiangjingyan.com/" target="_blank">
+                    <span class="lang-en">Personal Website</span>
+                    <span class="lang-zh">个人主页</span>
+                </a> |
+                <span class="lang-en">Email: jiangjingyanjlu@gmail.com</span>
+                <span class="lang-zh">邮箱: jiangjingyanjlu@gmail.com</span>
+            </p>
+        </div>
+    </div>
+</div>
+
+<h3 style="margin-top: 2rem;"><span class="lang-en">Ph.D. Students</span><span class="lang-zh">博士研究生</span></h3>
+<div class="student-grid">
+    <div class="student-item">
+        <a href="https://shuzhaoxie.github.io/" target="_blank"><span class="lang-en">Shuzhao Xie</span><span
+                class="lang-zh">解书照</span></a>
+        <span class="student-period">(2023-)</span>
+    </div>
+    <div class="student-item">
+        <span class="lang-en">Siqi Chen</span><span class="lang-zh">陈思琪</span>
+        <span class="student-period">(2023-)</span>
+    </div>
+    <div class="student-item">
+        <span class="lang-en">Xiao Chen</span><span class="lang-zh">陈骁</span>
+        <span class="student-period">(2025-)</span>
+    </div>
+    <div class="student-item">
+        <span class="lang-en">Xiao Fan</span><span class="lang-zh">范潇</span>
+        <span class="student-period">(2026-)</span>
+    </div>
+    <div class="student-item">
+        <a href="https://yu2hi13.github.io/" target="_blank"><span class="lang-en">Yuzhi Huang</span><span
+                class="lang-zh">黄誉之</span></a>
+        <span class="student-period">(2026-)</span>
+    </div>
+</div>
+
+<h3 style="margin-top: 1.5rem;"><span class="lang-en">Master Students</span><span class="lang-zh">硕士研究生</span></h3>
+<div class="student-grid">
+    <div class="student-item">
+        <span class="lang-en">Shijia Ge</span><span class="lang-zh">葛士嘉</span>
+        <span class="student-period">(2023-)</span>
+    </div>
+    <div class="student-item">
+        <span class="lang-en">Qinting Jiang</span><span class="lang-zh">蒋沁廷</span>
+        <span class="student-period">(2023-)</span>
+    </div>
+    <div class="student-item">
+        <span class="lang-en">Xiaojie Li</span><span class="lang-zh">李孝杰</span>
+        <span class="student-period">(2023-)</span>
+    </div>
+    <div class="student-item">
+        <span class="lang-en">Chenghao Gu</span><span class="lang-zh">顾程皓</span>
+        <span class="student-period">(2024-)</span>
+    </div>
+    <div class="student-item">
+        <span class="lang-en">Fanding Huang</span><span class="lang-zh">黄凡丁</span>
+        <span class="student-period">(2024-)</span>
+    </div>
+    <div class="student-item">
+        <span class="lang-en">Letian Li</span><span class="lang-zh">李乐天</span>
+        <span class="student-period">(2024-)</span>
+    </div>
+    <div class="student-item">
+        <span class="lang-en">Junchen Ge</span><span class="lang-zh">葛俊辰</span>
+        <span class="student-period">(2025-)</span>
+    </div>
+    <div class="student-item">
+        <span class="lang-en">Hanglei Jin</span><span class="lang-zh">金航磊</span>
+        <span class="student-period">(2025-)</span>
+    </div>
+    <div class="student-item">
+        <span class="lang-en">Fengnian Yang</span><span class="lang-zh">杨丰年</span>
+        <span class="student-period">(2025-)</span>
+    </div>
+    <div class="student-item">
+        <span class="lang-en">Zhengqi Zhang</span><span class="lang-zh">张正奇</span>
+        <span class="student-period">(2025-)</span>
+    </div>
+    <div class="student-item">
+        <span class="lang-en">Jiazhen Huang</span><span class="lang-zh">黄嘉桢</span>
+        <span class="student-period">(2026-)</span>
+    </div>
+</div>
+
+<div class="carousel-container" id="teamCarousel">
+    <div class="carousel-track" id="carouselTrack">
+        <!-- Add more photos here. Recommended naming convention: group_photo_1.jpg, group_photo_2.jpg, etc. -->
+        <img src="{{ site.baseurl }}/assets/images/team/group_photo.jpg" alt="Team Group Photo 1" class="carousel-img"
+            loading="lazy">
+        <img src="{{ site.baseurl }}/assets/images/team/group_photo2.jpg" alt="Team Group Photo 2" class="carousel-img"
+            loading="lazy">
+        <img src="{{ site.baseurl }}/assets/images/team/group_photo3.jpg" alt="Team Group Photo 3" class="carousel-img"
+            loading="lazy">
+    </div>
+
+    <button class="carousel-btn carousel-prev" id="carouselPrev">&#10094;</button>
+    <button class="carousel-btn carousel-next" id="carouselNext">&#10095;</button>
+
+    <div class="carousel-dots" id="carouselDots"></div>
+</div>
+
+<script>
+    /* Simple carousel — no clones, just index-based sliding */
+    (function () {
+        var track = document.getElementById('carouselTrack');
+        var container = document.getElementById('teamCarousel');
+        var prevBtn = document.getElementById('carouselPrev');
+        var nextBtn = document.getElementById('carouselNext');
+        var dotsBox = document.getElementById('carouselDots');
+
+        if (!track || !container || !prevBtn || !nextBtn) return;
+
+        var imgs = track.querySelectorAll('.carousel-img');
+        var total = imgs.length;
+        if (total === 0) return;
+
+        var idx = 0;
+
+        /* Size each image and track */
+        track.style.display = 'flex';
+        track.style.width = (total * 100) + '%';
+        track.style.transition = 'transform 0.5s ease';
+        for (var i = 0; i < total; i++) {
+            imgs[i].style.width = (100 / total) + '%';
+            imgs[i].style.flexShrink = '0';
+        }
+
+        function go(animate) {
+            if (animate !== false) {
+                track.style.transition = 'transform 0.5s ease';
+            } else {
+                track.style.transition = 'none';
+            }
+            var pct = idx * (100 / total);
+            track.style.transform = 'translateX(-' + pct + '%)';
+            /* dots */
+            var dots = dotsBox.children;
+            for (var d = 0; d < dots.length; d++) {
+                dots[d].style.background = (d === idx) ? '#ffffff' : 'rgba(255,255,255,0.4)';
+                dots[d].style.transform = (d === idx) ? 'scale(1.2)' : 'scale(1)';
+            }
+        }
+
+        /* Build dots */
+        for (var j = 0; j < total; j++) {
+            var dot = document.createElement('span');
+            dot.style.cssText = 'display:inline-block;width:10px;height:10px;border-radius:50%;cursor:pointer;transition:all 0.3s;margin:0 5px;';
+            (function (n) { dot.onclick = function () { idx = n; go(true); }; })(j);
+            dotsBox.appendChild(dot);
+        }
+
+        go(false); /* initial position */
+
+        /* button handlers */
+        nextBtn.onclick = function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            idx = (idx + 1) % total;
+            go(true);
+        };
+        prevBtn.onclick = function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            idx = (idx - 1 + total) % total;
+            go(true);
+        };
+
+    })();
+</script>
+
+<h2 id="join-us"><span class="lang-en">Join Us</span><span class="lang-zh">加入我们</span></h2>
+<p class="lang-en">We are always looking for passionate and talented students to join our team. If you are
+    interested in shaping the future of embodied AI, we encourage you to apply!</p>
+<p class="lang-zh">我们一直在寻找有热情和才华的学生加入我们的团队。如果您对塑造具身人工智能的未来感兴趣，我们鼓励您申请。</p>
+<div class="card-list-wrapper">
+    <div class="card-list">
+        <div class="card-item">
+            <h3 class="card-title">
+                <span class="lang-en">🎓 Undergraduates</span>
+                <span class="lang-zh">🎓 本科生</span>
+            </h3>
+            <p class="lang-en">Students with a strong background in math, AI, programming, or robotics are welcome.
+            </p>
+            <p class="lang-zh">欢迎数理或计算机基础扎实的同学加入课题组参与科研。</p>
+            <p class="contact"><span class="lang-en">📩 Contact <a href="mailto:yzhuang13@stu.xmu.edu.cn"><i>Yuzhi
+                            Huang</i></a></span><span class="lang-zh">📩 联系
+                    <a href="mailto:yzhuang13@stu.xmu.edu.cn"><i>黄誉之</i></a></span></p>
+        </div>
+
+        <div class="card-item">
+            <h3 class="card-title">
+                <span class="lang-en">🔬 Masters & PhDs</span>
+                <span class="lang-zh">🔬 硕博研究生</span>
+            </h3>
+            <p class="lang-en">Please include "Prospective Student" in your email subject with your CV and sample
+                code/papers.</p>
+            <p class="lang-zh">发送简历及代表作，邮件标题请注 “Prospective Student”。</p>
+            <p class="contact"><span class="lang-en">📩 Contact <a href="mailto:wangzhi@sz.tsinghua.edu.cn"><i>Prof. Zhi
+                            Wang</i></a></span><span class="lang-zh">📩
+                    联系 <a href="mailto:wangzhi@sz.tsinghua.edu.cn"><i>王智教授</i></a></span></p>
+        </div>
+
+        <div class="card-item">
+            <h3 class="card-title">
+                <span class="lang-en">🌍 Interns & Visiting</span>
+                <span class="lang-zh">🌍 实习 / 访问学者</span>
+            </h3>
+            <p class="lang-en">We invite bright minds worldwide for cutting-edge collaborative research in embodied
+                AI.</p>
+            <p class="lang-zh">诚邀海内外优秀学者合作交流，共同推进具身智能前沿研究。</p>
+            <p class="contact"><span class="lang-en">📩 Contact <a href="mailto:jiangjingyanjlu@gmail.com"><i>Jingyan
+                            Jiang</i></a></span><span class="lang-zh">📩
+                    联系
+                    <a href="mailto:jiangjingyanjlu@gmail.com"><i>姜婧妍</i></a></span></p>
+        </div>
+
+        <div class="card-item">
+            <h3 class="card-title">
+                <span class="lang-en">🤝 Corporate Collaboration</span>
+                <span class="lang-zh">🤝 企业合作</span>
+            </h3>
+            <p class="lang-en">Open to robotics deployment and industrial technology collaborations.</p>
+            <p class="lang-zh">开放探讨大模型工业落地、前沿算法研发与核心技术转化合作。</p>
+            <p class="contact"><span class="lang-en">📩 Contact <a href="mailto:wangzhi@sz.tsinghua.edu.cn"><i>Prof. Zhi
+                            Wang</i></a></span><span class="lang-zh">📩
+                    联系 <a href="mailto:wangzhi@sz.tsinghua.edu.cn"><i>王智教授</i></a></span></p>
+        </div>
+    </div>
+</div>

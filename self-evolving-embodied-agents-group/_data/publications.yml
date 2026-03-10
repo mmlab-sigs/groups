@@ -1,0 +1,108 @@
+- image: image 5.png
+  selected: true
+  date: '2025-11-14'
+  title: 'MoETTA: Test-Time Adaptation Under Mixed Distribution Shifts with MoE-LayerNorm'
+  venue_html: <strong>AAAI 2026</strong> (CCF-A)
+  links:
+    - label: arXiv
+      url: https://arxiv.org/abs/2511.13760v1
+    - label: Code
+      url: https://github.com/AnikiFan/MoETTA
+  abstract: 针对真实场景中复杂的混合分布偏移，提出 MoETTA 框架，引入专家混合(MoE)架构为不同域偏移提供结构解耦的多专家系统。在全新构建的 Potpourri
+    基准上全面超越现有基线。
+- image: Asset_1.png
+  selected: false
+  date: '2025-12-01'
+  title: 'Discover Your Neighbors: Advanced Stable Test-Time Adaptation in Dynamic
+    World'
+  venue_html: <strong>NIPS 2025</strong> (CCF-A)
+  links:
+    - label: Paper
+      url: https://openreview.net/pdf?id=bLXfEMe1Dk
+    - label: Code
+      url: https://github.com/Peanut-255/FIND
+  abstract: 提出 DYN 框架，通过逐层实例统计聚类(LISC)和聚类感知批量归一化(CABN)实现动态测试时适应。作为首个无需反向传播的方法，处理批次内多重分布展现卓越鲁棒性，最高提升
+    35% 泛化性能。
+- image: image 4.png
+  selected: true
+  date: '2024-12-08'
+  title: 'SizeGS: Size-aware Compression of 3D Gaussian Splatting via Mixed Integer
+    Programming'
+  venue_html: <strong>ACM MM 2025</strong> (CCF-A)
+  links:
+    - label: Project
+      url: https://shuzhaoxie.github.io/sizegs/
+    - label: arXiv
+      url: https://arxiv.org/abs/2412.05808
+    - label: Code
+      url: https://github.com/mmlab-sigs/SizeGS
+  abstract: 基于混合整数规划的尺寸感知压缩框架，旨在通过快速搜索超参数将 3DGS 压缩至预定大小。能在一分钟内搜索到满足尺寸约束的最佳参数，实现 SOTA
+    级别的离线压缩性能。
+- image: image 2.png
+  selected: false
+  date: '2025-07-10'
+  title: 'SD-GS: Structured Deformable 3D Gaussians for Efficient Dynamic Scene Reconstruction'
+  venue_html: ArXiv 2025
+  links:
+    - label: arXiv
+      url: https://arxiv.org/abs/2507.07465
+  abstract: 引入可变形锚点网格，利用局部锚点生成 3D 高斯作为几何骨架，显著降低时空冗余。结合形变感知致密化策略，模型体积平均减少 60%，FPS 提升
+    100%。
+- image: image 1.png
+  selected: true
+  date: '2024-12-13'
+  title: 'EVOS: Efficient Implicit Neural Training via EVOlutionary Selector'
+  venue_html: <strong>CVPR 2025</strong> (CCF-A)
+  links:
+    - label: Project
+      url: https://weixiang-zhang.github.io/proj-evos/
+    - label: arXiv
+      url: https://arxiv.org/abs/2412.10153
+    - label: Code
+      url: https://github.com/zwx-open/EVOS-INR
+  abstract: 提出动态样本选择框架 EVOS，将样本坐标视为进化个体，通过稀疏适应度评估、间隔采样与缓存机制，大幅降低计算量。结合频率引导交叉和增强无偏变异，克服频谱偏差，训练时间减少
+    48%-66%。
+- image: overviews.png
+  selected: true
+  date: '2025-09-28'
+  title: 'COSMIC: Clique-Oriented Semantic Multi-space Integration for Robust CLIP
+    Test-Time Adaptation'
+  venue_html: <strong>CVPR 2025</strong> (CCF-A)
+  links:
+    - label: Project
+      url: https://hf618.github.io/COSMIC_Project
+    - label: arXiv
+      url: https://arxiv.org/abs/2509.23808
+    - label: Code
+      url: https://github.com/hf618/COSMIC
+  abstract: 针对视觉语言模型在测试时领域适应的性能退化，提出了创新 COSMIC 框架，通过多粒度、跨模态语义缓存和基于图的查询机制，显著增强模型适应能力。跨域测试任务性能提升
+    15.81%。
+- image: image.png
+  selected: true
+  date: '2024-12-12'
+  title: Enhancing Implicit Neural Representations via Symmetric Power Transformation
+  venue_html: <strong>AAAI 2025</strong> (CCF-A)
+  links:
+    - label: Project
+      url: https://weixiang-zhang.github.io/proj-symtrans/
+    - label: arXiv
+      url: https://arxiv.org/abs/2412.09213
+    - label: Code
+      url: https://github.com/zwx-open/Symmetric-Power-Transformation-INR
+  abstract: 创新性地提出“对称幂变换”，基于“范围定义对称假设”，通过非线性可逆变换重构数据分布，同时完成范围约束与对称化。在零额外成本的前提下，解决了极端偏差放大与边界断裂难题，并在
+    ImageNet 上斩获最佳 PSNR/SSIM 指标。
+- image: image 3.png
+  selected: false
+  date: '2024-09-15'
+  title: 'MesonGS: Post-training Compression of 3D Gaussians via Efficient Attribute
+    Transformation'
+  venue_html: <strong>ECCV 2024</strong> (CCF-A)
+  links:
+    - label: Project
+      url: https://shuzhaoxie.github.io/mesongs/
+    - label: arXiv
+      url: https://arxiv.org/abs/2409.09756
+    - label: Code
+      url: https://github.com/ShuzhaoXie/MesonGS
+  abstract: 一种高效的后训练 3D 高斯压缩编解码器。引入视点相关与无关重要性度量标准，结合属性变换（如RAHT）和块量化策略，在大幅压缩体积的同时保留高质量渲染。
+  
