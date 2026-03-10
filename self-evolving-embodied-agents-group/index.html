@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: seea-default
 ---
 
 <style>
@@ -305,7 +305,7 @@ layout: default
             </p>
         </div>
         <div class="about-photo">
-            <img src="{{ site.baseurl }}/assets/images/about_photo.jpg" alt="Lab Photo">
+            <img src="{{ site.baseurl }}/self-evolving-embodied-agents-group/assets/images/about_photo.jpg" alt="Lab Photo">
         </div>
     </div>
 </div>
@@ -535,7 +535,7 @@ layout: default
 
 <h2 id="news"><span class="lang-en">Recent News</span><span class="lang-zh">近期动态</span></h2>
 <ul class="news-list">
-    {% for item in site.data.news %}
+    {% for item in site.data.seea.news %}
     <li>
         <span class="date">{{ item.date }}</span>
         <span class="lang-en">{{ item.en_html }}</span>
@@ -546,11 +546,11 @@ layout: default
 
 <h2 id="publications"><span class="lang-en">Selected Publications</span><span class="lang-zh">代表性成果</span></h2>
 
-{% assign selected_pubs = site.data.publications | where: "selected", true | sort: "date" | reverse %}
+{% assign selected_pubs = site.data.seea.publications | where: "selected", true | sort: "date" | reverse %}
 {% for pub in selected_pubs %}
 <div class="publication">
     <div class="pub-image">
-        <img src="{{ site.baseurl }}/assets/images/publications/{{ pub.image }}" alt="{{ pub.title | escape }}"
+        <img src="{{ site.baseurl }}/self-evolving-embodied-agents-group/assets/images/publications/{{ pub.image }}" alt="{{ pub.title | escape }}"
             loading="lazy">
     </div>
     <div class="pub-details">
@@ -569,7 +569,7 @@ layout: default
 {% endfor %}
 
 <div class="see-all-container">
-    <a href="{{ site.baseurl }}/publications.html" class="see-all-btn">
+    <a href="{{ site.baseurl }}/self-evolving-embodied-agents-group/publications.html" class="see-all-btn">
         <span class="lang-en">See All Publications &rarr;</span>
         <span class="lang-zh">查看全部成果 &rarr;</span>
     </a>
@@ -581,7 +581,7 @@ layout: default
 <div class="team-section">
     <!-- Zhi Wang -->
     <div class="team-member">
-        <img src="{{ site.baseurl }}/assets/images/team/zhi_wang.jpg" alt="Zhi Wang" class="team-photo"
+        <img src="{{ site.baseurl }}/self-evolving-embodied-agents-group/assets/images/team/zhi_wang.jpg" alt="Zhi Wang" class="team-photo"
             style="object-position: 70% 20%;" loading="lazy">
         <div class="team-info">
             <h4>Zhi Wang (王智)</h4>
@@ -607,7 +607,7 @@ layout: default
 <div class="team-section">
     <!-- Jingyan Jiang -->
     <div class="team-member">
-        <img src="{{ site.baseurl }}/assets/images/team/jingyan_jiang.jpg" alt="Jingyan Jiang" class="team-photo"
+        <img src="{{ site.baseurl }}/self-evolving-embodied-agents-group/assets/images/team/jingyan_jiang.jpg" alt="Jingyan Jiang" class="team-photo"
             loading="lazy" style="object-position: 70% 20%;">
         <div class="team-info">
             <h4>Jingyan Jiang (姜婧妍)</h4>
@@ -704,11 +704,11 @@ layout: default
 <div class="carousel-container" id="teamCarousel">
     <div class="carousel-track" id="carouselTrack">
         <!-- Add more photos here. Recommended naming convention: group_photo_1.jpg, group_photo_2.jpg, etc. -->
-        <img src="{{ site.baseurl }}/assets/images/team/group_photo.jpg" alt="Team Group Photo 1" class="carousel-img"
+        <img src="{{ site.baseurl }}/self-evolving-embodied-agents-group/assets/images/team/group_photo.jpg" alt="Team Group Photo 1" class="carousel-img"
             loading="lazy">
-        <img src="{{ site.baseurl }}/assets/images/team/group_photo2.jpg" alt="Team Group Photo 2" class="carousel-img"
+        <img src="{{ site.baseurl }}/self-evolving-embodied-agents-group/assets/images/team/group_photo2.jpg" alt="Team Group Photo 2" class="carousel-img"
             loading="lazy">
-        <img src="{{ site.baseurl }}/assets/images/team/group_photo3.jpg" alt="Team Group Photo 3" class="carousel-img"
+        <img src="{{ site.baseurl }}/self-evolving-embodied-agents-group/assets/images/team/group_photo3.jpg" alt="Team Group Photo 3" class="carousel-img"
             loading="lazy">
     </div>
 
