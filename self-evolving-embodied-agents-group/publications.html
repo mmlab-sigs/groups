@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: seea-default
 title: All Publications
 ---
 
@@ -7,15 +7,15 @@ title: All Publications
         class="lang-zh">全部代表性成果</span></h1>
 
 <p style="margin-bottom: 2rem;">
-    <a href="{{ site.baseurl }}/#publications" style="font-size: 0.95rem;">&larr; <span class="lang-en">Back to
+    <a href="{{ site.baseurl }}/self-evolving-embodied-agents-group/#publications" style="font-size: 0.95rem;">&larr; <span class="lang-en">Back to
             Home</span><span class="lang-zh">返回首页</span></a>
 </p>
 
-{% assign sorted_pubs = site.data.publications | sort: 'date' | reverse %}
+{% assign sorted_pubs = site.data.seea.publications | sort: 'date' | reverse %}
 {% for pub in sorted_pubs %}
 <div class="publication">
     <div class="pub-image">
-        <img src="{{ site.baseurl }}/assets/images/publications/{{ pub.image }}" alt="{{ pub.title | escape }}"
+        <img src="{{ site.baseurl }}/self-evolving-embodied-agents-group/assets/images/publications/{{ pub.image }}" alt="{{ pub.title | escape }}"
             loading="lazy">
     </div>
     <div class="pub-details">

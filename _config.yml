@@ -1,7 +1,7 @@
 title: Self-Evolving Embodied Agents Group
 description: Our mission is to establish a complete pipeline for creating self-evolving embodied agents.
 keywords: [Embodied AI, World Models, Large Language Models, LLMs, 3D Vision, Spatiotemporal Decision Making, Reinforcement Learning, Imitation Learning, Self-Evolving Agents, MMLab@SIGS, Tsinghua University, Robotics, Machine Learning, Artificial Intelligence, AI Research, Zhi Wang, 王智, 清华大学, 具身智能, 世界模型, 多模态感知]
-baseurl: "/groups/self-evolving-embodied-agents-group" # the subpath of your site, e.g. /blog
+baseurl: "/groups" # the subpath of your site, e.g. /blog
 url: "https://mmlab-sigs.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
 # Build settings
