@@ -249,34 +249,6 @@
             text-align: justify;
         }
 
-        /* News Section */
-        .news-list {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .news-list li {
-            position: relative;
-            margin-bottom: 0;
-            padding: 0.75rem 0 0.75rem 6.5rem;
-            transition: background-color 0.2s ease;
-        }
-
-        .news-list li:hover {
-            background-color: rgba(10, 25, 47, 0.015);
-        }
-
-        .date {
-            position: absolute;
-            left: 0.5rem;
-            top: 0.75rem;
-            font-weight: 600;
-            color: #555;
-            font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-            font-size: 0.88rem;
-        }
-
         /* Lists */
         ul {
             padding-left: 1.5rem;
@@ -344,6 +316,36 @@
             font-style: normal;
         }
 
+        .pub-award {
+            display: inline-block;
+            margin-left: 0.5rem;
+            padding: 0.12rem 0.5rem;
+            border-radius: 999px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            color: #7a1200;
+            background: #fff2cc;
+            border: 1px solid #f0c36d;
+            font-style: normal;
+            white-space: nowrap;
+        }
+
+        .pub-preprint {
+            display: inline-block;
+            margin-left: 0.5rem;
+            padding: 0.12rem 0.5rem;
+            border-radius: 999px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            color: #0b4f8a;
+            background: #eaf4ff;
+            border: 1px solid #9fc6ef;
+            font-style: normal;
+            white-space: nowrap;
+        }
+
         /* Classic bracket links: [PDF] [Code] */
         .pub-links {
             margin-top: 0.3rem;
@@ -383,16 +385,6 @@
                 margin-bottom: 1rem;
             }
 
-            .news-list li {
-                padding-left: 0;
-            }
-
-            .date {
-                position: static;
-                display: inline-block;
-                width: auto;
-                margin-right: 0.5rem;
-            }
         }
 
         .see-all-container {
@@ -792,7 +784,6 @@
             <a href="{{ site.baseurl }}/self-evolving-embodied-agents-group/#home"><span class="lang-en">Home</span><span class="lang-zh">首页</span></a>
             <a href="{{ site.baseurl }}/self-evolving-embodied-agents-group/#research"><span class="lang-en">Research</span><span
                     class="lang-zh">研究方向</span></a>
-            <a href="{{ site.baseurl }}/self-evolving-embodied-agents-group/#news"><span class="lang-en">News</span><span class="lang-zh">近期动态</span></a>
             <a href="{{ site.baseurl }}/self-evolving-embodied-agents-group/#publications"><span class="lang-en">Publications</span><span
                     class="lang-zh">代表性成果</span></a>
             <a href="{{ site.baseurl }}/self-evolving-embodied-agents-group/#team"><span class="lang-en">Team</span><span class="lang-zh">团队</span></a>

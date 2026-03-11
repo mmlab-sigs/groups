@@ -25,6 +25,7 @@
     35% 泛化性能。
 - image: image 4.png
   selected: true
+  best_paper: true
   date: '2024-12-08'
   title: 'SizeGS: Size-aware Compression of 3D Gaussian Splatting via Mixed Integer
     Programming'
@@ -43,6 +44,7 @@
   date: '2025-07-10'
   title: 'SD-GS: Structured Deformable 3D Gaussians for Efficient Dynamic Scene Reconstruction'
   venue_html: ArXiv 2025
+  preprint_under_review: true
   links:
     - label: arXiv
       url: https://arxiv.org/abs/2507.07465

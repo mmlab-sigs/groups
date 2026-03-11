@@ -20,7 +20,15 @@ title: All Publications
     </div>
     <div class="pub-details">
         <p class="pub-title">{{ pub.title }}</p>
-        <p class="pub-venue">{{ pub.venue_html }}</p>
+        <p class="pub-venue">
+            {{ pub.venue_html }}
+            {% if pub.best_paper %}
+            <span class="pub-award"><span class="lang-en">Best Paper Candidate</span><span class="lang-zh">最佳论文候选</span></span>
+            {% endif %}
+            {% if pub.preprint_under_review %}
+            <span class="pub-preprint"><span class="lang-en">Preprint (Under Review)</span><span class="lang-zh">预印本（在投）</span></span>
+            {% endif %}
+        </p>
         <div class="pub-links">
             {% for link in pub.links %}
             [<a href="{{ link.url }}" target="_blank">{{ link.label }}</a>]

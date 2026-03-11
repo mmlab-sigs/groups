@@ -1,0 +1,106 @@
+---
+layout: null
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MMLab@SIGS Groups</title>
+  <style>
+    :root {
+      --bg: #f5f7fb;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --accent: #0b57d0;
+      --border: #e5e7eb;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    .wrap {
+      max-width: 900px;
+      margin: 48px auto;
+      padding: 0 20px;
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      font-size: 2rem;
+    }
+
+    p {
+      margin: 0 0 24px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 14px;
+    }
+
+    a.card {
+      display: block;
+      padding: 16px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      text-decoration: none;
+      background: var(--card);
+      color: var(--text);
+      transition: border-color 0.15s ease, transform 0.15s ease;
+    }
+
+    a.card:hover {
+      border-color: var(--accent);
+      transform: translateY(-1px);
+    }
+
+    .name {
+      display: block;
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: var(--accent);
+    }
+
+    .desc {
+      display: block;
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <h1>MMLab@SIGS Groups</h1>
+    <p>Select a group site:</p>
+
+    <section class="grid">
+      <a class="card" href="{{ site.baseurl }}/self-evolving-embodied-agents-group/">
+        <span class="name">Self-Evolving Embodied Agents Group</span>
+        <span class="desc">Self-evolving embodied intelligence, world models, and agent learning.</span>
+      </a>
+
+      <a class="card" href="{{ site.baseurl }}/efficient-deep-learning-and-embodiment-group/">
+        <span class="name">Efficient Deep Learning and Embodiment Group</span>
+        <span class="desc">Efficient models, embodied AI systems, and scalable deployment.</span>
+      </a>
+
+      <a class="card" href="{{ site.baseurl }}/agentic-and-embodied-large-model-training-group/">
+        <span class="name">Agentic and Embodied Large Model Training Group</span>
+        <span class="desc">Agentic LMs and embodied training workflows.</span>
+      </a>
+    </section>
+  </main>
+</body>
+</html>
