@@ -12,31 +12,47 @@ title: All Publications
 </p>
 
 {% assign sorted_pubs = site.data.seea.publications | sort: 'date' | reverse %}
+<h2 id="preprints"><span class="lang-en">Preprints</span><span class="lang-zh">预印本</span></h2>
+
+{% assign preprint_count = 0 %}
 {% for pub in sorted_pubs %}
-<div class="publication">
-    <div class="pub-image">
-        <img src="{{ site.baseurl }}/self-evolving-embodied-agents-group/assets/images/publications/{{ pub.image }}" alt="{{ pub.title | escape }}"
-            loading="lazy">
-    </div>
-    <div class="pub-details">
-        <p class="pub-title">{{ pub.title }}</p>
-        <p class="pub-venue">
-            {{ pub.venue_html }}
-            {% if pub.best_paper %}
-            <span class="pub-award"><span class="lang-en">Best Paper Candidate</span><span class="lang-zh">最佳论文候选</span></span>
-            {% endif %}
-            {% if pub.preprint_under_review %}
-            <span class="pub-preprint"><span class="lang-en">Preprint (Under Review)</span><span class="lang-zh">预印本（在投）</span></span>
-            {% endif %}
-        </p>
-        <div class="pub-links">
-            {% for link in pub.links %}
-            [<a href="{{ link.url }}" target="_blank">{{ link.label }}</a>]
-            {% endfor %}
-        </div>
-        <p class="pub-abstract">
-            {{ pub.abstract }}
-        </p>
-    </div>
-</div>
+{% assign is_preprint = false %}
+{% if pub.preprint_under_review %}
+{% assign is_preprint = true %}
+{% endif %}
+{% if pub.venue_html contains 'arXiv' or pub.venue_html contains 'ArXiv' %}
+{% assign is_preprint = true %}
+{% endif %}
+{% if is_preprint %}
+{% assign preprint_count = preprint_count | plus: 1 %}
+{% include seea/publication-card.html pub=pub %}
+{% endif %}
+{% endfor %}
+{% if preprint_count == 0 %}
+<p><span class="lang-en">No preprints yet.</span><span class="lang-zh">暂时没有预印本。</span></p>
+{% endif %}
+
+{% assign year_sections = "2026,2025,2024" | split: "," %}
+{% for year in year_sections %}
+<h2 id="year-{{ year }}"><span class="lang-en">{{ year }}</span><span class="lang-zh">{{ year }}</span></h2>
+{% assign year_count = 0 %}
+{% for pub in sorted_pubs %}
+{% assign is_preprint = false %}
+{% if pub.preprint_under_review %}
+{% assign is_preprint = true %}
+{% endif %}
+{% if pub.venue_html contains 'arXiv' or pub.venue_html contains 'ArXiv' %}
+{% assign is_preprint = true %}
+{% endif %}
+{% assign venue_text = pub.venue_html | strip_html %}
+{% unless is_preprint %}
+{% if venue_text contains year %}
+{% assign year_count = year_count | plus: 1 %}
+{% include seea/publication-card.html pub=pub %}
+{% endif %}
+{% endunless %}
+{% endfor %}
+{% if year_count == 0 %}
+<p><span class="lang-en">No papers in {{ year }}.</span><span class="lang-zh">{{ year }} 年暂无论文。</span></p>
+{% endif %}
 {% endfor %}

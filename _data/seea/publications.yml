@@ -1,3 +1,16 @@
+- video: igen.mp4
+  selected: true
+  date: '2025-12-02'
+  title: 'IGen: Scalable Data Generation for Robot Learning from Open-World Images'
+  venue_html: <strong>CVPR 2026</strong> (CCF-A)
+  links:
+    - label: Project
+      url: https://chenghaogu.github.io/IGen/
+    - label: arXiv
+      url: https://arxiv.org/abs/2512.01773
+    - label: Code
+      url: https://github.com/ChenghaoGu/IGen_Robot
+  abstract: '本文提出 IGen，一种面向机器人学习的可扩展数据生成框架，可从开放世界图像中自动生成逼真的视觉观测与可执行动作，从而在无需人工遥操作数据的情况下训练有效的操作策略。'
 - image: image 5.png
   selected: true
   date: '2025-11-14'
@@ -10,19 +23,6 @@
       url: https://github.com/AnikiFan/MoETTA
   abstract: 针对真实场景中复杂的混合分布偏移，提出 MoETTA 框架，引入专家混合(MoE)架构为不同域偏移提供结构解耦的多专家系统。在全新构建的 Potpourri
     基准上全面超越现有基线。
-- image: Asset_1.png
-  selected: false
-  date: '2025-12-01'
-  title: 'Discover Your Neighbors: Advanced Stable Test-Time Adaptation in Dynamic
-    World'
-  venue_html: <strong>NIPS 2025</strong> (CCF-A)
-  links:
-    - label: Paper
-      url: https://openreview.net/pdf?id=bLXfEMe1Dk
-    - label: Code
-      url: https://github.com/Peanut-255/FIND
-  abstract: 提出 DYN 框架，通过逐层实例统计聚类(LISC)和聚类感知批量归一化(CABN)实现动态测试时适应。作为首个无需反向传播的方法，处理批次内多重分布展现卓越鲁棒性，最高提升
-    35% 泛化性能。
 - image: image 4.png
   selected: true
   best_paper: true
@@ -39,6 +39,47 @@
       url: https://github.com/mmlab-sigs/SizeGS
   abstract: 基于混合整数规划的尺寸感知压缩框架，旨在通过快速搜索超参数将 3DGS 压缩至预定大小。能在一分钟内搜索到满足尺寸约束的最佳参数，实现 SOTA
     级别的离线压缩性能。
+- image: tail_aware_ptq_3d_geometry_models.png
+  selected: false
+  date: '2026-02-02'
+  title: 'Tail-Aware Post-Training Quantization for 3D Geometry Models'
+  venue_html: '<strong>arXiv 2026</strong>'
+  preprint_under_review: true
+  links:
+    - label: arXiv
+      url: https://arxiv.org/abs/2602.01741
+  abstract: '本文提出面向 3D 几何模型的尾部分布感知后训练量化方法 TAPTQ，通过渐进式 coarse-to-fine 校准集构建、三分搜索量化区间优化和 TRE 引导的模块补偿，在提升量化精度的同时显著降低校准开销。'
+- image: neural_collapse_tta.png
+  selected: false
+  date: '2025-12-11'
+  title: 'Neural Collapse in Test-Time Adaptation'
+  venue_html: <strong>CVPR 2026</strong> (CCF-A)
+  links:
+    - label: arXiv
+      url: https://arxiv.org/abs/2512.10421
+  abstract: '研究测试时自适应（TTA）中的神经坍塌现象，分析模型在分布变化环境下特征表示与分类边界的变化规律。通过理论与实验分析，揭示神经坍塌对模型稳定性和泛化能力的影响，并探讨其在测试阶段持续适应过程中的作用机制，为提升模型在动态环境中的鲁棒性提供参考。'
+- image: 'Test-Time Distillation for Continual Model Adaptation.png'
+  selected: false
+  date: '2025-12-11'
+  title: 'Test-Time Distillation for Continual Model Adaptation'
+  venue_html: <strong>CVPR 2026</strong> (CCF-A)
+  links:
+    - label: arXiv
+      url: https://arxiv.org/abs/2506.02671
+  abstract: '研究持续测试时自适应（CTTA）中模型在分布变化下性能退化与漂移的问题。通过在测试阶段引入蒸馏机制，并利用冻结的视觉—语言模型提供稳定的教师信号，为目标模型提供外部监督，从而减少自监督误差累积。该方法提升了模型在持续分布变化环境中的稳定性与适应能力。'
+- image: Asset_1.png
+  selected: false
+  date: '2025-12-01'
+  title: 'Discover Your Neighbors: Advanced Stable Test-Time Adaptation in Dynamic
+    World'
+  venue_html: <strong>NIPS 2025</strong> (CCF-A)
+  links:
+    - label: Paper
+      url: https://openreview.net/pdf?id=bLXfEMe1Dk
+    - label: Code
+      url: https://github.com/Peanut-255/FIND
+  abstract: 提出 DYN 框架，通过逐层实例统计聚类(LISC)和聚类感知批量归一化(CABN)实现动态测试时适应。作为首个无需反向传播的方法，处理批次内多重分布展现卓越鲁棒性，最高提升
+    35% 泛化性能。
 - image: image 2.png
   selected: false
   date: '2025-07-10'

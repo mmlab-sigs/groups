@@ -277,6 +277,15 @@
             box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
         }
 
+        .publication[data-card-url] {
+            cursor: pointer;
+        }
+
+        .publication[data-card-url]:focus-visible {
+            outline: 2px solid #0055aa;
+            outline-offset: 2px;
+        }
+
         .pub-image {
             width: 260px;
             height: 160px;
@@ -286,7 +295,8 @@
             overflow: hidden;
         }
 
-        .pub-image img {
+        .pub-image img,
+        .pub-image video {
             width: 100%;
             height: 100%;
             object-fit: cover;
@@ -314,6 +324,12 @@
         .pub-venue strong {
             color: #b30000;
             font-style: normal;
+        }
+
+        .pub-venue .venue-arxiv {
+            color: #666666;
+            font-style: italic;
+            font-weight: 500;
         }
 
         .pub-award {
@@ -832,6 +848,30 @@
         // Initial call and event listener
         updateNav();
         window.addEventListener('scroll', updateNav);
+
+        // Publication card navigation: Project first, fallback to arXiv
+        document.querySelectorAll('.publication[data-card-url]').forEach((card) => {
+            const openCard = () => {
+                const url = card.getAttribute('data-card-url');
+                if (url) {
+                    window.location.href = url;
+                }
+            };
+
+            card.addEventListener('click', (event) => {
+                if (event.target.closest('a, button, input, textarea, select')) {
+                    return;
+                }
+                openCard();
+            });
+
+            card.addEventListener('keydown', (event) => {
+                if (event.key === 'Enter' || event.key === ' ') {
+                    event.preventDefault();
+                    openCard();
+                }
+            });
+        });
     </script>
 </body>
 

@@ -1,0 +1,54 @@
+{% assign pub = include.pub %}
+{% assign project_url = "" %}
+{% assign arxiv_url = "" %}
+{% for link in pub.links %}
+{% assign link_label = link.label | downcase %}
+{% if project_url == "" and link_label == "project" %}
+{% assign project_url = link.url %}
+{% endif %}
+{% if arxiv_url == "" and link_label contains "arxiv" %}
+{% assign arxiv_url = link.url %}
+{% endif %}
+{% endfor %}
+{% assign card_url = project_url %}
+{% if card_url == "" %}
+{% assign card_url = arxiv_url %}
+{% endif %}
+<div class="publication"{% if card_url != "" %} data-card-url="{{ card_url }}" role="link" tabindex="0"{% endif %}>
+    <div class="pub-image">
+        {% if pub.video %}
+        <video autoplay muted loop playsinline preload="metadata"
+            {% if pub.video_poster %}poster="{{ site.baseurl }}/self-evolving-embodied-agents-group/assets/images/publications/{{ pub.video_poster }}"{% endif %}
+            aria-label="{{ pub.title | escape }}">
+            <source src="{{ site.baseurl }}/self-evolving-embodied-agents-group/assets/videos/publications/{{ pub.video }}" type="video/mp4">
+        </video>
+        {% else %}
+        <img src="{{ site.baseurl }}/self-evolving-embodied-agents-group/assets/images/publications/{{ pub.image }}"
+            alt="{{ pub.title | escape }}" loading="lazy">
+        {% endif %}
+    </div>
+    <div class="pub-details">
+        <p class="pub-title">{{ pub.title }}</p>
+        <p class="pub-venue">
+            {% if pub.venue_html contains 'arXiv' or pub.venue_html contains 'ArXiv' %}
+            <span class="venue-arxiv">{{ pub.venue_html | strip_html }}</span>
+            {% else %}
+            {{ pub.venue_html }}
+            {% endif %}
+            {% if pub.best_paper %}
+            <span class="pub-award"><span class="lang-en">Best Paper Candidate</span><span class="lang-zh">最佳论文候选</span></span>
+            {% endif %}
+            {% if pub.preprint_under_review %}
+            <span class="pub-preprint"><span class="lang-en">Preprint (Under Review)</span><span class="lang-zh">预印本（在投）</span></span>
+            {% endif %}
+        </p>
+        <div class="pub-links">
+            {% for link in pub.links %}
+            [<a href="{{ link.url }}" target="_blank">{{ link.label }}</a>]
+            {% endfor %}
+        </div>
+        <p class="pub-abstract">
+            {{ pub.abstract }}
+        </p>
+    </div>
+</div>
