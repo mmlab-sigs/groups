@@ -14,6 +14,13 @@
 {% if card_url == "" %}
 {% assign card_url = arxiv_url %}
 {% endif %}
+{% assign is_under_review = false %}
+{% if pub.preprint_under_review %}
+{% assign is_under_review = true %}
+{% endif %}
+{% if pub.venue_html contains 'arXiv' or pub.venue_html contains 'ArXiv' or pub.venue_html contains 'Under Review' %}
+{% assign is_under_review = true %}
+{% endif %}
 <div class="publication"{% if card_url != "" %} data-card-url="{{ card_url }}" role="link" tabindex="0"{% endif %}>
     <div class="pub-image">
         {% if pub.video %}
@@ -22,24 +29,26 @@
             aria-label="{{ pub.title | escape }}">
             <source src="{{ site.baseurl }}/self-evolving-embodied-agents-group/assets/videos/publications/{{ pub.video }}" type="video/mp4">
         </video>
-        {% else %}
+        {% elsif pub.image %}
         <img src="{{ site.baseurl }}/self-evolving-embodied-agents-group/assets/images/publications/{{ pub.image }}"
             alt="{{ pub.title | escape }}" loading="lazy">
+        {% else %}
+        <div class="pub-image-placeholder">
+            <span class="lang-en">Cover coming soon</span>
+            <span class="lang-zh">封面待补充</span>
+        </div>
         {% endif %}
     </div>
     <div class="pub-details">
         <p class="pub-title">{{ pub.title }}</p>
         <p class="pub-venue">
-            {% if pub.venue_html contains 'arXiv' or pub.venue_html contains 'ArXiv' %}
-            <span class="venue-arxiv">{{ pub.venue_html | strip_html }}</span>
+            {% if is_under_review %}
+            <span class="venue-arxiv">Under Review</span>
             {% else %}
             {{ pub.venue_html }}
             {% endif %}
             {% if pub.best_paper %}
             <span class="pub-award"><span class="lang-en">Best Paper Candidate</span><span class="lang-zh">最佳论文候选</span></span>
-            {% endif %}
-            {% if pub.preprint_under_review %}
-            <span class="pub-preprint"><span class="lang-en">Preprint (Under Review)</span><span class="lang-zh">预印本（在投）</span></span>
             {% endif %}
         </p>
         <div class="pub-links">
