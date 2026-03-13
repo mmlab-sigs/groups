@@ -129,6 +129,10 @@
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
         }
 
+        .lang-toggle-short {
+            display: none;
+        }
+
         .lang-toggle:hover {
             background: rgba(255, 255, 255, 0.8);
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
@@ -218,14 +222,29 @@
             }
 
             .lang-toggle {
-                font-size: 0.75rem !important;
-                padding: 0.25rem 0.6rem !important;
-                margin-left: auto;
+                font-size: 0.72rem !important;
+                padding: 0.24rem 0.48rem !important;
+                margin-left: 0;
                 flex-shrink: 0;
+                max-width: calc(100vw - 4.8rem);
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            .lang-toggle-full {
+                display: none;
+            }
+
+            .lang-toggle-short {
+                display: inline;
             }
 
             .nav-menu-toggle {
                 display: inline-flex;
+                width: 2.2rem;
+                height: 2.2rem;
+                margin-right: 0.35rem;
             }
 
             h2 {
@@ -931,7 +950,7 @@
             <a href="{{ site.baseurl }}/self-evolving-embodied-agents-group/#join-us" data-nav-section="join-us"><span class="lang-en">Join Us</span><span
                     class="lang-zh">加入我们</span></a>
         </div>
-        <button class="lang-toggle" id="lang-btn">中文 / EN</button>
+        <button class="lang-toggle" id="lang-btn"><span class="lang-toggle-full">中文 / EN</span><span class="lang-toggle-short">中 / EN</span></button>
     </div>
 
     {{ content }}
