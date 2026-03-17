@@ -1,5 +1,6 @@
 - video: igen.mp4
   selected: true
+  embodied: true
   date: '2025-12-02'
   title: 'IGen: Scalable Data Generation for Robot Learning from Open-World Images'
   venue_html: <strong>CVPR 2026</strong> (CCF-A)
@@ -11,15 +12,17 @@
     - label: Code
       url: https://github.com/ChenghaoGu/IGen_Robot
   abstract: '本文提出 IGen，一种面向机器人学习的可扩展数据生成框架，可从开放世界图像中自动生成逼真的视觉观测与可执行动作，从而在无需人工遥操作数据的情况下训练有效的操作策略。'
-- selected: false
+- selected: true
   image: Embodied Motion Imagination.png
+  embodied: true
   date: '2026-03-12'
   title: 'Embodied Motion Imagination: Fixed-View Motion Reconstruction for Moving-Camera 4D Human Capture'
   venue_html: '<strong>Under Review</strong>'
   preprint_under_review: true
   abstract: '本文提出 EIHMR 框架，针对移动相机单目视频中相机运动与人体运动耦合导致的全局 3D 人体重建困难问题，通过“固定视角”的局部运动优化与运动感知 SLAM 协同建模，实现相机轨迹与人体姿态的互相强化。方法利用场景深度与运动重投影生成稳定几何特征，显著提升长序列中的轨迹精度与运动一致性，在 EMDB 等数据集上取得更优全局重建效果。'
-- selected: false
+- selected: true
   image: anchorgen_pipeline.png
+  embodied: true
   date: '2026-03-12'
   title: 'AnchorGen: Multi-View Geometric Anchoring for Keyframe-Aware Embodied Video Generation'
   venue_html: '<strong>Under Review</strong>'
@@ -52,8 +55,9 @@
     - label: Code
       url: https://github.com/xjli360/SoulDance-Official
   abstract: '本文提出面向音乐驱动全身三维舞蹈生成的 SoulNet 框架，并构建高精度 SoulDance 数据集。方法通过分层残差向量量化建模身体、手部与面部的细粒度运动依赖，结合音乐条件生成模块与跨模态检索先验，实现动作与音乐的时序同步与语义一致。实验表明模型在生成质量、协调性与对齐性能上显著优于现有方法。'
-- selected: false
+- selected: true
   image: vggt-dt.png
+  embodied: true
   date: '2025-09-23'
   title: 'VGGT-DP: Generalizable Robot Control via Vision Foundation Models'
   venue_html: '<strong>Under Review</strong>'
@@ -111,7 +115,7 @@
       url: https://github.com/ModelTC/RFQuant
   abstract: '本文提出一种无需重训练的模型量化方法 RFQuant，通过一次性权重耦合学习在保持模型精度的同时显著降低量化成本，为高效部署提供了实用方案。'
 - image: image 5.png
-  selected: true
+  selected: false
   date: '2025-11-14'
   title: 'MoETTA: Test-Time Adaptation Under Mixed Distribution Shifts with MoE-LayerNorm'
   venue_html: <strong>AAAI 2026</strong> (CCF-A)
@@ -234,11 +238,11 @@
   abstract: 创新性地提出“对称幂变换”，基于“范围定义对称假设”，通过非线性可逆变换重构数据分布，同时完成范围约束与对称化。在零额外成本的前提下，解决了极端偏差放大与边界断裂难题，并在
     ImageNet 上斩获最佳 PSNR/SSIM 指标。
 - image: image 3.png
-  selected: false
+  selected: true
   date: '2024-09-15'
   title: 'MesonGS: Post-training Compression of 3D Gaussians via Efficient Attribute
     Transformation'
-  venue_html: <strong>ECCV 2024</strong> (CCF-A)
+  venue_html: <strong>ECCV 2024</strong> (CCF-B)
   links:
     - label: Project
       url: https://shuzhaoxie.github.io/mesongs/
