@@ -12,7 +12,7 @@
     - label: Code
       url: https://github.com/ChenghaoGu/IGen_Robot
   abstract: '本文提出 IGen，一种面向机器人学习的可扩展数据生成框架，可从开放世界图像中自动生成逼真的视觉观测与可执行动作，从而在无需人工遥操作数据的情况下训练有效的操作策略。'
-- selected: true
+- selected: false
   image: Embodied Motion Imagination.png
   embodied: true
   date: '2026-03-12'
@@ -55,7 +55,7 @@
     - label: Code
       url: https://github.com/xjli360/SoulDance-Official
   abstract: '本文提出面向音乐驱动全身三维舞蹈生成的 SoulNet 框架，并构建高精度 SoulDance 数据集。方法通过分层残差向量量化建模身体、手部与面部的细粒度运动依赖，结合音乐条件生成模块与跨模态检索先验，实现动作与音乐的时序同步与语义一致。实验表明模型在生成质量、协调性与对齐性能上显著优于现有方法。'
-- selected: true
+- selected: false
   image: vggt-dt.png
   embodied: true
   date: '2025-09-23'
