@@ -1,0 +1,507 @@
+/* ========================================
+   Zhi Wang's Academic Homepage — Redesigned
+   Clean, warm, scholarly aesthetic
+   ======================================== */
+
+/* --- Google Fonts Import --- */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@500;600;700&display=swap');
+
+/* --- CSS Variables --- */
+:root {
+  --color-text: #1e2d3d;
+  --color-text-light: #4a5a6a;
+  --color-heading: #0f1f2f;
+  --color-link: #1e5a8a;
+  --color-link-hover: #143f66;
+  --color-accent: #82502a;
+  --color-accent-light: #d4a574;
+  --color-bg: #fafaf8;
+  --color-surface: #ffffff;
+  --color-border: #e0ddd7;
+  --color-border-light: #f0eeea;
+  --color-tag-bg: #f5f0eb;
+  --color-section-bg: #fdfcfa;
+  --font-body: 'Inter', 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-heading: 'Playfair Display', 'Noto Serif SC', Georgia, 'Times New Roman', serif;
+  --max-width: 900px;
+  --transition: 0.25s ease;
+}
+
+/* --- Reset & Base --- */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+BODY {
+  font-family: var(--font-body);
+  font-size: 17px;
+  font-weight: 450;
+  line-height: 1.75;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  margin: 0;
+  padding: 0;
+}
+
+/* --- Main Container --- */
+DIV.all {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 40px 32px 60px;
+  background-color: transparent;
+  width: auto;
+}
+
+/* --- Typography --- */
+h1 {
+  font-family: var(--font-heading);
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: var(--color-heading);
+  margin: 0 0 8px 0;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+h2 {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-heading);
+  margin: 0 0 24px 0;
+}
+
+h3 {
+  font-family: var(--font-heading);
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--color-heading);
+  margin: 52px 0 18px 0;
+  padding-bottom: 10px;
+  padding-left: 14px;
+  border-bottom: none;
+  border-left: 4px solid var(--color-accent-light);
+  background: linear-gradient(90deg, var(--color-section-bg) 0%, transparent 100%);
+  border-radius: 0 6px 6px 0;
+}
+
+P { line-height: 1.8; margin: 0 0 18px 0; font-weight: 450; }
+
+/* --- Links --- */
+A:link, A:visited {
+  color: var(--color-link);
+  text-decoration: none;
+  border: none;
+  transition: color var(--transition);
+}
+A:active { color: var(--color-link); text-decoration: none; border: none; }
+A:hover {
+  color: var(--color-link-hover);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+  border: none;
+}
+
+/* --- Profile Photo (table layout) --- */
+table { border-collapse: collapse; width: 100%; }
+table td { vertical-align: middle; padding: 0; }
+table td:last-child { text-align: right; padding-left: 36px; }
+
+IMG {
+  border: none;
+  max-width: 100%;
+  height: auto;
+}
+
+table td img,
+table td IMG {
+  width: 250px;
+  height: auto;
+  border-radius: 14px;
+  box-shadow: 0 6px 28px rgba(0,0,0,0.10);
+  border: 3px solid var(--color-border-light);
+}
+
+/* --- Navigation Pills --- */
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 18px 0 12px;
+  margin: 8px 0 0;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.nav-links a {
+  display: inline-block;
+  padding: 8px 18px;
+  font-size: 0.88rem;
+  font-weight: 650;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-text-light);
+  border-radius: 24px;
+  border: 1.5px solid transparent;
+  transition: all var(--transition);
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  color: var(--color-accent);
+  background: var(--color-tag-bg);
+  border-color: var(--color-accent-light);
+  text-decoration: none;
+}
+
+/* --- Lists --- */
+UL, ol { line-height: 1.8; padding-left: 22px; margin: 10px 0 18px; }
+UL li, ol li { margin-bottom: 10px; padding-left: 6px; font-size: 1rem; font-weight: 450; }
+ul li::marker { color: var(--color-accent-light); }
+ol li::marker { color: var(--color-accent); font-weight: 600; }
+
+/* --- Research Area Tags --- */
+.research-areas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 0;
+}
+.research-areas li {
+  background: linear-gradient(135deg, var(--color-surface) 0%, var(--color-tag-bg) 100%);
+  padding: 10px 22px;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 650;
+  color: var(--color-heading);
+  margin-bottom: 0;
+  border: 1.5px solid var(--color-border);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  transition: all var(--transition);
+}
+.research-areas li:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  transform: translateY(-1px);
+  border-color: var(--color-accent-light);
+}
+.research-areas li strong { font-weight: 600; }
+.research-areas li a {
+  text-decoration: none;
+  color: inherit;
+  transition: color var(--transition);
+}
+.research-areas li a:hover {
+  color: var(--color-link);
+  text-decoration: none;
+}
+
+/* --- Research Group Cards --- */
+.research-groups {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 0;
+}
+.research-groups li {
+  flex: 1 1 220px;
+  background: var(--color-surface);
+  padding: 18px 22px;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 650;
+  color: var(--color-heading);
+  border: 1.5px solid var(--color-border);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+  transition: all var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+.research-groups li::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--color-accent-light);
+  border-radius: 4px 0 0 4px;
+}
+.research-groups li:hover {
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  transform: translateY(-2px);
+  border-color: var(--color-accent-light);
+}
+.research-groups li a {
+  text-decoration: none;
+  color: var(--color-heading);
+  display: block;
+  transition: color var(--transition);
+}
+.research-groups li a:hover {
+  color: var(--color-heading);
+  text-decoration: none;
+}
+.group-name {
+  display: block;
+  font-weight: 650;
+  font-size: 0.98rem;
+  color: var(--color-heading);
+  margin-bottom: 6px;
+  transition: color var(--transition);
+}
+.research-groups li:hover .group-name {
+  color: var(--color-link);
+}
+.group-desc {
+  display: block;
+  font-size: 0.84rem;
+  font-weight: 430;
+  line-height: 1.55;
+  color: var(--color-text-light);
+}
+.research-groups li .group-arrow {
+  color: var(--color-accent-light);
+  font-size: 0.85em;
+  margin-left: 6px;
+  transition: transform var(--transition);
+}
+.research-groups li:hover .group-arrow {
+  transform: translateX(3px);
+}
+
+/* --- Award highlight --- */
+.award { color: #b33a2a !important; font-weight: 600; }
+
+/* --- Publication & Paper Styles --- */
+.author { text-decoration: none; font-weight: 450; }
+.title { font-weight: 650; color: var(--color-link); border: none; cursor: pointer; }
+.conference, .journal { font-style: italic; color: #5a3d82; font-weight: 600; }
+.venue-abbr {
+  font-style: normal;
+  font-weight: 750;
+  color: #3d2066;
+  letter-spacing: 0.02em;
+}
+.hidden { color: var(--color-text-light); font-family: var(--font-body); font-size: 0.9em; font-weight: 450; }
+
+div.block { width: 100%; padding: 0; margin: 0; }
+div.abstract {
+  display: none;
+  padding: 16px 20px;
+  margin: 8px 0 16px;
+  width: 100%;
+  max-width: 100%;
+  line-height: 1.6;
+  background-color: var(--color-tag-bg);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  font-size: 0.92rem;
+  color: var(--color-text);
+}
+.abstract p { margin: 5px 0; }
+
+ul.circle {
+  list-style-type: none;
+  line-height: 1.6;
+  margin-left: 0;
+  padding-left: 0;
+}
+li.list { padding-left: 10px; }
+ul.none { padding-left: 10px; margin-left: 15px; list-style-type: none; }
+li.paper { padding-left: 10px; margin-bottom: 12px; }
+
+span.paper {
+  display: block;
+  padding: 14px 16px;
+  margin: 6px 0;
+  border-bottom: none;
+  border-radius: 8px;
+  transition: background var(--transition);
+}
+span.paper:hover {
+  background: var(--color-section-bg);
+}
+span.paper p { margin: 4px 0; font-size: 0.95rem; line-height: 1.7; font-weight: 450; }
+
+/* --- Note --- */
+DIV.note { font-size: 0.8rem; float: right; color: var(--color-text-light); }
+
+/* --- Subpage center headers --- */
+center h2 {
+  text-align: center;
+  border-bottom: 2px solid var(--color-border);
+  padding-bottom: 12px;
+  margin-bottom: 32px;
+}
+
+/* --- Container / Legacy compat --- */
+div.container { width: var(--max-width); }
+div.header { width: var(--max-width); margin-top: 50px; margin-left: 40px; margin-bottom: 40px; padding-top: 1px; text-align: left; }
+div.menu { width: 150px; text-align: center; float: left; }
+div.photo { width: 200px; height: auto; margin-top: 0; margin-right: 0; border: none; }
+div.contact { width: auto; padding: 15px; margin-bottom: -30px; text-align: left; border-radius: 10px; background-color: transparent; }
+div.content { width: var(--max-width); text-align: left; }
+div.title { color: var(--color-heading); }
+
+nav.navbar { width: 100%; max-width: var(--max-width); height: auto; top: 0; font-family: var(--font-body); background: var(--color-heading); position: fixed; z-index: 100; padding: 0 20px; }
+ul.navbar { list-style-type: none; margin: 0 auto; max-width: var(--max-width); height: auto; display: flex; padding: 0; }
+li.navbar { height: 40px; margin: 0 16px; text-align: center; display: inline-flex; align-items: center; }
+a.navbar { color: #aaa; text-decoration: none; display: block; font-size: 0.85rem; font-weight: 650; letter-spacing: 0.03em; text-transform: uppercase; }
+a.navbar:hover { color: white; text-decoration: none; }
+
+/* --- Top accent bar --- */
+body::before {
+  content: '';
+  display: block;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-accent-light) 0%, var(--color-link) 50%, var(--color-accent-light) 100%);
+}
+
+/* --- Section icon labels --- */
+.section-icon {
+  display: inline-block;
+  margin-right: 8px;
+  font-size: 1.1em;
+  vertical-align: middle;
+}
+
+/* --- Highlight card (for call-to-action like recruiting) --- */
+.highlight-card {
+  background: linear-gradient(135deg, var(--color-surface) 0%, var(--color-tag-bg) 100%);
+  border: 1.5px solid var(--color-border);
+  border-left: 4px solid var(--color-accent-light);
+  border-radius: 10px;
+  padding: 20px 24px;
+  margin: 12px 0 0;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+}
+
+/* --- Recruiting Banner --- */
+.recruiting-banner {
+  background: linear-gradient(135deg, #fcfaf6 0%, #f3ede4 100%);
+  border: 1.5px solid var(--color-border);
+  border-radius: 14px;
+  padding: 28px 32px;
+  margin: 12px 0 0;
+  box-shadow: 0 3px 14px rgba(0,0,0,0.05);
+  position: relative;
+  overflow: hidden;
+}
+.recruiting-banner::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 4px;
+  background: linear-gradient(90deg, var(--color-accent-light), var(--color-link), var(--color-accent-light));
+}
+.recruiting-header {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--color-accent);
+  margin-bottom: 14px;
+  letter-spacing: 0.01em;
+}
+.recruiting-banner p {
+  font-size: 1rem;
+  font-weight: 450;
+  line-height: 1.75;
+  margin-bottom: 12px;
+}
+.recruiting-topics {
+  list-style: none;
+  padding: 0;
+  margin: 12px 0 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.recruiting-topics li {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  padding: 7px 16px;
+  font-size: 0.9rem;
+  font-weight: 550;
+  color: var(--color-heading);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.03);
+  margin-bottom: 0;
+}
+.recruiting-cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid var(--color-border-light);
+}
+.cta-button {
+  display: inline-block;
+  padding: 10px 24px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-surface) !important;
+  background: linear-gradient(135deg, var(--color-link) 0%, #1e5a8a 100%);
+  border-radius: 8px;
+  text-decoration: none !important;
+  transition: all var(--transition);
+  box-shadow: 0 2px 8px rgba(42,100,150,0.25);
+}
+.cta-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(42,100,150,0.35);
+  text-decoration: none !important;
+  color: var(--color-surface) !important;
+}
+.cta-button-outline {
+  background: transparent !important;
+  color: var(--color-link) !important;
+  border: 2px solid var(--color-link);
+  box-shadow: none;
+}
+.cta-button-outline:hover {
+  background: var(--color-link) !important;
+  color: var(--color-surface) !important;
+  box-shadow: 0 4px 14px rgba(42,100,150,0.25);
+}
+
+/* --- Footer credit --- */
+.page-footer {
+  margin-top: 60px;
+  padding-top: 20px;
+  border-top: 1px solid var(--color-border-light);
+  text-align: center;
+  font-size: 0.82rem;
+  color: var(--color-text-light);
+  letter-spacing: 0.02em;
+}
+
+/* --- Responsive --- */
+@media (max-width: 700px) {
+  DIV.all { padding: 24px 16px 40px; }
+  table { display: flex; flex-direction: column-reverse; }
+  table td { display: block; text-align: left !important; padding: 0 !important; }
+  table td:last-child { text-align: center !important; margin-bottom: 20px; }
+  table td img { width: 180px; }
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.6rem; }
+  h3 { font-size: 1.2rem; }
+  .nav-links { justify-content: center; }
+  .research-areas { justify-content: center; }
+  .research-groups li { flex: 1 1 100%; }
+}
+
+/* --- Print --- */
+@media print {
+  body { background: white; }
+  body::before { display: none; }
+  DIV.all { max-width: 100%; padding: 20px; }
+  .nav-links { display: none; }
+  .page-footer { display: none; }
+  a { color: var(--color-text) !important; }
+}

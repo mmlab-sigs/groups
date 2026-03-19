@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Design Preview — Zhi Wang Homepage</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@500;600;700&display=swap');
+
+:root {
+  --color-text: #1e2d3d;
+  --color-text-light: #4a5a6a;
+  --color-heading: #0f1f2f;
+  --color-link: #1e5a8a;
+  --color-link-hover: #143f66;
+  --color-accent: #82502a;
+  --color-accent-light: #d4a574;
+  --color-bg: #fafaf8;
+  --color-surface: #ffffff;
+  --color-border: #e0ddd7;
+  --color-border-light: #f0eeea;
+  --color-tag-bg: #f5f0eb;
+  --color-section-bg: #fdfcfa;
+  --font-body: 'Inter', 'Noto Sans SC', -apple-system, sans-serif;
+  --font-heading: 'Playfair Display', 'Noto Serif SC', Georgia, serif;
+  --max-width: 900px;
+  --transition: 0.25s ease;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+body {
+  font-family: var(--font-body); font-size: 17px; font-weight: 450;
+  line-height: 1.75; color: var(--color-text); background-color: var(--color-bg);
+  margin: 0; padding: 0;
+}
+body::before {
+  content: ''; display: block; height: 4px;
+  background: linear-gradient(90deg, var(--color-accent-light) 0%, var(--color-link) 50%, var(--color-accent-light) 100%);
+}
+.all { max-width: var(--max-width); margin: 0 auto; padding: 40px 32px 60px; }
+h1 { font-family: var(--font-heading); font-size: 2.6rem; font-weight: 800; color: var(--color-heading); margin: 0 0 8px 0; letter-spacing: -0.02em; line-height: 1.2; }
+h3 {
+  font-family: var(--font-heading); font-size: 1.45rem; font-weight: 700; color: var(--color-heading);
+  margin: 52px 0 18px 0; padding-bottom: 10px; padding-left: 14px;
+  border-bottom: none; border-left: 4px solid var(--color-accent-light);
+  background: linear-gradient(90deg, var(--color-section-bg) 0%, transparent 100%);
+  border-radius: 0 6px 6px 0;
+}
+p { line-height: 1.8; margin: 0 0 18px 0; font-weight: 450; }
+a:link, a:visited { color: var(--color-link); text-decoration: none; transition: color var(--transition); font-weight: 500; }
+a:hover { color: var(--color-link-hover); text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 2px; }
+
+/* Profile - vertically centered */
+.profile-row { display: flex; align-items: center; gap: 40px; margin-bottom: 8px; }
+.profile-row .info { flex: 1; }
+.profile-row .info p { margin: 0 0 12px 0; color: var(--color-text-light); font-size: 1rem; line-height: 1.7; font-weight: 450; }
+.photo-placeholder {
+  flex-shrink: 0; width: 250px; height: 250px;
+  border-radius: 14px; background: linear-gradient(135deg, #d4cfc8, #b8b2a8);
+  box-shadow: 0 6px 28px rgba(0,0,0,0.10); border: 3px solid var(--color-border-light);
+  display: flex; align-items: center; justify-content: center; color: #888; font-size: 0.85rem;
+}
+
+/* Nav */
+.nav-links {
+  display: flex; flex-wrap: wrap; gap: 8px; padding: 18px 0 12px; margin: 8px 0 0;
+  border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border);
+}
+.nav-links a {
+  display: inline-block; padding: 8px 18px; font-size: 0.88rem; font-weight: 650;
+  letter-spacing: 0.04em; text-transform: uppercase; color: var(--color-text-light);
+  border-radius: 24px; border: 1.5px solid transparent; transition: all var(--transition); text-decoration: none;
+}
+.nav-links a:hover { color: var(--color-accent); background: var(--color-tag-bg); border-color: var(--color-accent-light); text-decoration: none; }
+
+/* Research areas */
+.research-areas { display: flex; flex-wrap: wrap; gap: 12px; list-style: none; padding: 0; margin: 16px 0 0; }
+.research-areas li {
+  background: linear-gradient(135deg, var(--color-surface) 0%, var(--color-tag-bg) 100%);
+  padding: 10px 22px; border-radius: 10px; font-size: 0.95rem; font-weight: 650;
+  color: var(--color-heading); border: 1.5px solid var(--color-border);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04); transition: all var(--transition);
+}
+.research-areas li:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); transform: translateY(-1px); border-color: var(--color-accent-light); }
+
+/* Research group cards with descriptions */
+.research-groups { display: flex; flex-wrap: wrap; gap: 14px; list-style: none; padding: 0; margin: 16px 0 0; }
+.research-groups li {
+  flex: 1 1 220px; background: var(--color-surface); padding: 18px 22px; border-radius: 12px;
+  font-size: 0.95rem; color: var(--color-heading);
+  border: 1.5px solid var(--color-border); box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+  transition: all var(--transition); position: relative; overflow: hidden;
+}
+.research-groups li::before {
+  content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%;
+  background: var(--color-accent-light); border-radius: 4px 0 0 4px;
+}
+.research-groups li:hover { box-shadow: 0 6px 20px rgba(0,0,0,0.08); transform: translateY(-2px); border-color: var(--color-accent-light); }
+.research-groups li a { text-decoration: none; color: var(--color-heading); display: block; }
+.research-groups li a:hover { color: var(--color-heading); text-decoration: none; }
+.group-name { display: block; font-weight: 650; font-size: 0.98rem; color: var(--color-heading); margin-bottom: 6px; transition: color var(--transition); }
+.research-groups li:hover .group-name { color: var(--color-link); }
+.group-desc { display: block; font-size: 0.84rem; font-weight: 430; line-height: 1.55; color: var(--color-text-light); }
+.group-arrow { color: var(--color-accent-light); font-size: 0.85em; margin-left: 6px; transition: transform var(--transition); display: inline-block; }
+.research-groups li:hover .group-arrow { transform: translateX(3px); }
+
+/* Recruiting */
+.recruiting-banner {
+  background: linear-gradient(135deg, #fcfaf6 0%, #f3ede4 100%);
+  border: 1.5px solid var(--color-border); border-radius: 14px;
+  padding: 28px 32px; margin: 12px 0 0;
+  box-shadow: 0 3px 14px rgba(0,0,0,0.05); position: relative; overflow: hidden;
+}
+.recruiting-banner::before {
+  content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 4px;
+  background: linear-gradient(90deg, var(--color-accent-light), var(--color-link), var(--color-accent-light));
+}
+.recruiting-header { font-family: var(--font-heading); font-size: 1.25rem; font-weight: 800; color: var(--color-accent); margin-bottom: 14px; }
+.recruiting-banner p { font-size: 1rem; font-weight: 450; line-height: 1.75; margin-bottom: 12px; }
+.recruiting-topics { list-style: none; padding: 0; margin: 12px 0 16px; display: flex; flex-wrap: wrap; gap: 10px; }
+.recruiting-topics li {
+  background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 8px;
+  padding: 7px 16px; font-size: 0.9rem; font-weight: 550; color: var(--color-heading); margin-bottom: 0;
+}
+.recruiting-cta { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; margin-top: 18px; padding-top: 16px; border-top: 1px solid var(--color-border-light); }
+.cta-button {
+  display: inline-block; padding: 10px 24px; font-size: 0.95rem; font-weight: 700;
+  color: var(--color-surface) !important; background: linear-gradient(135deg, var(--color-link) 0%, #1e5a8a 100%);
+  border-radius: 8px; text-decoration: none !important; box-shadow: 0 2px 8px rgba(42,100,150,0.25);
+  transition: all var(--transition);
+}
+.cta-button:hover { transform: translateY(-1px); box-shadow: 0 4px 14px rgba(42,100,150,0.35); text-decoration: none !important; color: var(--color-surface) !important; }
+.cta-link { font-size: 0.92rem; font-weight: 650; color: var(--color-link) !important; text-decoration: none !important; }
+.cta-link:hover { color: var(--color-accent) !important; text-decoration: underline !important; }
+
+/* Publications */
+.conference, .journal { font-style: italic; color: #5a3d82; font-weight: 600; }
+.venue-abbr { font-style: normal; font-weight: 750; color: #3d2066; letter-spacing: 0.02em; }
+.title { font-weight: 650; color: var(--color-link); }
+.author { font-weight: 450; }
+
+ul, ol { line-height: 1.8; padding-left: 22px; margin: 10px 0 18px; }
+ul li, ol li { margin-bottom: 10px; padding-left: 6px; font-size: 1rem; font-weight: 450; }
+ul li::marker { color: var(--color-accent-light); }
+
+.section-icon { display: inline-block; margin-right: 8px; font-size: 1.1em; vertical-align: middle; }
+.hidden { color: var(--color-text-light); font-size: 0.9em; font-weight: 450; }
+
+.paper-item {
+  display: block; padding: 14px 16px; margin: 6px 0; border-radius: 8px;
+  font-size: 0.95rem; line-height: 1.7; font-weight: 450; transition: background var(--transition);
+}
+.paper-item:hover { background: var(--color-section-bg); }
+.paper-title { color: var(--color-link); font-weight: 650; }
+.paper-venue { font-style: italic; color: #5a3d82; font-weight: 600; }
+.paper-venue .venue-abbr { font-style: normal; font-weight: 750; color: #3d2066; }
+.paper-tag {
+  display: inline-block; padding: 1px 8px; font-size: 0.78rem; font-weight: 650;
+  border-radius: 4px; background: var(--color-tag-bg); color: var(--color-link); text-decoration: none;
+}
+
+.page-footer {
+  margin-top: 60px; padding-top: 20px; border-top: 1px solid var(--color-border-light);
+  text-align: center; font-size: 0.82rem; color: var(--color-text-light); font-weight: 500;
+}
+
+@media (max-width: 700px) {
+  .all { padding: 24px 16px 40px; }
+  .profile-row { flex-direction: column-reverse; align-items: center; gap: 20px; }
+  h1 { font-size: 2rem; } h3 { font-size: 1.2rem; }
+  .nav-links { justify-content: center; }
+  .research-groups li { flex: 1 1 100%; }
+}
+</style>
+</head>
+<body>
+<div class="all">
+  <!-- Profile Section - vertically centered -->
+  <div class="profile-row">
+    <div class="info">
+      <h1>Zhi Wang&nbsp;<span class="hidden">(王智)</span></h1>
+      <p>
+        Associate Professor<br>
+        <a href="#">Tsinghua Shenzhen International Graduate School</a><br>
+        <a href="#">Tsinghua University</a>
+      </p>
+      <p>Room 1708, Information Building<br>Tsinghua Campus, University Town of Shenzhen</p>
+      <p>Phone: +86-755-26031113<br>Email: <a href="#">wangzhi@sz.tsinghua.edu.cn</a></p>
+    </div>
+    <div class="photo-placeholder">Photo</div>
+  </div>
+
+  <div class="nav-links">
+    <a href="#research">Research</a>
+    <a href="#students">Students</a>
+    <a href="#awards">Awards</a>
+    <a href="#teaching">Teaching</a>
+    <a href="#publications">Publications</a>
+    <a href="#">Biography</a>
+  </div>
+
+  <h3><span class="section-icon">&#x1F52C;</span>Research</h3>
+  <p>
+    With the rapid rise of large-scale pretrained models and autonomous intelligence, AI is increasingly moving from the digital realm into the physical world, catalyzing a new industrial transformation centered on <strong>industrial foundation models</strong> and <strong>embodied industrial intelligence</strong>.
+  </p>
+  <ul class="research-areas">
+    <li><strong>Autonomous multimedia intelligence</strong></li>
+    <li><strong>Distributed machine learning</strong></li>
+    <li><strong>Industrial foundation models</strong></li>
+    <li><strong>Embodied industrial intelligence</strong></li>
+  </ul>
+
+  <h3 style="margin-top: 32px;"><span class="section-icon">&#x1F465;</span>Research Groups</h3>
+  <ul class="research-groups">
+    <li>
+      <a href="#">
+        <span class="group-name">Efficient Deep Learning &amp; Embodiment<span class="group-arrow">&rarr;</span></span>
+        <span class="group-desc">Model compression, efficient neural architectures, and deploying deep learning on resource-constrained embodied systems for real-time robotic perception and control.</span>
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <span class="group-name">Agentic &amp; Embodied Large Model Training<span class="group-arrow">&rarr;</span></span>
+        <span class="group-desc">Training and accelerating large vision-language-action models for agentic decision-making, with focus on scalable distributed training and embodied AI deployment.</span>
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <span class="group-name">Self-Evolving Embodied Agents<span class="group-arrow">&rarr;</span></span>
+        <span class="group-desc">Autonomous agents that continuously self-improve through interaction with physical environments, leveraging world models and reinforcement learning.</span>
+      </a>
+    </li>
+  </ul>
+
+  <h3><span class="section-icon">&#x1F393;</span>Join Us</h3>
+  <div class="recruiting-banner">
+    <div class="recruiting-header">We are actively recruiting!</div>
+    <p>We are looking for <strong>Ph.D. and Master students</strong>, <strong>Postdocs</strong>, and <strong>Undergraduate Interns</strong> with strong interests in frontier research topics:</p>
+    <ul class="recruiting-topics">
+      <li>Data-driven multimedia network &amp; system design</li>
+      <li>Large decision models &amp; autonomous agents</li>
+      <li>Edge computing and networking</li>
+      <li>Distributed machine learning systems</li>
+    </ul>
+    <p>Candidates with hands-on systems building abilities and mathematical background are highly encouraged.</p>
+    <div class="recruiting-cta">
+      <a href="mailto:wangzhi@sz.tsinghua.edu.cn" class="cta-button">Send your CV &rarr;</a>
+      <a href="#" class="cta-link">More information &rarr;</a>
+    </div>
+  </div>
+
+  <h3><span class="section-icon">&#x1F3C6;</span>Honors and Awards</h3>
+  <ul>
+    <li><b>北京市科学技术奖自然科学奖二等奖</b>, 2024</li>
+    <li><b>国家自然科学二等奖</b>, 2018</li>
+    <li><b>Best Paper Award</b>, ACM Multimedia, 2012</li>
+  </ul>
+
+  <!-- Publication examples with highlighted venue abbreviations -->
+  <h3><span class="section-icon">&#x1F4DA;</span>Selected Publications (2023&ndash;) &nbsp;<a href="#" style="font-size:0.85em; font-weight:500;">full list &rarr;</a></h3>
+  
+  <span class="paper-item">
+    <span class="author">Chenghao Gu, Haolan Chen, ... and <b>Zhi Wang</b>.</span> <span class="paper-title">&ldquo;IGen: Scalable Data Generation for Robot Learning from Open-World Images,&rdquo;</span> In Proceedings of <span class="paper-venue">IEEE/CVF Conference on Computer Vision and Pattern Recognition (<span class="venue-abbr">CVPR</span>), Denver, CO, USA, June 2026</span> <a href="#" class="paper-tag">[pdf]</a> <a href="#" class="paper-tag">[project]</a>
+  </span>
+
+  <span class="paper-item">
+    <span class="author">Ye Li, Yuan Meng, ... and <b>Zhi Wang</b>.</span> <span class="paper-title">&ldquo;SP-VLA: A Joint Model Scheduling and Token Pruning Approach for VLA Model Acceleration,&rdquo;</span> In Proceedings of <span class="paper-venue">International Conference on Learning Representations (<span class="venue-abbr">ICLR</span>), Rio de Janeiro, Brazil, April 2026</span> <a href="#" class="paper-tag">[pdf]</a>
+  </span>
+
+  <span class="paper-item">
+    <span class="author">Author A, Author B, and <b>Zhi Wang</b>.</span> <span class="paper-title">&ldquo;Example: Distributed Training Optimization,&rdquo;</span> In <span class="paper-venue">IEEE Transactions on Pattern Analysis and Machine Intelligence (<span class="venue-abbr">TPAMI</span>), vol. 48, 2025</span> <a href="#" class="paper-tag">[pdf]</a>
+  </span>
+
+  <h3><span class="section-icon">&#x1F4D6;</span>Teaching</h3>
+  <ul>
+    <li><b>大数据系统基础B（64100033）</b>，秋季；2014&ndash;</li>
+    <li><b>分布式机器学习（85990072）</b>，春季；2021&ndash;</li>
+  </ul>
+
+  <div class="page-footer">mmlab @ Tsinghua Shenzhen International Graduate School</div>
+</div>
+</body>
+</html>
