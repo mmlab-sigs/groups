@@ -585,13 +585,15 @@ layout: seea-default
 {% if pub.venue_html contains 'arXiv' or pub.venue_html contains 'ArXiv' or pub.venue_html contains 'Under Review' %}
 {% assign is_under_review = true %}
 {% endif %}
-<div class="publication"{% if card_url != "" %} data-card-url="{{ card_url }}" role="link" tabindex="0"{% endif %}>
+<div class="publication" {% if card_url !="" %} data-card-url="{{ card_url }}" role="link" tabindex="0" {% endif %}>
     <div class="pub-image">
         {% if pub.video %}
-        <video autoplay muted loop playsinline preload="metadata"
-            {% if pub.video_poster %}poster="{{ site.baseurl }}/self-evolving-embodied-agents-group/assets/images/publications/{{ pub.video_poster }}"{% endif %}
-            aria-label="{{ pub.title | escape }}">
-            <source src="{{ site.baseurl }}/self-evolving-embodied-agents-group/assets/videos/publications/{{ pub.video }}" type="video/mp4">
+        <video autoplay muted loop playsinline preload="metadata" {% if pub.video_poster
+            %}poster="{{ site.baseurl }}/self-evolving-embodied-agents-group/assets/images/publications/{{ pub.video_poster }}"
+            {% endif %} aria-label="{{ pub.title | escape }}">
+            <source
+                src="{{ site.baseurl }}/self-evolving-embodied-agents-group/assets/videos/publications/{{ pub.video }}"
+                type="video/mp4">
         </video>
         {% elsif pub.image %}
         <img src="{{ site.baseurl }}/self-evolving-embodied-agents-group/assets/images/publications/{{ pub.image }}"
@@ -612,7 +614,8 @@ layout: seea-default
             {{ pub.venue_html }}
             {% endif %}
             {% if pub.best_paper %}
-            <span class="pub-award"><span class="lang-en">Best Paper Candidate</span><span class="lang-zh">最佳论文候选</span></span>
+            <span class="pub-award"><span class="lang-en">Best Paper Candidate</span><span
+                    class="lang-zh">最佳论文候选</span></span>
             {% endif %}
         </p>
         <div class="pub-links">
@@ -650,7 +653,7 @@ layout: seea-default
                 <span class="lang-zh">副教授，清华大学深圳国际研究生院</span>
             </p>
             <p>
-                <a href="https://www.mmlab.top/" target="_blank">
+                <a href="https://mmlab-sigs.github.io/groups/zwang/" target="_blank">
                     <span class="lang-en">Personal Website</span>
                     <span class="lang-zh">个人主页</span>
                 </a> |
