@@ -12,6 +12,19 @@
     - label: Code
       url: https://github.com/ChenghaoGu/IGen_Robot
   abstract: '本文提出 IGen，一种面向机器人学习的可扩展数据生成框架，可从开放世界图像中自动生成逼真的视觉观测与可执行动作，从而在无需人工遥操作数据的情况下训练有效的操作策略。'
+- video: RoboStream.mp4
+  selected: true
+  embodied: true
+  date: '2025-03-17'
+  title: 'RoboStream: Weaving Spatio-Temporal Reasoning with Memory in Vision-Language Models for Robotics'
+  venue_html: '<strong>Under Review</strong>'
+  preprint_under_review: true
+  links:
+    - label: Project
+      url: https://robostream123.github.io/
+    - label: arXiv
+      url: https://arxiv.org/abs/2603.12939
+  abstract: 'RoboStream 提出面向机器人操作的时空推理与记忆增强视觉语言模型框架，引入时空融合 Token 实现持久目标定位，构建因果时空图追踪状态转移，无需训练即可在 RLBench 长时域任务上达到 90.5% 成功率，在真实世界方块操作任务中达到 44.4% 成功率。'
 - selected: false
   image: Embodied Motion Imagination.png
   embodied: true
