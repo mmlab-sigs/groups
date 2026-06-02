@@ -3,16 +3,52 @@
 // http://www.textfixer.com/tools/remove-line-breaks.php
 
 var conferencePapers = new Array (	
+	        // Kangye: SAG中了ICML
 	
-
-		// CVPR: Xiao Chen (x2), Kangye, Haotian, Chenghao
+		// [ACL 2026] Decision notification for your submission 5893: Semantic-Space Exploration and Exploitation in RLVR for LLM Reasoning
 		
-		// Ye Li  “SP-VLA: A Joint Model Scheduling and Token Pruning Approach for VLA Model Acceleration”, to ICLR 2026
-		// Kangye Ji “Block-wise Adaptive Caching for Accelerating Diffusion Policy”, to ICLR 2026. 
 		
 		// Yimin Zhou, Yichong Xia, Sicheng Pan, Bin Chen, Yaowei Li, Jiawei Li, Mingyao Hong, Zhi Wang, Yaowei Wang, Paper ID: 10307; Title: HIGH QUALITY UNDERWATER IMAGE COMPRESSION WITH ADAPTIVE COLOR CORRECTION
 		
 		// Xiaojie Li, Chenghao Gu, Shuzhao Xie, Yunpeng Bai, Weixiang Zhang, Zhi Wang,; Paper ID: 4331; Title: Tuning-Free Visual Customization via View Iterative Self-Attention Control
+	{
+		id : "icml26-sag",
+		name : "Sparse ActionGen: Accelerating Diffusion Policy with Real-time Pruning",
+		authors : new Array(authorList.Kangye, authorList.JianboZhou, authorList.Yuan, authorList.Ye, authorList.Hanyun, authorList.Zhi),
+		conference : "International Conference on Machine Learning (ICML), Seoul, South Korea, July 6-11, 2026 (<font color=\"red\">CCF-A</font>)",
+		year : 2026,
+		rep : 1,
+		topic: "Robot Learning", 
+		paperPDF : "publications/icml26-sag.pdf",
+		projectLink : "https://sparse-actiongen.github.io/", 
+		paperAbstract: "<p>Diffusion Policy has dominated action generation due to its strong capabilities for modeling multi-modal action distributions, but its multistep denoising processes make it impractical for real-time visuomotor control. Existing cachingbased acceleration methods typically rely onstatic schedules that fail to adapt to the dynamics of robot-environment interactions, thereby leading to suboptimal performance. In this paper, we propose Sparse ActionGen (SAG) for extremely sparse action generation. To accommodate the iterative interactions, SAG customizes a rollout-adaptive prune-then-reuse mechanism that first identifies prunable computations globally and then reuses cached activations to substitute them during action diffusion. To capture the rollout dynamics, SAG parameterizes an observation-conditioned diffusion pruner for environment-aware adaptation and instantiates it with a highly parameter- and inference-efficient design for real-time prediction. Furthermore, SAG introduces a one-for-all reusing strategy that reuses activations across both timesteps and blocks in a zig-zag manner, minimizing the global redundancy. Extensive experiments on multiple robotic benchmarks demonstrate that SAG achieves up to 4× generation speedup without sacrificing performance.</p >",
+	},
+	
+	{
+	    id : "acl26-verl",
+	    name : "Semantic-Space Exploration and Exploitation in RLVR for LLM Reasoning",
+	    authors : new Array(authorList.Fanding, authorList.GuanboHuang, authorList.XiaoFan, authorList.YiHe, authorList.XiaoLiang, authorList.Xiao, authorList.Qinting,	        authorList.Faisal, authorList.Jingyan, authorList.Zhi),
+	    conference : "Findings of the Association for Computational Linguistics: ACL 2026, San Diego, CA, USA, July 2-7, 2026 (<font color=\"red\">CCF-A</font>)",
+	    year : 2026,
+	    rep : 1,
+	    topic: "LLM Reasoning",
+	    paperPDF : "publications/acl26-verl.pdf",
+	    projectLink : "https://hf618.github.io/VERL.github.io/",
+	    paperAbstract: "<p>Reinforcement Learning with Verifiable Rewards (RLVR) for LLM reasoning is often framed as balancing exploration and exploitation in action space, typically operationalized with token-level proxies (e.g., output entropy or confidence). We argue that this apparent trade-off is largely a measurement artifact: token-level statistics reflect next-token uncertainty rather than how reasoning progresses over multi-token semantic structures. We therefore study exploration and exploitation in the semantically rich hidden-state space of response trajectories, adopting Effective Rank (ER) to quantify exploration and introducing its temporal derivatives, named Effective Rank Velocity (ERV) and Effective Rank Acceleration (ERA), to characterize exploitation dynamics. Empirically and theoretically, our analysis shows that ER and ERV exhibit near-zero correlation in semantic space, suggesting that exploration and exploitation can be decoupled and enhanced simultaneously. This insight motivates our method, Velocity-Exploiting Rank Learning (VERL), the first to operationalize synergistic exploration-exploitation enhancement by directly shaping the RL advantage function. The key innovation is leveraging the theoretically stable ERA as a predictive meta-controller to create an adaptive dual-channel incentive structure. Instead of forcing a trade-off, VERL prospectively amplifies rewards for exploration to preempt overconfidence and reinforces exploitative gains to consolidate reasoning. Experiments across diverse base models, RL algorithms, and reasoning benchmarks show consistent gains, including up to 21.4% absolute accuracy improvement on the challenging Gaokao 2024 dataset.</p >",
+	},
+			
+	{
+		id : "cvpr26-tts",
+		name : "Test-time Sparsity for Extreme Fast Action Diffusion",
+		authors : new Array(authorList.Kangye, authorList.Yuan, authorList.JianboZhou, authorList.Ye, authorList.ChenTang, authorList.Zhi),
+		conference : "IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), Denver, CO, USA, June 3-7, 2026 (<font color=\"red\">CCF-A</font>)",
+		year : 2026,
+		rep : 1,
+		topic: "Robot Learning", 
+		paperPDF : "publications/cvpr26-tts.pdf",
+		projectLink : "https://github.com/ky-ji/Test-time-Sparsity", 
+		paperAbstract: "<p>Action diffusion excels at high-fidelity action generation but incurs heavy computational costs owing to its iterative denoising nature. Despite current technologies showing promise in accelerating diffusion transformers by reusing the cached features, they struggle to adapt to policy dynamics arising from diverse perceptions and multi-round rollout iterations in open environments. We propose test-time sparsity to tackle this challenge, which aims to accelerate action diffusion by dynamically predicting prunable residual computations for each model forward at test time. However, two bottlenecks remain in this paradigm: 1) repetitive conditional encoding and pruning offset most potential speed gains, and 2) the features cached from previous denoising timesteps cannot constrain large pruning errors under aggressive sparsity. To address the first bottleneck, we design a highly parallelized inference pipeline that minimizes the nondecoder delay to milliseconds. Specifically, we first design a lightweight pruner that shares the encoder with the diffusion transformer. Then, we decouple the encoding and pruning from the autoregressive denoising loop by processing all denoising timesteps in parallel, and overlap the pruner with the decoder forward inference through asynchronism. To overcome the second bottleneck, we introduce an omnidirectional reusing strategy, which achieves 95% sparsity by selectively reusing the features cached from the current forward, previous denoising timesteps, and earlier rollout iterations. To learn the rollout-level reusing strategies, we sample a few action trajectories to supervise the sparsified diffusion step by step. Extensive experiments demonstrate that our method reduces FLOPs by 92% and accelerates action generation by 5×, achieving lossless performance with an inference frequency of 47.5 Hz.</p >",
+	},
 		
 	{
 		id : "cvpr26-igen",
@@ -54,6 +90,18 @@ var conferencePapers = new Array (
 	},
 	
 	{
+	    id : "icassp26-hquic",
+	    name : "High Quality Underwater Image Compression with Adaptive Color Correction",
+	    authors : new Array(authorList.YiminZhou, authorList.YichongXia, authorList.Sicheng, authorList.Bin, authorList.YaoweiLi, authorList.Jiawei, authorList.MingyaoHong, authorList.Zhi, authorList.Yaowei),
+	    conference : "IEEE International Conference on Acoustics, Speech, and Signal Processing (ICASSP), Barcelona, Spain, May 4-8, 2026",
+	    year : 2026,
+	    rep : 0,
+	    topic: "Image Compression", 
+	    paperPDF : "https://ieeexplore.ieee.org/abstract/document/11463361/",
+	    paperAbstract: "<p>With the increasing exploration and exploitation of the underwater world, underwater images have become a critical medium for human interaction with marine environments, driving extensive research into their efficient transmission and storage. However, contemporary underwater image compression algorithms fail to adequately address the impact of water refraction and scattering on light waves, which not only elevate training complexity but also result in suboptimal compression performance. To tackle this limitation, we propose High Quality Underwater Image Compression (HQUIC), a novel framework designed to handle the unique illumination conditions and color shifts inherent in underwater images, thereby achieving superior compression performance. HQUIC first incorporates an Adaptive Lighting and Tone Correction (ALTC) module to adaptively predict the attenuation coefficients and global light information of images, effectively alleviating issues stemming from variations in illumination and tone across underwater images. Secondly, it dynamically weights multi-scale frequency components, prioritizing information critical to distortion quality while discarding redundant details. Furthermore, we introduce a tone adjustment loss to enable the model to better balance discrepancies among different color channels. Comprehensive evaluations on diverse underwater datasets validate that HQUIC outperforms state-of-the-art compression methods, demonstrating its effectiveness.</p >",
+	},
+	
+	{
 	    id : "iclr26-SP-VLA",
 	    name : "SP-VLA: A Joint Model Scheduling and Token Pruning Approach for VLA Model Acceleration",
 	    authors : new Array(
@@ -65,6 +113,18 @@ var conferencePapers = new Array (
 	    paperPDF : "",
 	    projectLink : "https://github.com/ChildTang/SP-VLA",
 	    paperAbstract : "<p>Vision-Language-Action (VLA) models have attracted increasing attention for their strong control capabilities. However, their high computational cost and low execution frequency hinder their suitability for real-time tasks such as robotic manipulation and autonomous navigation. Existing VLA acceleration methods primarily focus on structural optimization, overlooking the fact that these models operate in sequential decision-making environments. As a result, temporal redundancy in sequential action generation and spatial redundancy in visual input remain unaddressed. To this end, we propose SP-VLA, a unified framework that accelerates VLA models by jointly scheduling models and pruning tokens. Specifically, we design an action-aware model scheduling mechanism that reduces temporal redundancy by dynamically switching between VLA model and a lightweight generator. Inspired by the human motion pattern of focusing on key decision points while relying on intuition for other actions, we categorize VLA actions into deliberative and intuitive, assigning the former to the VLA model and the latter to the lightweight generator, enabling frequency-adaptive execution through collaborative model scheduling. To address spatial redundancy, we further develop a spatio-semantic dual-aware token pruning method. Tokens are classified into spatial and semantic types and pruned based on their dual-aware importance to accelerate VLA inference. These two mechanisms work jointly to guide the VLA in focusing on critical actions and salient visual information, achieving effective acceleration while maintaining high accuracy. Extensive experiments show that our method achieves 1.5$\times$ lossless acceleration in LIBERO and 2.4$\times$ in SimplerEnv, with up to 6% average performance gain. Inference frequency and latency improve by 2.2$\times$ in SimplerEnv and 1.4$\times$ in LIBERO.</p >",
+	},
+	
+	{
+			id : " cvpr26-free ",
+			name : " FREE: Uncertainty-Aware Autoregression for Parallel Diffusion Transformers ",
+			authors : new Array(authorList.XinwanWen, authorList.Bowen, authorList.JiajunLuo, authorList.Ye, authorList.Zhi),
+			conference : " IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR), Denver, CO, USA, June 3-7, 2026 (Findings) (<font color=\"red\">CCF-A</font>) ",
+			year : 2026,
+			rep : 1,
+			topic: " Image Generation ",
+			paperPDF : "publications/cvpr26-free.pdf",
+			paperAbstract: " <p>Diffusion Transformers (DiTs) achieve state-of-the-art generation quality but require long sequential denoising trajectories, leading to high inference latency. Recent speculative inference methods enable lossless parallel sampling in U-Net–based diffusion models via a drafter–verifier scheme, but their acceleration is limited on DiTs due to insufficient draft accuracy during verification. To address this limitation, we analyze the feature dynamics of DiTs and find that the features of the final transformer layer (top-block) exhibit strong temporal consistency and rich semantic abstraction. Based on this insight, we propose <b>FREE</b>, a novel framework that employs a lightweight drafter to perform feature-level autoregression with parallel verification, guaranteeing lossless acceleration with theoretical and empirical support. Meanwhile, prediction variance (uncertainty) of DiTs naturally increases in later denoising steps, reducing acceptance rates under speculative sampling. To mitigate this effect, we further introduce an uncertainty-guided relaxation strategy, forming <b>FREE (relax)</b>, which dynamically adjusts the acceptance probability in response to uncertainty levels. Experiments on ImageNet-512<sup>2</sup> show that <b>FREE</b> achieves up to 1.86× acceleration, and <b>FREE (relax)</b> further reaches 2.25× speedup while maintaining high perceptual and quantitative fidelity in generation quality.</p > ",
 	},
 	
 	{
@@ -1854,6 +1914,7 @@ var conferencePapers = new Array (
 var journalPapers = new Array (
 	//  Mr. Guo, PR, Learning Gated Experts for Segment Anything in the Wild on January 24, 2026.
 	// Dai Tao
+	//  "Multi-Beholder: Biomarker Prediction for Low-Grade Glioma with Multiple Instance Learning and One-Class Classification" (Digital Object Identifier or DOI: 10.1109/TCBBIO.2026.3686279).
 
 	{
 	  id : "tpami25-prance",

@@ -1929,5 +1929,50 @@ var authorList = {
 		name : "Li Lu",
 		web : "#"	
 	},
+	
+	XinwanWen : {
+		name : "Xinwan Wen",
+		web : "#"	
+	},
+	
+	JianboZhou : {
+		name : "Jianbo Zhou",
+		web : "#"	
+	},
+	
+	GuanboHuang : {
+		name : "Guanbo Huang",
+		web : "#"	
+	},
+	
+	YiHe : {
+		name : "Yi He",
+		web : "#"	
+	},
+	
+	XiaoLiang : {
+		name : "Xiao Liang",
+		web : "#"	
+	},
+	
+	YiminZhou : {
+		name : "Yimin Zhou",
+		web : "#"	
+	},
+	
+	YichongXia : {
+		name : "Yichong Xia",
+		web : "#"	
+	},
+	
+	YaoweiLi : {
+		name : "Yaowei Li",
+		web : "#"	
+	},
+	
+	MingyaoHong : {
+		name : "Mingyao Hong",
+		web : "#"	
+	},
 };
 
