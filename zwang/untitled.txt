@@ -1,0 +1,258 @@
+					<p>
+						<span class="author">
+							Chong Yuan,
+							<b>Zhi Wang</b>,
+							Lifeng Sun.
+						</span>
+					<span class="title">"TV6: A Revisit to System Design, User Socialization and Content Recommendation in Social TV,"</a></span>
+						<span class="conference">
+							in Proceedings of <a href="http://www.iaria.org/conferences2013/MMEDIA13.html">International Conferences on Advances in Multimedia (MMEDIA)</a>, Venice, Italy, April 21-26, 2013.
+						</span>
+					</p>
+					<p>
+						<span class="author">
+							<b>Zhi Wang</b>,
+							<p>
+						<span class="author">
+							Chong Yuan,
+							<b>Zhi Wang</b>,
+							Lifeng Sun.
+						</span>
+					<span class="title">"TV6: A Revisit to System Design, User Socialization and Content Recommendation in Social TV,"</a></span>
+						<span class="conference">
+							in Proceedings of <a href="http://www.iaria.org/conferences2013/MMEDIA13.html">International Conferences on Advances in Multimedia (MMEDIA)</a>, Venice, Italy, April 21-26, 2013.
+						</span>
+					</p>
+					<p>
+						<span class="author">
+							<b>Zhi Wang</b>,
+							Baochun Li,
+							Lifeng Sun,
+							Shiqiang Yang.
+						</span>
+					<span class="title"><a href="zhi-conext12.pdf" target="_blank"  onclick="_gaq.push(['_trackEvent','Download','PDF',this.href]);">"Cloud-based Social Application Deployment using Local Processing and Global Distribution,"</a></span>
+						<span class="conference">
+							in Proceedings of <a href="http://conferences.sigcomm.org/co-next/2012/">ACM CoNEXT 2012</a>, Nice, France, December 10-13, 2012.
+						</span>
+					</p>
+				<p>
+					<span class="author">
+						<b>Zhi Wang</b>,
+						Lifeng Sun,
+						Xiangwen Chen,
+						Wenwu Zhu,
+						Jiangchuan Liu,
+						Minghua Chen,
+						Shiqiang Yang.
+					</span>
+				<span class="title"><a href="zhi-acmmm2012.pdf" target="_blank"  onclick="_gaq.push(['_trackEvent','Download','PDF',this.href]);">"Propagation-Based Social-Aware Replication for Social Video Contents,"</a></span>
+					<span class="conference">
+						in Proceedings of <a href="http://www.acmmm12.org//">ACM Multimedia 2012</a>, Nara, Japan,
+						October 29-November 2, 2012. (<a href="zhi-acmmm2012-psar-slides.pdf" target="_blank"  onclick="_gaq.push(['_trackEvent','Download','PDF',this.href]);">slides</a>) <span class="award"><b>Best Paper Award</b></span> 
+					</span>
+				</p>
+				<p>
+					<span class="author">
+						Xiaoyan Wang,
+						Lifeng Sun,
+						<b>Zhi Wang</b>,
+						Da Meng.
+					</span>
+				<span class="title"><a href="xiaoyan-icme2012.pdf" target="_blank"  onclick="_gaq.push(['_trackEvent','Download','PDF',this.href]);">"Group Recommendation Using External Followee for Social TV,"</a></span>
+					<span class="conference">
+						in Proceedings of <a href="http://www.icme2012.org/">IEEE ICME 2012</a>, Melbourne, Australia, July 9-13, 2012.
+					</span>
+				</p> 
+					<p>
+						<span class="author">
+							<b>Zhi Wang</b>,
+							Lifeng Sun,
+							Chuan Wu,
+							Shiqiang Yang.
+						</span>
+						<span class="title"><a href="zhi-infocom12.pdf" target="_blank"  onclick="_gaq.push(['_trackEvent','Download','PDF',this.href]);">"Guiding Internet-scale Video Service Deployment Using Microblog-based Prediction,"</a></span>
+						<span class="conference">
+							in Proceedings of <a href="http://www.ieee-infocom.org/2012/">IEEE INFOCOM 2012 Mini-Conference</a>, Orlando, FL, USA, March 25-30, 2012.
+						</span>
+					</p> 
+					<p>
+						<span class="author">
+							<b>Zhi Wang</b>,
+							Lifeng Sun,
+							Shiqiang Yang,
+							Wenwu Zhu.
+						</span>
+					<span class="title"><a href="zhi-acmmm2011.pdf" target="_blank"  onclick="_gaq.push(['_trackEvent','Download','PDF',this.href]);">"Prefetching Strategy in Peer-Assisted Social Video Streaming,"</a></span>
+						<span class="conference">
+							in Proceedings of <a href="http://www.acmmm11.org/">ACM Multimedia 2011</a>, Scottsdale, AZ, USA, November 28-December 1, 2011.
+						</span>
+					</p> 
+				
+					<p>
+						<span class="author">
+							<b>Zhi Wang</b>,
+							Chuan Wu,
+							Lifeng Sun,
+							Shiqiang Yang.
+						</span>
+						<span class="title"><a href="zhi-iwqos2011.pdf" target="_blank"  onclick="_gaq.push(['_trackEvent','Download','PDF',this.href]);">"Peer-Assisted Online Games with Social Reciprocity,"</a></span>
+						<span class="conference">
+							in Proceedings of <a href="http://www.ieee-iwqos.org/2011/">ACM/IEEE IWQoS 2011</a>, San Jose, CA, USA, June 6-7, 2011.
+						</span>
+					</p>
+
+					<p>
+						<span class="author">
+							<b>Zhi Wang</b>,
+							Chuan Wu,
+							Lifeng Sun,
+							Shiqiang Yang.
+						</span>
+						<span class="title"><a href="zhi-globecom2010.pdf" target="_blank"  onclick="_gaq.push(['_trackEvent','Download','PDF',this.href]);">"Strategies of Collaboration in Multi-channel P2P VoD Streaming,"</a></span>
+						<span class="conference">
+							in Proceedings of <a
+								href="http://cms.comsoc.org/eprise/main/SiteGen/Globecom_2010/Content/Home.html">IEEE GLOBECOM 2010</a>, Miami, FL, USA, December 6-10, 2010.
+						</span>
+					</p> 
+				</li>
+
+					<p>
+						<span class="author">
+							<b>Zhi Wang</b>,
+							Lifeng Sun,
+							Shiqiang Yang.
+						</span>
+						<span class="title"><a href="zhi-mmsp2010.pdf" target="_blank"  onclick="_gaq.push(['_trackEvent','Download','PDF',this.href]);">"Strategies of Buffering Schedule in P2P VoD Streaming,"</a></span>
+						<span class="conference">
+							in Proceedings of the Twelfth International Workshop on Multimedia Signal Processing 2010 (<a href="http://www.mmsp2010.org/">MMSP 2010</a>), Saint-Malo, France, October 4-6, 2010.
+						</span>
+					</p>
+				</li> 
+
+					<p>
+						<span class="author">
+							Peng Cui,
+							Lifeng Sun,
+							<strong>Zhi Wang,</strong>
+							Shiqiang Yang.
+						</span>
+						<span class="title">"A Novel Segment-of-Interest Discovery Method for Surveillance Video,"</span>
+						<span class="conference">
+							in Proceedings of the 2007 IEEE International Conference on Multimedia and Expo (<a href="http://research.microsoft.com/en-us/um/beijing/events/icme07/">ICME 2007</a>), Beijing, China, July 2-5, 2007.
+						</span>
+					</p> 
+					Baochun Li,
+							Lifeng Sun,
+							Shiqiang Yang.
+						</span>
+					<span class="title"><a href="zhi-conext12.pdf" target="_blank"  onclick="_gaq.push(['_trackEvent','Download','PDF',this.href]);">"Cloud-based Social Application Deployment using Local Processing and Global Distribution,"</a></span>
+						<span class="conference">
+							in Proceedings of <a href="http://conferences.sigcomm.org/co-next/2012/">ACM CoNEXT 2012</a>, Nice, France, December 10-13, 2012.
+						</span>
+					</p>
+				<p>
+					<span class="author">
+						<b>Zhi Wang</b>,
+						Lifeng Sun,
+						Xiangwen Chen,
+						Wenwu Zhu,
+						Jiangchuan Liu,
+						Minghua Chen,
+						Shiqiang Yang.
+					</span>
+				<span class="title"><a href="zhi-acmmm2012.pdf" target="_blank"  onclick="_gaq.push(['_trackEvent','Download','PDF',this.href]);">"Propagation-Based Social-Aware Replication for Social Video Contents,"</a></span>
+					<span class="conference">
+						in Proceedings of <a href="http://www.acmmm12.org//">ACM Multimedia 2012</a>, Nara, Japan,
+						October 29-November 2, 2012. (<a href="zhi-acmmm2012-psar-slides.pdf" target="_blank"  onclick="_gaq.push(['_trackEvent','Download','PDF',this.href]);">slides</a>) <span class="award"><b>Best Paper Award</b></span> 
+					</span>
+				</p>
+				<p>
+					<span class="author">
+						Xiaoyan Wang,
+						Lifeng Sun,
+						<b>Zhi Wang</b>,
+						Da Meng.
+					</span>
+				<span class="title"><a href="xiaoyan-icme2012.pdf" target="_blank"  onclick="_gaq.push(['_trackEvent','Download','PDF',this.href]);">"Group Recommendation Using External Followee for Social TV,"</a></span>
+					<span class="conference">
+						in Proceedings of <a href="http://www.icme2012.org/">IEEE ICME 2012</a>, Melbourne, Australia, July 9-13, 2012.
+					</span>
+				</p> 
+					<p>
+						<span class="author">
+							<b>Zhi Wang</b>,
+							Lifeng Sun,
+							Chuan Wu,
+							Shiqiang Yang.
+						</span>
+						<span class="title"><a href="zhi-infocom12.pdf" target="_blank"  onclick="_gaq.push(['_trackEvent','Download','PDF',this.href]);">"Guiding Internet-scale Video Service Deployment Using Microblog-based Prediction,"</a></span>
+						<span class="conference">
+							in Proceedings of <a href="http://www.ieee-infocom.org/2012/">IEEE INFOCOM 2012 Mini-Conference</a>, Orlando, FL, USA, March 25-30, 2012.
+						</span>
+					</p> 
+					<p>
+						<span class="author">
+							<b>Zhi Wang</b>,
+							Lifeng Sun,
+							Shiqiang Yang,
+							Wenwu Zhu.
+						</span>
+					<span class="title"><a href="zhi-acmmm2011.pdf" target="_blank"  onclick="_gaq.push(['_trackEvent','Download','PDF',this.href]);">"Prefetching Strategy in Peer-Assisted Social Video Streaming,"</a></span>
+						<span class="conference">
+							in Proceedings of <a href="http://www.acmmm11.org/">ACM Multimedia 2011</a>, Scottsdale, AZ, USA, November 28-December 1, 2011.
+						</span>
+					</p> 
+				
+					<p>
+						<span class="author">
+							<b>Zhi Wang</b>,
+							Chuan Wu,
+							Lifeng Sun,
+							Shiqiang Yang.
+						</span>
+						<span class="title"><a href="zhi-iwqos2011.pdf" target="_blank"  onclick="_gaq.push(['_trackEvent','Download','PDF',this.href]);">"Peer-Assisted Online Games with Social Reciprocity,"</a></span>
+						<span class="conference">
+							in Proceedings of <a href="http://www.ieee-iwqos.org/2011/">ACM/IEEE IWQoS 2011</a>, San Jose, CA, USA, June 6-7, 2011.
+						</span>
+					</p>
+
+					<p>
+						<span class="author">
+							<b>Zhi Wang</b>,
+							Chuan Wu,
+							Lifeng Sun,
+							Shiqiang Yang.
+						</span>
+						<span class="title"><a href="zhi-globecom2010.pdf" target="_blank"  onclick="_gaq.push(['_trackEvent','Download','PDF',this.href]);">"Strategies of Collaboration in Multi-channel P2P VoD Streaming,"</a></span>
+						<span class="conference">
+							in Proceedings of <a
+								href="http://cms.comsoc.org/eprise/main/SiteGen/Globecom_2010/Content/Home.html">IEEE GLOBECOM 2010</a>, Miami, FL, USA, December 6-10, 2010.
+						</span>
+					</p> 
+				</li>
+
+					<p>
+						<span class="author">
+							<b>Zhi Wang</b>,
+							Lifeng Sun,
+							Shiqiang Yang.
+						</span>
+						<span class="title"><a href="zhi-mmsp2010.pdf" target="_blank"  onclick="_gaq.push(['_trackEvent','Download','PDF',this.href]);">"Strategies of Buffering Schedule in P2P VoD Streaming,"</a></span>
+						<span class="conference">
+							in Proceedings of the Twelfth International Workshop on Multimedia Signal Processing 2010 (<a href="http://www.mmsp2010.org/">MMSP 2010</a>), Saint-Malo, France, October 4-6, 2010.
+						</span>
+					</p>
+				</li> 
+
+					<p>
+						<span class="author">
+							Peng Cui,
+							Lifeng Sun,
+							<strong>Zhi Wang,</strong>
+							Shiqiang Yang.
+						</span>
+						<span class="title">"A Novel Segment-of-Interest Discovery Method for Surveillance Video,"</span>
+						<span class="conference">
+							in Proceedings of the 2007 IEEE International Conference on Multimedia and Expo (<a href="http://research.microsoft.com/en-us/um/beijing/events/icme07/">ICME 2007</a>), Beijing, China, July 2-5, 2007.
+						</span>
+					</p> 

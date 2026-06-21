@@ -1470,7 +1470,7 @@ var authorList = {
 	},
 	
 	Chunyang : {
-		name : "Chunyang Zhang",
+		name : "Chunyang Li",
 		web : "#"	
 	},
 	

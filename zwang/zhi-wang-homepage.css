@@ -4,7 +4,7 @@
    ======================================== */
 
 /* --- Google Fonts Import --- */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:wght@400;500;600;700;900&family=LXGW+WenKai+TC:wght@300;400;700&display=swap');
 
 /* --- CSS Variables --- */
 :root {
@@ -25,6 +25,64 @@
   --font-heading: 'Playfair Display', 'Noto Serif SC', Georgia, 'Times New Roman', serif;
   --max-width: 900px;
   --transition: 0.25s ease;
+}
+
+/* --- Chinese Typography Overrides --- */
+html[lang="zh-CN"] {
+  --font-body: 'Noto Sans SC', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+  --font-heading: 'Noto Serif SC', 'LXGW WenKai TC', 'STSong', 'SimSun', serif;
+}
+html[lang="zh-CN"] BODY {
+  font-size: 16px;
+  line-height: 1.9;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+html[lang="zh-CN"] P {
+  line-height: 2;
+  text-align: justify;
+}
+html[lang="zh-CN"] h1 {
+  font-weight: 900;
+  letter-spacing: 0.06em;
+}
+html[lang="zh-CN"] h2 {
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+html[lang="zh-CN"] h3 {
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  font-size: 1.35rem;
+}
+html[lang="zh-CN"] h4 {
+  font-family: var(--font-body);
+  letter-spacing: 0.02em;
+}
+html[lang="zh-CN"] UL li,
+html[lang="zh-CN"] ol li {
+  font-weight: 400;
+  line-height: 1.9;
+}
+html[lang="zh-CN"] .nav-links a {
+  letter-spacing: 0.08em;
+  text-transform: none;
+}
+html[lang="zh-CN"] .recruiting-header {
+  letter-spacing: 0.04em;
+}
+html[lang="zh-CN"] .group-name {
+  font-weight: 700;
+}
+html[lang="zh-CN"] .group-desc {
+  font-weight: 400;
+  line-height: 1.7;
+}
+html[lang="zh-CN"] .research-areas li strong {
+  font-weight: 700;
+}
+html[lang="zh-CN"] .page-footer {
+  letter-spacing: 0.06em;
 }
 
 /* --- Reset & Base --- */
@@ -494,6 +552,48 @@ body::before {
   .nav-links { justify-content: center; }
   .research-areas { justify-content: center; }
   .research-groups li { flex: 1 1 100%; }
+}
+
+/* --- Language Switcher --- */
+.lang-switcher {
+  position: absolute;
+  top: 16px;
+  right: 32px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  z-index: 10;
+}
+.lang-switcher a,
+.lang-switcher span {
+  padding: 5px 12px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all var(--transition);
+}
+.lang-switcher a {
+  color: var(--color-text-light);
+  border: 1.5px solid var(--color-border);
+  background: var(--color-surface);
+}
+.lang-switcher a:hover {
+  color: var(--color-link);
+  border-color: var(--color-accent-light);
+  background: var(--color-tag-bg);
+  text-decoration: none;
+}
+.lang-switcher .lang-active {
+  color: var(--color-surface);
+  background: var(--color-link);
+  border: 1.5px solid var(--color-link);
+  cursor: default;
+}
+DIV.all { position: relative; }
+
+@media (max-width: 700px) {
+  .lang-switcher { top: 10px; right: 16px; }
 }
 
 /* --- Print --- */

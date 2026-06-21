@@ -3,14 +3,7 @@
 // http://www.textfixer.com/tools/remove-line-breaks.php
 
 var conferencePapers = new Array (	
-	        // Kangye: SAG中了ICML
-	
-		// [ACL 2026] Decision notification for your submission 5893: Semantic-Space Exploration and Exploitation in RLVR for LLM Reasoning
-		
-		
-		// Yimin Zhou, Yichong Xia, Sicheng Pan, Bin Chen, Yaowei Li, Jiawei Li, Mingyao Hong, Zhi Wang, Yaowei Wang, Paper ID: 10307; Title: HIGH QUALITY UNDERWATER IMAGE COMPRESSION WITH ADAPTIVE COLOR CORRECTION
-		
-		// Xiaojie Li, Chenghao Gu, Shuzhao Xie, Yunpeng Bai, Weixiang Zhang, Zhi Wang,; Paper ID: 4331; Title: Tuning-Free Visual Customization via View Iterative Self-Attention Control
+	        // #3192 "RoboStream: Weaving Spatio-Temporal Reasoning with Memory in Vision-Language Models for Robotics
 	{
 		id : "icml26-sag",
 		name : "Sparse ActionGen: Accelerating Diffusion Policy with Real-time Pruning",
@@ -1918,10 +1911,10 @@ var journalPapers = new Array (
 
 	{
 	  id : "tpami25-prance",
-	  name : "PRANCE: Joint token-optimization and structural channel-pruning for adaptive ViT inference",
+	  name : "PRANCE: Joint Token-optimization and Structural Channel-pruning for Adaptive ViT Inference",
 	  authors : new Array(authorList.Ye, authorList.ChenTang, authorList.Yuan, authorList.JiajunFan, authorList.Zenghao, authorList.Xinzhu, authorList.Zhi, authorList.Wenwu),
-	  journal : "IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI), vol. 48, no. 1, pp. 283-298, September 2025 (<font color=\"red\">CCF-A, JCR-Q1</font>)",
-	  year : 2025,
+	  journal : "IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI), vol. 48, no. 1, pp. 283-298, January 2026 (<font color=\"red\">CCF-A, JCR-Q1</font>)",
+	  year : 2026,
 	  rep : 1,
 	  topic: "Vision Transformers / Model Compression",
 	  paperPDF : "https://ieeexplore.ieee.org/abstract/document/11146899",
