@@ -561,7 +561,7 @@ layout: seea-default
 
 <h2 id="publications"><span class="lang-en">Selected Publications</span><span class="lang-zh">代表性成果</span></h2>
 
-{% assign selected_pubs = site.data.seea.publications | where: "selected", true %}
+{% assign selected_pubs = site.data.seea.publications | where: "selected", true | sort: "selected_rank" %}
 {% for pub in selected_pubs %}
 {% assign project_url = "" %}
 {% assign arxiv_url = "" %}
@@ -608,8 +608,10 @@ layout: seea-default
     <div class="pub-details">
         <p class="pub-title">{{ pub.title }}</p>
         <p class="pub-venue">
-            {% if is_under_review %}
-            <span class="venue-arxiv">Under Review</span>
+            {% if pub.status == "preprint" %}
+            <span class="venue-arxiv"><span class="lang-en">Preprint</span><span class="lang-zh">预印本</span></span>
+            {% elsif is_under_review %}
+            <span class="venue-arxiv"><span class="lang-en">Preprint · Under Review</span><span class="lang-zh">预印本 · 投稿中</span></span>
             {% else %}
             {{ pub.venue_html }}
             {% endif %}

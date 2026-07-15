@@ -1,7 +1,8 @@
 - video: igen.mp4
   selected: true
+  selected_rank: 3
   embodied: true
-  date: '2025-12-02'
+  date: '2025-12-01'
   title: 'IGen: Scalable Data Generation for Robot Learning from Open-World Images'
   venue_html: <strong>CVPR 2026</strong> (CCF-A)
   links:
@@ -12,18 +13,20 @@
     - label: Code
       url: https://github.com/ChenghaoGu/IGen_Robot
   abstract: '本文提出 IGen，一种面向机器人学习的可扩展数据生成框架，可从开放世界图像中自动生成逼真的视觉观测与可执行动作，从而在无需人工遥操作数据的情况下训练有效的操作策略。'
-- video: RoboStream.mp4
+- video: RoboStream-preview.mp4
   selected: true
+  selected_rank: 1
   embodied: true
-  date: '2025-03-17'
+  date: '2026-03-13'
   title: 'RoboStream: Weaving Spatio-Temporal Reasoning with Memory in Vision-Language Models for Robotics'
-  venue_html: '<strong>Under Review</strong>'
-  preprint_under_review: true
+  venue_html: <strong>ECCV 2026</strong>
   links:
     - label: Project
       url: https://robostream123.github.io/
     - label: arXiv
       url: https://arxiv.org/abs/2603.12939
+    - label: Code
+      url: https://github.com/yu2hi13/RoboStream
   abstract: 'RoboStream 提出面向机器人操作的时空推理与记忆增强视觉语言模型框架，引入时空融合 Token 实现持久目标定位，构建因果时空图追踪状态转移，无需训练即可在 RLBench 长时域任务上达到 90.5% 成功率，在真实世界方块操作任务中达到 44.4% 成功率。'
 - selected: false
   image: Embodied Motion Imagination.png
@@ -33,7 +36,7 @@
   venue_html: '<strong>Under Review</strong>'
   preprint_under_review: true
   abstract: '本文提出 EIHMR 框架，针对移动相机单目视频中相机运动与人体运动耦合导致的全局 3D 人体重建困难问题，通过“固定视角”的局部运动优化与运动感知 SLAM 协同建模，实现相机轨迹与人体姿态的互相强化。方法利用场景深度与运动重投影生成稳定几何特征，显著提升长序列中的轨迹精度与运动一致性，在 EMDB 等数据集上取得更优全局重建效果。'
-- selected: true
+- selected: false
   image: anchorgen_pipeline.png
   embodied: true
   date: '2026-03-12'
@@ -44,18 +47,20 @@
 - selected: false
   image: 'Beyond the Exploration-Exploitation Trade-off.png'
   date: '2025-09-28'
-  title: 'Beyond the Exploration-Exploitation Trade-off: A Hidden State Approach for LLM Reasoning in RLVR'
-  venue_html: '<strong>Under Review</strong>'
-  preprint_under_review: true
+  title: 'Semantic-Space Exploration and Exploitation in RLVR for LLM Reasoning'
+  venue_html: <strong>Findings of ACL 2026</strong>
   links:
     - label: Project
       url: https://hf618.github.io/VERL.github.io
+    - label: Paper
+      url: https://aclanthology.org/2026.findings-acl.1915/
     - label: arXiv
       url: https://arxiv.org/abs/2509.23808
     - label: Code
-      url: https://hf618.github.io/VERL.github.io/
+      url: https://github.com/hf618/VERL
   abstract: '本文提出从隐藏状态语义空间重新审视大模型推理中“探索-利用权衡”，指出该权衡源于 token 级度量偏差。作者引入有效秩及其速度、加速度刻画探索与利用动态，并提出 VERL 方法，通过优势函数塑形实现两者协同提升。实验表明该方法在多模型与推理任务上显著提升准确率与泛化能力。'
-- selected: false
+- selected: true
+  selected_rank: 6
   image: 'Music-Aligned Holistic 3D Dance Generation via Hierarchical Motion Modeling.png'
   date: '2025-07-20'
   title: 'Music-Aligned Holistic 3D Dance Generation via Hierarchical Motion Modeling'
@@ -68,6 +73,19 @@
     - label: Code
       url: https://github.com/xjli360/SoulDance-Official
   abstract: '本文提出面向音乐驱动全身三维舞蹈生成的 SoulNet 框架，并构建高精度 SoulDance 数据集。方法通过分层残差向量量化建模身体、手部与面部的细粒度运动依赖，结合音乐条件生成模块与跨模态检索先验，实现动作与音乐的时序同步与语义一致。实验表明模型在生成质量、协调性与对齐性能上显著优于现有方法。'
+- image: lungmix_overview.png
+  selected: false
+  date: '2025-04-06'
+  title: 'Lungmix: A Mixup-Based Strategy for Generalization in Respiratory Sound Classification'
+  venue_html: <strong>ICASSP 2025</strong>
+  links:
+    - label: Paper
+      url: https://zwang.inflexionlab.org/publications/Lungmix_CRV4.pdf
+    - label: arXiv
+      url: https://arxiv.org/abs/2501.00064
+    - label: DOI
+      url: https://doi.org/10.1109/ICASSP49660.2025.10888016
+  abstract: '本文提出 Lungmix，以混合增强策略缓解呼吸音分类中的域偏移与噪声问题，并在多个呼吸音数据集上验证了更强的泛化能力。'
 - selected: false
   image: vggt-dt.png
   embodied: true
@@ -128,7 +146,8 @@
       url: https://github.com/ModelTC/RFQuant
   abstract: '本文提出一种无需重训练的模型量化方法 RFQuant，通过一次性权重耦合学习在保持模型精度的同时显著降低量化成本，为高效部署提供了实用方案。'
 - image: image 5.png
-  selected: false
+  selected: true
+  selected_rank: 4
   date: '2025-11-14'
   title: 'MoETTA: Test-Time Adaptation Under Mixed Distribution Shifts with MoE-LayerNorm'
   venue_html: <strong>AAAI 2026</strong> (CCF-A)
@@ -141,6 +160,7 @@
     基准上全面超越现有基线。
 - image: image 4.png
   selected: true
+  selected_rank: 5
   best_paper: true
   date: '2024-12-08'
   title: 'SizeGS: Size-aware Compression of 3D Gaussian Splatting via Mixed Integer
@@ -166,11 +186,14 @@
       url: https://arxiv.org/abs/2602.01741
   abstract: '本文提出面向 3D 几何模型的尾部分布感知后训练量化方法 TAPTQ，通过渐进式 coarse-to-fine 校准集构建、三分搜索量化区间优化和 TRE 引导的模块补偿，在提升量化精度的同时显著降低校准开销。'
 - image: neural_collapse_tta.png
-  selected: false
+  selected: true
+  selected_rank: 2
   date: '2025-12-11'
   title: 'Neural Collapse in Test-Time Adaptation'
   venue_html: <strong>CVPR 2026</strong> (CCF-A)
   links:
+    - label: Paper
+      url: https://openaccess.thecvf.com/content/CVPR2026/html/Chen_Neural_Collapse_in_Test-Time_Adaptation_CVPR_2026_paper.html
     - label: arXiv
       url: https://arxiv.org/abs/2512.10421
   abstract: '研究测试时自适应（TTA）中的神经坍塌现象，分析模型在分布变化环境下特征表示与分类边界的变化规律。通过理论与实验分析，揭示神经坍塌对模型稳定性和泛化能力的影响，并探讨其在测试阶段持续适应过程中的作用机制，为提升模型在动态环境中的鲁棒性提供参考。'
@@ -184,14 +207,16 @@
       url: https://arxiv.org/abs/2506.02671
   abstract: '研究持续测试时自适应（CTTA）中模型在分布变化下性能退化与漂移的问题。通过在测试阶段引入蒸馏机制，并利用冻结的视觉—语言模型提供稳定的教师信号，为目标模型提供外部监督，从而减少自监督误差累积。该方法提升了模型在持续分布变化环境中的稳定性与适应能力。'
 - image: Asset_1.png
-  selected: false
-  date: '2025-12-01'
-  title: 'Discover Your Neighbors: Advanced Stable Test-Time Adaptation in Dynamic
-    World'
-  venue_html: <strong>NIPS 2025</strong> (CCF-A)
+  selected: true
+  selected_rank: 7
+  date: '2025-06-07'
+  title: 'Feature-Based Instance Neighbor Discovery: Advanced Stable Test-Time Adaptation in Dynamic World'
+  venue_html: <strong>NeurIPS 2025</strong> (CCF-A)
   links:
     - label: Paper
-      url: https://openreview.net/pdf?id=bLXfEMe1Dk
+      url: https://proceedings.neurips.cc/paper_files/paper/2025/hash/c9867d5a22653ce98b02595061e40f12-Abstract-Conference.html
+    - label: arXiv
+      url: https://arxiv.org/abs/2506.06782
     - label: Code
       url: https://github.com/Peanut-255/FIND
   abstract: 提出 DYN 框架，通过逐层实例统计聚类(LISC)和聚类感知批量归一化(CABN)实现动态测试时适应。作为首个无需反向传播的方法，处理批次内多重分布展现卓越鲁棒性，最高提升
@@ -208,7 +233,7 @@
   abstract: 引入可变形锚点网格，利用局部锚点生成 3D 高斯作为几何骨架，显著降低时空冗余。结合形变感知致密化策略，模型体积平均减少 60%，FPS 提升
     100%。
 - image: image 1.png
-  selected: true
+  selected: false
   date: '2024-12-13'
   title: 'EVOS: Efficient Implicit Neural Training via EVOlutionary Selector'
   venue_html: <strong>CVPR 2025</strong> (CCF-A)
@@ -223,7 +248,8 @@
     48%-66%。
 - image: overviews.png
   selected: true
-  date: '2025-09-28'
+  selected_rank: 8
+  date: '2025-03-31'
   title: 'COSMIC: Clique-Oriented Semantic Multi-space Integration for Robust CLIP
     Test-Time Adaptation'
   venue_html: <strong>CVPR 2025</strong> (CCF-A)
@@ -237,7 +263,7 @@
   abstract: 针对视觉语言模型在测试时领域适应的性能退化，提出了创新 COSMIC 框架，通过多粒度、跨模态语义缓存和基于图的查询机制，显著增强模型适应能力。跨域测试任务性能提升
     15.81%。
 - image: image.png
-  selected: true
+  selected: false
   date: '2024-12-12'
   title: Enhancing Implicit Neural Representations via Symmetric Power Transformation
   venue_html: <strong>AAAI 2025</strong> (CCF-A)
@@ -251,11 +277,11 @@
   abstract: 创新性地提出“对称幂变换”，基于“范围定义对称假设”，通过非线性可逆变换重构数据分布，同时完成范围约束与对称化。在零额外成本的前提下，解决了极端偏差放大与边界断裂难题，并在
     ImageNet 上斩获最佳 PSNR/SSIM 指标。
 - image: image 3.png
-  selected: true
+  selected: false
   date: '2024-09-15'
   title: 'MesonGS: Post-training Compression of 3D Gaussians via Efficient Attribute
     Transformation'
-  venue_html: <strong>ECCV 2024</strong> (CCF-B)
+  venue_html: <strong>ECCV 2024</strong>
   links:
     - label: Project
       url: https://shuzhaoxie.github.io/mesongs/
