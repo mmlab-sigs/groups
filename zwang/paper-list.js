@@ -3,7 +3,52 @@
 // http://www.textfixer.com/tools/remove-line-breaks.php
 
 var conferencePapers = new Array (	
-	        // #3192 "RoboStream: Weaving Spatio-Temporal Reasoning with Memory in Vision-Language Models for Robotics
+	       
+		// CurvSpec: Adaptive Multi-Curvature Learning for Partial Relevant Video Retrieval
+	// Letian: HDSL: A Hierarchical Domain-Specific Language for Structured 3D Indoor Scene Generation and Localized Editing with LLM Agents
+	
+	{
+		id : "emnlp26-lazymuon",
+		name : "LazyMuon: Exploiting Angular Stability to Reduce Newton-Schulz Overhead in Muon for Efficient Large Model Training",
+		authors : new Array(authorList.Kainan, authorList.Rongwei, authorList.Haotian, authorList.LeChen, authorList.Jingyan, authorList.Huan, authorList.Zhi),
+		conference : "The 2026 Conference on Empirical Methods in Natural Language Processing (EMNLP), Budapest, Hungary, October 24 –29, 2026",
+		year : 2026,
+		rep : 1,
+		topic: "Efficient Methods for NLP",
+		paperPDF : "publications/LazyMuon.pdf",
+		paperAbstract: "<p>Recently, the Muon optimizer has demonstrated strong efficiency in large model training through matrix orthogonalization. At each optimization step, Muon orthogonalizes the raw update matrix via Newton-Schulz (NS) iterations before applying it to model parameters. However, orthogonalization requires repeated matrix multiplications whose computational cost scales with $O(n^3)$ for an $n\times n$ matrix, making the overhead prohibitive at large model scales. In this paper, we observe that the geometric angle derived from cosine similarity between consecutive orthogonal update matrices remains highly stable during training, a phenomenon that we partially explain theoretically and support empirically. Based on this angular stability, we propose LazyMuon, which skips computationally expensive NS iterations through intermittent linear interpolation and employs a residual correction mechanism to mitigate accumulated approximation errors. This design ensures fast iteration while preserving Muon's orthogonal manifold constraints. Empirical evaluations on language and vision tasks demonstrate that LazyMuon achieves speedups of up to 1.34$\times$ and 1.31$\times$ over Muon, respectively, with negligible degradation in convergence.</p >",
+	},
+	
+	{
+			id : "eccv26-decopatch",
+			name : "DeCoPatch: Revealing Causal Latent Subspaces in Vision-Language Models for GUI Grounding",
+			authors : new Array(authorList.Yongkang, authorList.Linjia, authorList.Zhimin, authorList.Duo, authorList.Zhi),
+			conference : "European Conference on Computer Vision (ECCV), Malmö, Sweden, September 8-12, 2026.  (<font color=\"red\">CCF-A</font>)",
+			year : 2026,
+			rep : 1,
+			topic : "Vision-Language Models",
+			paperPDF : "publications/eccv26-decopatch.pdf",
+			projectLink : "https://eccv.ecva.net/virtual/2026/poster/4189",
+			paperAbstract : "<p>Vision–Language Models (VLMs) have recently emerged as a powerful paradigm for autonomously perceiving and interacting with complex and dynamic Graphical User Interface (GUI) environments. However, their interaction capability remains fundamentally limited by insufficient precision in spatial grounding. Intriguingly, simply overlaying visual markers on screenshots has been extensively shown to substantially enhance the grounding performance of models. Despite its empirical effectiveness, the underlying mechanism—specifically, why these explicit visual cues can influence the model’s internal spatial understanding—remains largely unexplained. We find that the causal influence of visual markers on grounding performance is mediated by low-rank latent subspaces associated with specific neurons in the late decoder layers. Based on this key insight, we propose <b>DeCoPatch</b>, a novel decode-time causal intervention method that precisely modulates the activations of key neurons relevant to GUI grounding. DeCoPatch follows a two-stage design: it first identifies top-k critical neurons during the prefill stage, effectively isolating a low-rank latent subspace, and then reinforces these neurons during the decoding stage to causally steer the model’s spatial grounding behavior. Extensive experiments on four challenging benchmarks demonstrate that DeCoPatch consistently enhances the GUI grounding performance of diverse VLMs with almost no additional computational overhead.</p >",
+	},
+	
+	
+
+	{
+	    id : "eccv2026-robostream",
+	    name : "RoboStream: Weaving Spatio-Temporal Reasoning with Memory in Vision-Language Models for Robotics",
+	    authors : new Array(authorList.Yuzhi, authorList.JieWu, authorList.Weijue, authorList.Ziyi, authorList.Gaoyang, authorList.Ye, authorList.Kangye, authorList.Shuzhao, authorList.YueHuang, authorList.Chenglei, authorList.Jingyan, authorList.Zhi
+	    ),
+	    conference : "The 19th European Conference on Computer Vision (ECCV), Malmo, Sweden, September 8-12, 2026. (<font color=\"red\">CCF-A</font>)",
+	    year : 2026,
+	    rep : 1,
+	    topic : "Embodied AI & Robotic Agents",
+	    paperPDF : "https://arxiv.org/pdf/2603.12939",
+	    projectLink : "https://robostream123.github.io/",
+	    paperAbstract : "<p>Enabling reliable long-horizon robotic manipulation is a crucial step toward open-world embodied intelligence. However, VLM-based planners treat each step as an isolated observation-to-action mapping, forcing them to reinfer scene geometry from raw pixels at every decision point while remaining unaware of how prior actions have reshaped the environment. Despite strong short-horizon performance, these systems lack the spatio-temporal reasoning required for persistent geometric anchoring and memory of action-triggered state transitions. Without persistent state tracking, perceptual errors accumulate across the execution horizon, temporarily occluded objects are catastrophically forgotten, and these compounding failures lead to precondition violations that cascade through subsequent steps. In contrast, humans maintain a persistent mental model that continuously tracks spatial relations and action consequences across interactions rather than reconstructing them at each instant. Inspired by this human capacity for causal spatio-temporal reasoning with persistent memory, we propose RoboStream, a training-free framework that achieves geometric anchoring through Spatio-Temporal Fusion Tokens (STF-Tokens), which bind visual evidence to 3D geometric attributes for persistent object grounding, and maintains causal continuity via a Causal Spatio-Temporal Graph (CSTG) that records action-triggered state transitions across steps. This design enables the planner to trace causal chains and preserve object permanence under occlusion without additional training or fine-tuning. RoboStream achieves 90.5% on long-horizon RLBench and 44.4% on challenging real-world block-building tasks, where both SoFar and VoxPoser score 11.1%, demonstrating that spatio-temporal reasoning and causal memory are critical missing components for reliable long-horizon manipulation.</p>",
+	},
+
+
 	{
 		id : "icml26-sag",
 		name : "Sparse ActionGen: Accelerating Diffusion Policy with Real-time Pruning",
@@ -1905,9 +1950,46 @@ var conferencePapers = new Array (
 );
 
 var journalPapers = new Array (
-	//  Mr. Guo, PR, Learning Gated Experts for Segment Anything in the Wild on January 24, 2026.
-	// Dai Tao
+	//  Mr. Guo,  Pattern Recognition., Learning Gated Experts for Segment Anything in the Wild on January 24, 2026. Corresponding Author: Mr. Yizhen Guo. Co-Authors: Hang Guo; Tao Dai; Zhi Wang; Bin Chen; Shu-Tao Xia
 	//  "Multi-Beholder: Biomarker Prediction for Low-Grade Glioma with Multiple Instance Learning and One-Class Classification" (Digital Object Identifier or DOI: 10.1109/TCBBIO.2026.3686279).
+	
+	{
+	  id : "jsac26-decosgd",
+	  name : "Taming Latency and Bandwidth: A Theoretical Framework and Adaptive Algorithm for Communication-Constrained Training",
+	  authors : new Array(authorList.Rongwei, authorList.Chunyang, authorList.Jingyan, authorList.Xingguang, authorList.Zhi),
+	  journal : "IEEE Journal on Selected Areas in Communications (JSAC), 2026 (<font color=\"red\">CCF-A, JCR-Q1</font>)",
+	  year : 2026,
+	  rep : 1,
+	  topic: "Distributed Machine Learning",
+	  paperPDF : "https://ieeexplore.ieee.org/abstract/document/11701246",
+	  paperAbstract: "<p>Regional energy caps constrain the scalability of individual data centers for large-scale model training. This single-center training paradigm works when model size remains manageable, but exponential growth in model size and computational demand challenges it. A natural alternative is to distribute training across multiple data centers over wide-area networks. This pools distributed resources, but suffers from high latency and low, time-varying bandwidth, sharply reducing throughput. Employing gradient compression and delayed aggregation jointly can alleviate communication problems but introduces a complex three-way trade-off among compression ratio, staleness (delayed synchronization steps), and convergence rate. Existing work lacks theoretical guidance and thus proposes only fixed strategies, agnostic to computation and communication conditions. We address this with a new theoretical framework, decomposing the joint optimization problem into a traditional process plus multiple analyzable noise terms. Our analysis derives the first convergence rate for this setting and shows that increasing staleness exponentially amplifies the detrimental effect of compression. Leveraging these insights, we propose <b>DeCo-SGD</b>, which dynamically adjusts the compression ratio and staleness based on the real-time communication and computation conditions. <b>DeCo-SGD</b> achieves up to 10.82× and 1.36× speed-ups over distributed SGD and the state-of-the-art strategy in high-latency and low, varying bandwidth networks, respectively.</p>",
+	},
+	
+	{
+	    id : "tmm26-tsdp",
+	    name : "TS-DP: Reinforcement Speculative Decoding For Temporal Adaptive Diffusion Policy Acceleration",
+	    authors : new Array(authorList.Ye, authorList.Jiahe, authorList.Yuan, authorList.Kangye, authorList.ChenTang, authorList.JiajunFan, authorList.Xinwan, authorList.Jiawei, authorList.Wenwu, authorList.Shutao, authorList.XinWang, authorList.Zhi),
+	    conference : "IEEE Transactions on Multimedia (TMM), 2026",
+	    year : 2026,
+	    rep : 1,
+	    topic: "Model Acceleration",
+	    paperPDF : "https://arxiv.org/pdf/2512.15773",
+	    projectLink : "https://github.com/ChildTang/TS-DP",
+	    paperAbstract: "<p>Diffusion Policy (DP) excels in embodied control but suffers from high inference latency and computational cost due to multiple iterative denoising steps. Existing diffusion model (DMs) acceleration methods improve inference speed by reducing computational overhead, as DMs for image generation are computation-bound. In this work, we reveal that DP are I/O bound, and thus propose using speculative decoding, a parallel computing framework, to accelerate DP for the first time. However, it is non-trivial to address the following challenges: (1) How to preserve the denoising quality of the base model at reduced computational cost under time-varying task difficulty in embodied settings; and (2) How to dynamically allocate computation according to task difficulty in such environments. Therefore, we propose <b>TS-DP</b>, the first framework that enables speculative decoding for DP with temporal adaptivity. First, to handle dynamic environments where task difficulty varies over time, we distill a Transformer-based drafter to imitate the base model and replace its costly denoising calls. Second, an RL-based scheduler further adapts to the time-varying task difficulty by adjusting speculative parameters to maintain accuracy while improving efficiency. Extensive experiments show that TS-DP achieves up to 4.17× faster inference with a draft acceptance rate of over 85% in simulation. Real-world experiments further demonstrate a 3.8× speedup while improving success rates on real-time tasks (e.g., a 23% gain on the conveyor-belt task), reaching an inference frequency of 26 Hz and enabling real-time control while maintaining comparable task performance.</p >",
+	},
+	
+	{
+	    id : "tkdd26-sbrlhapi",
+	    name : "Heterogeneous Treatment Effect Estimation with Distribution Shift and Unmeasured Confounding",
+	    authors : new Array(authorList.Wenyang, authorList.Yuling, authorList.Anpeng, authorList.Kun, authorList.Ming, authorList.Zhi),
+	    journal : "ACM Transactions on Knowledge Discovery from Data (TKDD), 2026",
+	    year : 2026,
+	    rep : 1,
+	    topic : "Causal Inference",
+	    paperPDF : "publications/tkdd26-sbrlhapi.pdf",
+	    paperAbstract : "<p>Heterogeneous treatment effect (HTE) estimation is vital for understanding how treatment effects vary across individuals or subgroups. Recently, numerous HTE models, such as balancing methods and instrumental variable (IV) methods, have been developed to eliminate confounding bias from both observed variables and unmeasured confounders. However, many of these models overlook distribution shifts across populations, limiting their applicability to in-distribution (ID) scenarios, where the sample distribution matches that of the training dataset. In real-world applications where population distributions are subject to continuous change, there is an urgent need to develop methods for stable HTE estimation across out-of-distribution (OOD) populations. As pioneers in resolving this problem, we propose <b>SBRL-HAPI</b> (Stable Balanced Representation Learning with Hierarchical-Attention Paradigm and Instrumental Regularizer), a novel framework which consists of four key components: 1) Instrumental Regularizer (IvR) for mitigating unmeasured confounding, 2) Balancing Regularizer (BR) for eliminating confounding bias induced by observed variables, 3) Independence Regularizer (IR) for addressing the distribution shift and 4) Hierarchical-Attention Paradigm (HAP) for coordination between balance and independence. In this way, <b>SBRL-HAPI</b> regresses counterfactual outcomes using ID data, while ensuring the resulting HTE estimation can be successfully generalized to out-of-distribution scenarios, thereby enhancing the model’s applicability in real-world settings. Extensive experiments on synthetic and semi-synthetic datasets demonstrate the effectiveness of all four modules including IvR in achieving stable HTE estimation. Furthermore, large-scale industrial experiments on Kuaishou dataset confirm the OOD robustness of BR, IR, and HAP under realistic distribution shifts.</p>",
+	},
+	
 
 	{
 	  id : "tpami25-prance",
@@ -1937,8 +2019,8 @@ var journalPapers = new Array (
  		id : "tmc24-dagc", 
  		name : "Data-Aware Gradient Compression for FL in Communication-Constrained Mobile Computing", 
  		authors : new Array(authorList.Rongwei, authorList.Yutong, authorList.Yinan, authorList.ChenTang, authorList.Bin, authorList.Laizhong, authorList.Zhi), 
- 		conference : "IEEE Transactions on Mobile Computing, vol. 24, no. 4, pp. 2755-2768, November 2024 (<font color=\"red\">CCF-A, JCR-Q1</font>)", 
- 		year : 2024, 
+ 		journal : "IEEE Transactions on Mobile Computing, vol. 24, no. 4, pp. 2755-2768, April 2025 (<font color=\"red\">CCF-A, JCR-Q1</font>)", 
+ 		year : 2025, 
  		rep : 1, 
  		topic: "Distributed Machine Learning", 
  		paperPDF : "publications/DAGC_TMC.pdf", 

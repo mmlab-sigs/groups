@@ -1974,5 +1974,92 @@ var authorList = {
 		name : "Mingyao Hong",
 		web : "#"	
 	},
+	
+	Yuzhi : {
+		name : "Yuzhi Huang",
+		web : "#"	
+	},
+	
+	JieWu : {
+		name : "Jie Wu",
+		web : "#"	
+	},
+	
+	Weijue : {
+		name : "Weijue Bu",
+		web : "#"	
+	},
+	
+	Ziyi : {
+		name : "Ziyi Xiong",
+		web : "#"	
+	},
+	
+	Gaoyang : {
+		name : "Gaoyang Jiang",
+		web : "#"	
+	},
+	
+	Gaoyang : {
+		name : "Gaoyang Jiang",
+		web : "#"	
+	},
+	
+	YueHuang : {
+		name : "Yue Huang",
+		web : "#"	
+	},
+	
+	Wenyang : {
+		name : "Wenyang Liu",
+		web : "#"	
+	},
+	
+	Yongkang : {
+		name : "Yongkang Zhang",
+		web : "#"	
+	},
+	
+	Linjia : {
+		name : "Linjia Kang",
+		web : "#"	
+	},
+	
+	Zhimin : {
+		name : "Zhimin Wang",
+		web : "#"	
+	},
+	
+	Xingguang : {
+		name : "Xingguang Wei",
+		web : "#"
+	},
+
+	Kainan : {
+		name : "Kainan Lin",
+		web : "#"
+	},
+
+	LeChen : {
+		name : "Le Chen",
+		web : "#"
+	},
+
+	Huan : {
+		name : "Huan Yang",
+		web : "#"
+	},
+	
+	Jiahe : {
+		name : "Jiahe Feng",
+		web : "#"
+	},
+	
+	Xinwan : {
+		name : "Xinwan Wen",
+		web : "#"
+	},
+	
+	
 };
 
