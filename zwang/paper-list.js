@@ -3,6 +3,73 @@
 // http://www.textfixer.com/tools/remove-line-breaks.php
 
 var conferencePapers = new Array (	
+
+	{
+		id : "neurips26-elegantvla",
+		name : "ElegantVLA: Learning When to Think for Efficient Vision-Language-Action Models",
+		authors : new Array(authorList.Ye, authorList.Huanan, authorList.Kangye, authorList.Yuan, authorList.JiajunFan, authorList.Yuansong, authorList.Shiyu, authorList.Chenglei, authorList.Shutao, authorList.Zhi),
+		conference : "Conference on Neural Information Processing Systems (NeurIPS), 2026 (<font color=\"red\">CCF-A</font>)",
+		year : 2026,
+		rep : 1,
+		topic : "Vision-Language-Action Models",
+		paperAbstract : "<p>Vision-Language-Action (VLA) models have emerged as a powerful paradigm for generalist robotic control. However, their high computational cost and limited control frequency hinder real-time robotic manipulation, especially when large vision-language backbones and iterative action heads are executed at every control step. Existing VLA acceleration methods often optimize individual components or rely on fixed acceleration rules, treating different control steps with largely fixed computation and overlooking the non-uniform reasoning demands of sequential embodied control. Inspired by human motor control, where cognitive and feedback resources concentrate on goal-sensitive stages, we argue that VLA models should learn when to invest full computation and when to reuse prior computation. To this end, we propose ElegantVLA, a plug-in phase-adaptive inference framework that accelerates VLA models through intra-model dynamic compute scheduling. ElegantVLA introduces a lightweight scheduler that observes temporal representation similarity, robot-motion cues, and episode progress to jointly allocate computation across the vision encoder, LLM, and action head. For perception-language reasoning, the scheduler selects a five-level Vision--LLM compute mode, from full recomputation to multi-step temporal reuse, based on visual-language representation stability. For action generation, it selects a three-level denoising mode, reusing intermediate denoising states during stable motion while preserving full refinement for goal-sensitive stages. By coordinating these decisions, ElegantVLA provides a general acceleration framework for modern VLA pipelines with explicit action-generation modules, without modifying or retraining the base model. Extensive experiments on GR00T, CogACT, and real-world tasks show that ElegantVLA preserves or improves task success while substantially accelerating inference. On GR00T, it achieves up to 2.55$\\times$ average speedup. On CogACT, it delivers a 3.77$\\times$ average speedup. In GR00T-based real-world experiments across six tasks, it reduces computation by 2.18$\\times$ and increases control frequency from 13.8 Hz to 26.3 Hz.</p>",
+	},
+
+	{
+		id : "neurips26-eihmr",
+		name : "EIHMR: Collaborative Human-Camera Estimation for Global Human Mesh Recovery",
+		authors : new Array(authorList.JunchenGe, authorList.Zhengqi, authorList.Hanglei, authorList.Shuzhao, authorList.Yuzhi, authorList.Jingwei, authorList.Jingyan, authorList.Zhi),
+		conference : "Conference on Neural Information Processing Systems (NeurIPS), 2026 (<font color=\"red\">CCF-A</font>)",
+		year : 2026,
+		rep : 1,
+		topic : "Human Mesh Recovery",
+		paperAbstract : "<p>Recovering global 3D human motion from monocular video captured by a moving camera is a fundamental yet challenging problem, as camera ego-motion and human body motion are tightly entangled in the image observations. The prevailing two-stage paradigm treats camera estimation and motion reconstruction as isolated processes, causing errors on both sides to be further amplified when combined in the world coordinate system. To address this, we draw inspiration from the human inner visual simulation mechanism and propose EIHMR, a collaborative human-camera co-estimation framework. EIHMR comprises two complementary modules that bridge scene-aware human motion refinement and motion-aware camera estimation: Scene-Aware Local Human Motion Reconstruction reprojects motion sequences into frozen keyframe viewpoints and leverages metric depth and kinematic constraints to produce geometrically consistent local motion, while Motion-aware SLAM re-renders the refined motion as static meshes in the original frames, converting dynamic human regions into structured matching cues for robust camera estimation. EIHMR consistently improves global trajectory reconstruction over strong baselines, demonstrating the effectiveness of collaborative human-camera estimation for long-range human motion recovery.</p>",
+	},
+
+	{
+		id : "neurips26-geomind",
+		name : "GeoMIND: A Benchmark for Spatial Understanding in Robotic Manipulation",
+		authors : new Array(authorList.Jinghe, authorList.Xinrui, authorList.Duo, authorList.ChenghaoGu, authorList.YongZhong, authorList.Linjia, authorList.Tianyi, authorList.Zhi),
+		conference : "Conference on Neural Information Processing Systems (NeurIPS), 2026 (<font color=\"red\">CCF-A</font>)",
+		year : 2026,
+		rep : 1,
+		topic : "Robotic Manipulation",
+		paperAbstract : "<p>Recent advances in robotic manipulation have made rapid progress in mapping visual observations and language instructions to actions. However, reliable manipulation in open-world environments requires robust spatial understanding, the ability to identify targets from complex layouts (spatial reasoning) and adapt to scenes that continuously evolve through interaction (spatial memory). Yet existing embodied benchmarks fall short in evaluating spatial understanding: they often introduce strong visual cues that bypass spatial reasoning, and focus on static scenes that offer little insight into an agent’s capacity for spatial memory. To address this gap, we introduce GeoMind, a systematic benchmark for structured spatial understanding through tabletop manipulation. GeoMind comprises 54 evaluated task variants derived from 27 canonical task designs organized around spatial reasoning and spatial memory. It also incorporates a scalable pipeline that automates the generation and annotation process of task instances with verified targets and executable interactions. Extensive evaluations across diverse embodied agents reveal their consistent weaknesses in spatial understanding. Our findings highlight that these agents struggle to track identities after spatial changes and convert relational or geometric constraints into executable actions.</p>",
+	},
+
+	{
+		id : "neurips26-ttabc",
+		name : "What Drives Test-Time Adaptation for CLIP? A Controlled Empirical Study from an Update Perspective",
+		authors : new Array(authorList.Jiazhen, authorList.Xiao, authorList.Zhiming, authorList.Yaru, authorList.Jingyan, authorList.Zhi),
+		conference : "Conference on Neural Information Processing Systems (NeurIPS), 2026, Evaluations and Datasets Track (<font color=\"red\">CCF-A</font>)",
+		year : 2026,
+		rep : 1,
+		topic : "Test-Time Adaptation",
+		paperAbstract : "<p>Vision-Language Models (VLMs) such as CLIP have become a standard backbone for open-vocabulary recognition, yet their zero-shot predictions remain vulnerable to distribution shifts encountered at deployment. Test-Time Adaptation (TTA) has recently been extended to CLIP as a lightweight solution, leading to a rapidly growing body of TTA4CLIP methods. However, empirical progress in this area has largely outpaced our understanding of what truly drives adaptation, where their gains originate, and under which shifts they remain reliable. In this paper, we take a step back from the pursuit of state-of-the-art accuracy and conduct a systematic controlled study of TTA4CLIP. We first organize existing methods into three unified paradigms according to what is updated at test time. We then introduce TTABC, an open-source TTA Benchmark for CLIP, which standardizes evaluation protocols and integrates more than 20 representative methods. Our controlled empirical analysis focuses on three key areas. First, we determine the driving factors in parameter-based methods, revealing that adaptation gains are primarily driven by test-time evidence and reliable proxies rather than heavy optimization. Second, we explore evidence utilization beyond heavy parameter tuning, showing that competitive and efficient performance can be achieved through cross- or current-sample evidence and lightweight prototype updates. Finally, we demonstrate that there is no silver bullet for TTA; no single adaptation paradigm is universally optimal, and the preferred paradigm depends on the nature of shift. We hope our benchmark and study provide a clearer understanding of the current TTA4CLIP landscape and establish a foundation for further research.</p>",
+	},
+
+	{
+		id : "neurips26-dawn",
+		name : "DAWN: Dependency-Aware Fast Inference for Diffusion LLMs",
+		authors : new Array(authorList.Lizhuo, authorList.Zhuoran, authorList.JiajunLuo, authorList.Zhi, authorList.Shen, authorList.Wenya, authorList.Tianwei),
+		conference : "Conference on Neural Information Processing Systems (NeurIPS), 2026 (<font color=\"red\">CCF-A</font>)",
+		year : 2026,
+		rep : 0,
+		topic : "LLM Inference",
+		paperAbstract : "<p>Diffusion large language models (dLLMs) have shown advantages in text generation, particularly due to their inherent ability for parallel decoding. However, constrained by the quality--speed trade-off, existing inference solutions adopt conservative parallel strategies, leaving substantial efficiency potential underexplored. A core challenge is that parallel decoding assumes each position can be filled independently, but tokens are often semantically coupled. Thus, the correct choice at one position constrains valid choices at others. Without modeling these inter-token dependencies, parallel strategies produce deteriorated outputs. Motivated by this insight, we propose DAWN, a training-free, dependency-aware decoding method for fast dLLM inference. DAWN extracts token dependencies and leverages two key observations: (1) masked positions dependent on unmasked certain positions become more reliable; (2) coupled masked positions strongly influence each other's predictions. Given those findings, DAWN leverages a dependency graph to select more reliable unmasking positions at each iteration, achieving high parallelism with negligible loss in generation quality. Extensive experiments across multiple models and datasets demonstrate that DAWN speedups the inference by <b>1.80–8.06</b>× over baselines while preserving the generation quality.</p>",
+	},
+
+	{
+		id : "neurips26-dsl",
+		name : "Treat Domain-Specific Languages as Design Variables in LLM Agents",
+		authors : new Array(authorList.Letian, authorList.Wenyuan, authorList.XinYang, authorList.Shuzhao, authorList.ChenghaoGu, authorList.YuMeng, authorList.ZhengXiao, authorList.Zhi),
+		conference : "Conference on Neural Information Processing Systems (NeurIPS), 2026, Position Paper Track (<font color=\"red\">CCF-A</font>)",
+		year : 2026,
+		rep : 1,
+		topic : "LLM Agents",
+		paperAbstract : "<p>Large Language Model (LLM) agents increasingly excel at complex tasks, yet a persistent bottleneck emerges at the boundary of rule-based systems. Here, the core challenge is often not comprehending intent, but routing user intent through a prescribed, executable interface. This paper posits that this routing problem is best addressed not by scaling model reasoning alone, but by treating the interface itself—specifically, Domain-Specific Languages (DSLs) and their attached verifiers—as first-class boundary infrastructure. We argue that an effective DSL functions as a cognitive shortcut: by providing a high-abstraction, strongly constrained representation, it can compress the intent-to-action path, prune invalid actions before they are attempted, and mechanistically verify correctness via its harness. Our central contribution is to frame the deliberate selection, design, and evaluation of such language--harness pairings as an under-studied research variable that directly shapes an agent's effective action space, failure modes, and learning signals. We develop this position through a dual lens of lifecycle and domain analyses, and ground it with targeted case studies.</p>",
+	},
+
 	       
 		// CurvSpec: Adaptive Multi-Curvature Learning for Partial Relevant Video Retrieval
 	// Letian: HDSL: A Hierarchical Domain-Specific Language for Structured 3D Indoor Scene Generation and Localized Editing with LLM Agents
@@ -11,7 +78,7 @@ var conferencePapers = new Array (
 		id : "emnlp26-lazymuon",
 		name : "LazyMuon: Exploiting Angular Stability to Reduce Newton-Schulz Overhead in Muon for Efficient Large Model Training",
 		authors : new Array(authorList.Kainan, authorList.Rongwei, authorList.Haotian, authorList.LeChen, authorList.Jingyan, authorList.Huan, authorList.Zhi),
-		conference : "The 2026 Conference on Empirical Methods in Natural Language Processing (EMNLP), Budapest, Hungary, October 24 –29, 2026",
+		conference : "The 2026 Conference on Empirical Methods in Natural Language Processing (EMNLP), Budapest, Hungary, October 24 –29, 2026 (<font color=\"red\">CCF-A</font>)",
 		year : 2026,
 		rep : 1,
 		topic: "Efficient Methods for NLP",
@@ -236,7 +303,7 @@ var conferencePapers = new Array (
 	id : "EMNLP2025-survey",
 	name : "Beyond A Single AI Cluster: A Survey of Decentralized LLM Training",
 	authors : new Array(authorList.Haotian, authorList.Jingyan, authorList.Rongwei, authorList.JiajunLuo, authorList.Jiajun, authorList.Bowen, authorList.YingShen, authorList.Zhi),
-	conference : "The 2025 Conference on Empirical Methods in Natural Language Processing (EMNLP), Suzhou, China, November 4-9, 2025",
+	conference : "The 2025 Conference on Empirical Methods in Natural Language Processing (EMNLP), Suzhou, China, November 4-9, 2025 (<font color=\"red\">CCF-A</font>)",
 	year : 2025,
 	rep : 1,
 	topic: "LLM",

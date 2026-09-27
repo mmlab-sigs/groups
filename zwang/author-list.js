@@ -2061,5 +2061,100 @@ var authorList = {
 	},
 	
 	
+
+	Huanan : {
+		name : "Huanan Liu",
+		web : "#"
+	},
+
+	Yuansong : {
+		name : "Yuansong Wang",
+		web : "#"
+	},
+
+	Shiyu : {
+		name : "Shiyu Qin",
+		web : "#"
+	},
+
+	Zhengqi : {
+		name : "Zhengqi Zhang",
+		web : "#"
+	},
+
+	Hanglei : {
+		name : "Hanglei Jin",
+		web : "#"
+	},
+
+	Jingwei : {
+		name : "Jingwei Xu",
+		web : "#"
+	},
+
+	Xinrui : {
+		name : "Xinrui Cao",
+		web : "#"
+	},
+
+	YongZhong : {
+		name : "Yong Zhong",
+		web : "#"
+	},
+
+	Tianyi : {
+		name : "Tianyi Xiong",
+		web : "#"
+	},
+
+	Zhiming : {
+		name : "Zhiming Liu",
+		web : "#"
+	},
+
+	Yaru : {
+		name : "Yaru Sun",
+		web : "#"
+	},
+
+	Zhuoran : {
+		name : "Zhuoran Shi",
+		web : "#"
+	},
+
+	Shen : {
+		name : "Shen Ren",
+		web : "#"
+	},
+
+	Wenya : {
+		name : "Wenya Wang",
+		web : "#"
+	},
+
+	Tianwei : {
+		name : "Tianwei Zhang",
+		web : "#"
+	},
+
+	Wenyuan : {
+		name : "Wenyuan Jiang",
+		web : "#"
+	},
+
+	XinYang : {
+		name : "Xin Yang",
+		web : "#"
+	},
+
+	YuMeng : {
+		name : "Yu Meng",
+		web : "#"
+	},
+
+	ZhengXiao : {
+		name : "ZhengXiao He",
+		web : "#"
+	},
 };
 
