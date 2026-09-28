@@ -1,7 +1,7 @@
 var authorList = {
     Zhi : {
         name : "Zhi Wang",
-        web : "http://zwang.inflexionlab.org/"
+        web : "https://mmlab-sigs.github.io/groups/zwang/"
     },
 
     Baochun : {
@@ -1772,12 +1772,12 @@ var authorList = {
 	
 	JiajunFan: {
 		name : "Jiajun Fan",
-		web : "#"	
+		web : "https://www.jiajunfan.com/"	
 	},
 	
 	Ye: {
 		name : "Ye Li",
-		web : "#"	
+		web : "https://childtang.github.io/"	
 	},
 	
 	Haotian: {
@@ -1832,7 +1832,7 @@ var authorList = {
 	
 	XiaoFan: {
 		name : "Xiao Fan",
-		web : "#"	
+		web : "https://xiaofan.ac.cn"	
 	},
 	
 	Zhaoru: {
@@ -1977,7 +1977,7 @@ var authorList = {
 	
 	Yuzhi : {
 		name : "Yuzhi Huang",
-		web : "#"	
+		web : "https://yu2hi13.github.io/"	
 	},
 	
 	JieWu : {
@@ -2029,7 +2029,6 @@ var authorList = {
 		name : "Zhimin Wang",
 		web : "#"	
 	},
-	
 	Xingguang : {
 		name : "Xingguang Wei",
 		web : "#"
@@ -2074,7 +2073,7 @@ var authorList = {
 
 	Shiyu : {
 		name : "Shiyu Qin",
-		web : "#"
+		web : "https://github.com/QinSY123"
 	},
 
 	Zhengqi : {
@@ -2109,7 +2108,7 @@ var authorList = {
 
 	Zhiming : {
 		name : "Zhiming Liu",
-		web : "#"
+		web : "https://mikuz12.github.io/"
 	},
 
 	Yaru : {
@@ -2129,22 +2128,22 @@ var authorList = {
 
 	Wenya : {
 		name : "Wenya Wang",
-		web : "#"
+		web : "https://personal.ntu.edu.sg/wangwy/"
 	},
 
 	Tianwei : {
 		name : "Tianwei Zhang",
-		web : "#"
+		web : "https://personal.ntu.edu.sg/tianwei.zhang/"
 	},
 
 	Wenyuan : {
 		name : "Wenyuan Jiang",
-		web : "#"
+		web : "https://github.com/jwyjohn"
 	},
 
 	XinYang : {
 		name : "Xin Yang",
-		web : "#"
+		web : "https://github.com/vegetable-yx"
 	},
 
 	YuMeng : {
@@ -2154,7 +2153,11 @@ var authorList = {
 
 	ZhengXiao : {
 		name : "ZhengXiao He",
-		web : "#"
+		web : "https://miraclehetech.github.io/hezhengxiao.github.io/"
+	},
+	
+	YuJie : {
+		name : "YuJie Jia",
+		web : "https://yujie-jia.github.io/"
 	},
 };
-
