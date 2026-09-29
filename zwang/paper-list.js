@@ -3,12 +3,12 @@
 // http://www.textfixer.com/tools/remove-line-breaks.php
 
 var conferencePapers = new Array (	
-
+	
 	{
 		id : "neurips26-elegantvla",
 		name : "ElegantVLA: Learning When to Think for Efficient Vision-Language-Action Models",
 		authors : new Array(authorList.Ye, authorList.Huanan, authorList.Kangye, authorList.Yuan, authorList.JiajunFan, authorList.Yuansong, authorList.Shiyu, authorList.Chenglei, authorList.Shutao, authorList.Zhi),
-		conference : "Conference on Neural Information Processing Systems (NeurIPS), 2026 (<font color=\"red\">CCF-A</font>)",
+		conference : "The 40th Conference on Neural Information Processing Systems (NeurIPS), Sydney, Australia, December 6–12, 2026. (<font color=\"red\">CCF-A</font>)",
 		year : 2026,
 		rep : 1,
 		topic : "Vision-Language-Action Models",
@@ -19,7 +19,7 @@ var conferencePapers = new Array (
 		id : "neurips26-eihmr",
 		name : "EIHMR: Collaborative Human-Camera Estimation for Global Human Mesh Recovery",
 		authors : new Array(authorList.JunchenGe, authorList.Zhengqi, authorList.Hanglei, authorList.Shuzhao, authorList.Yuzhi, authorList.Jingwei, authorList.Jingyan, authorList.Zhi),
-		conference : "Conference on Neural Information Processing Systems (NeurIPS), 2026 (<font color=\"red\">CCF-A</font>)",
+		conference : "The 40th Conference on Neural Information Processing Systems (NeurIPS), Sydney, Australia, December 6–12, 2026. (<font color=\"red\">CCF-A</font>)",
 		year : 2026,
 		rep : 1,
 		topic : "Human Mesh Recovery",
@@ -30,7 +30,7 @@ var conferencePapers = new Array (
 		id : "neurips26-geomind",
 		name : "GeoMIND: A Benchmark for Spatial Understanding in Robotic Manipulation",
 		authors : new Array(authorList.Jinghe, authorList.Xinrui, authorList.Duo, authorList.ChenghaoGu, authorList.YongZhong, authorList.Linjia, authorList.Tianyi, authorList.Zhi),
-		conference : "Conference on Neural Information Processing Systems (NeurIPS), 2026 (<font color=\"red\">CCF-A</font>)",
+		conference : "The 40th Conference on Neural Information Processing Systems (NeurIPS), Sydney, Australia, December 6–12, 2026. (<font color=\"red\">CCF-A</font>)",
 		year : 2026,
 		rep : 1,
 		topic : "Robotic Manipulation",
@@ -41,7 +41,7 @@ var conferencePapers = new Array (
 		id : "neurips26-ttabc",
 		name : "What Drives Test-Time Adaptation for CLIP? A Controlled Empirical Study from an Update Perspective",
 		authors : new Array(authorList.Jiazhen, authorList.Xiao, authorList.Zhiming, authorList.Yaru, authorList.Jingyan, authorList.Zhi),
-		conference : "Conference on Neural Information Processing Systems (NeurIPS), 2026, Evaluations and Datasets Track (<font color=\"red\">CCF-A</font>)",
+		conference : "The 40th Conference on Neural Information Processing Systems (NeurIPS), Sydney, Australia, December 6–12, 2026. Evaluations and Datasets Track (<font color=\"red\">CCF-A</font>)",
 		year : 2026,
 		rep : 1,
 		topic : "Test-Time Adaptation",
@@ -52,7 +52,7 @@ var conferencePapers = new Array (
 		id : "neurips26-dawn",
 		name : "DAWN: Dependency-Aware Fast Inference for Diffusion LLMs",
 		authors : new Array(authorList.Lizhuo, authorList.Zhuoran, authorList.JiajunLuo, authorList.Zhi, authorList.Shen, authorList.Wenya, authorList.Tianwei),
-		conference : "Conference on Neural Information Processing Systems (NeurIPS), 2026 (<font color=\"red\">CCF-A</font>)",
+		conference : "The 40th Conference on Neural Information Processing Systems (NeurIPS), Sydney, Australia, December 6–12, 2026. (<font color=\"red\">CCF-A</font>)",
 		year : 2026,
 		rep : 0,
 		topic : "LLM Inference",
@@ -63,15 +63,25 @@ var conferencePapers = new Array (
 		id : "neurips26-dsl",
 		name : "Treat Domain-Specific Languages as Design Variables in LLM Agents",
 		authors : new Array(authorList.Letian, authorList.Wenyuan, authorList.XinYang, authorList.Shuzhao, authorList.ChenghaoGu, authorList.YuMeng, authorList.ZhengXiao, authorList.Zhi),
-		conference : "Conference on Neural Information Processing Systems (NeurIPS), 2026, Position Paper Track (<font color=\"red\">CCF-A</font>)",
+		conference : "The 40th Conference on Neural Information Processing Systems (NeurIPS), Sydney, Australia, December 6–12, 2026. Position Paper Track (<font color=\"red\">CCF-A</font>)",
 		year : 2026,
 		rep : 1,
 		topic : "LLM Agents",
 		paperAbstract : "<p>Large Language Model (LLM) agents increasingly excel at complex tasks, yet a persistent bottleneck emerges at the boundary of rule-based systems. Here, the core challenge is often not comprehending intent, but routing user intent through a prescribed, executable interface. This paper posits that this routing problem is best addressed not by scaling model reasoning alone, but by treating the interface itself—specifically, Domain-Specific Languages (DSLs) and their attached verifiers—as first-class boundary infrastructure. We argue that an effective DSL functions as a cognitive shortcut: by providing a high-abstraction, strongly constrained representation, it can compress the intent-to-action path, prune invalid actions before they are attempted, and mechanistically verify correctness via its harness. Our central contribution is to frame the deliberate selection, design, and evaluation of such language--harness pairings as an under-studied research variable that directly shapes an agent's effective action space, failure modes, and learning signals. We develop this position through a dual lens of lifecycle and domain analyses, and ground it with targeted case studies.</p>",
 	},
 
-	       
-		// CurvSpec: Adaptive Multi-Curvature Learning for Partial Relevant Video Retrieval
+	{
+		   id : "acmmm26-curvspec",
+		   name : "CurvSpec: Adaptive Multi-Curvature Learning for Partial Relevant Video Retrieval",
+		   authors : new Array( authorList.Zhen, authorList.Letian, authorList.Jinpeng, authorList.Shuzhao, authorList.Yuzhi, authorList.Jingyan, authorList.Zhi	     ),
+		   conference : "The 34th ACM International Conference on Multimedia (ACM MM), Rio de Janeiro, Brazil, November 10–14, 2026. (<font color=\"red\">CCF-A</font>)",
+		   year : 2026,
+		   rep : 1,
+		   topic: "Video Retrieval",
+		   paperPDF : "publications/acmmm26-curvspec.pdf",
+		   paperAbstract: "<p>Partially Relevant Video Retrieval (PRVR) seeks to retrieve untrim-med videos containing a moment that matches a text query, without temporal annotations. The relevant moment may last only seconds within a video spanning several minutes, creating an extremely low signal-to-noise ratio that makes PRVR more challenging than standard full-video retrieval. This task presents two intertwined challenges: (1) \emph{signal dilution}, where coarse global representations blur the brief relevant signal into the dominant irrelevant surroundings;m(2) \emph{curvature rigidity}, where embedding all videos in the same fixed-geometry space distorts representations for videos that range from flat atomic events to deep compositional hierarchies. Existing PRVR methods have improved moment selection and cross-modal matching, but they still typically encode all videos in a single fixed-curvature retrieval space, limiting their ability to model diverse video structures. To address both challenges, we propose Curv\-Spec, a framework that learns content-adaptive curvature for video retrieval representations rather than imposing a fixed geometric prior. Curv\-Spec processes features through parallel Euclidean and hyperbolic attention layers, with independently learned curvatures assigned to the hyperbolic layers, and a content-aware fusion mechanism routes each input to its most suitable geometric regime. To further suppress signal dilution, Curv\-Spec represents each video with semantic centroids whose number is determined by the video's content complexity, projects them onto the learned manifold, and matches each query against its nearest centroid by geodesic distance. Experiments on ActivityNet Captions, TVR, and Charades-STA demonstrate state-of-the-art retrieval performance.</p >",
+	},
+	
 	// Letian: HDSL: A Hierarchical Domain-Specific Language for Structured 3D Indoor Scene Generation and Localized Editing with LLM Agents
 	
 	{
@@ -132,7 +142,7 @@ var conferencePapers = new Array (
 	{
 	    id : "acl26-verl",
 	    name : "Semantic-Space Exploration and Exploitation in RLVR for LLM Reasoning",
-	    authors : new Array(authorList.Fanding, authorList.GuanboHuang, authorList.XiaoFan, authorList.YiHe, authorList.XiaoLiang, authorList.Xiao, authorList.Qinting,	        authorList.Faisal, authorList.Jingyan, authorList.Zhi),
+	    authors : new Array(authorList.Fanding, authorList.GuanboHuang, authorList.XiaoFan, authorList.YiHe, authorList.XiaoLiang, authorList.Xiao, authorList.Qinting, authorList.Faisal, authorList.Jingyan, authorList.Zhi),
 	    conference : "Findings of the Association for Computational Linguistics: ACL 2026, San Diego, CA, USA, July 2-7, 2026 (<font color=\"red\">CCF-A</font>)",
 	    year : 2026,
 	    rep : 1,

@@ -117,7 +117,7 @@ var authorList = {
 	
 	JianHuang: {
 		name : "Jian Huang",
-		web : "#"
+		web : "https://hf618.github.io/"
 	},
 	
 	DiWu: {
@@ -743,7 +743,7 @@ var authorList = {
 	
 	Xiao : {
 		name : "Xiao Chen",
-		web : "#"
+		web : "https://cevaaa.github.io/ceva/"
 	},
 	
 	Qun : {
@@ -919,7 +919,7 @@ var authorList = {
 
 	XiaoChen: {
 		name : "Xiao Chen",
-		web : "#"
+		web : "https://cevaaa.github.io/ceva/"
 	},
 
 	Zhiyuan: {
@@ -1892,7 +1892,7 @@ var authorList = {
 	
 	Kangye : {
 		name : "Kangye Ji",
-		web : "#"	
+		web : "https://ky-ji.github.io/"	
 	},
 	
 	Hanyun : {
@@ -2160,4 +2160,9 @@ var authorList = {
 		name : "YuJie Jia",
 		web : "https://yujie-jia.github.io/"
 	},
+	
+	Zhen : {
+		name : "Zhen Liu",
+		web : "#"
+	}
 };
