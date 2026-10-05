@@ -564,6 +564,28 @@ body::before {
   text-decoration: none !important;
 }
 
+/* --- Postdoctoral openings below academic profiles --- */
+.postdoc-notice {
+  max-width: 430px;
+  margin-top: 16px;
+  padding: 14px 18px;
+  background: var(--color-tag-bg);
+  border-left: 3px solid var(--color-accent-light);
+  border-radius: 8px;
+}
+.postdoc-notice strong {
+  color: var(--color-accent);
+  font-size: 1rem;
+}
+.postdoc-notice p {
+  margin: 6px 0 0;
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+.postdoc-notice a {
+  overflow-wrap: anywhere;
+}
+
 /* --- Footer credit --- */
 .page-footer {
   margin-top: 60px;

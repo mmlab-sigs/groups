@@ -2027,7 +2027,7 @@ var authorList = {
 	
 	Zhimin : {
 		name : "Zhimin Wang",
-		web : "#"	
+		web : "https://zhiminwangss.github.io/"	
 	},
 	Xingguang : {
 		name : "Xingguang Wei",
