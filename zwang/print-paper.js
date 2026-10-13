@@ -54,6 +54,8 @@ function printPaper(paper, num){
 	
     if (typeof paper.projectLink == "string" && paper.projectLink !== "") document.write(" <a href=\""+paper.projectLink+"\" style=\"display:inline-block; padding:1px 8px; font-size:0.78rem; font-weight:600; border-radius:4px; background:#f5f0eb; color:#2a6496; text-decoration:none;\"> [project] </a>");
     
+    if (typeof paper.erratumPDF == "string" && paper.erratumPDF !== "") document.write(" <a href=\""+paper.erratumPDF+"\" target=\"_blank\" style=\"display:inline-block; padding:1px 8px; font-size:0.78rem; font-weight:600; border-radius:4px; background:#f5f0eb; color:#2a6496; text-decoration:none;\">[erratum]</a>");
+
     if (typeof paper.paperAbstract == "string") {
            document.writeln("<div class=\"abstract\" id=\'abs-" + paper.id + "\'>");
            document.writeln("<p><b>Abstract</b></p>");

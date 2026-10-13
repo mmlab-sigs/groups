@@ -886,6 +886,7 @@ var conferencePapers = new Array (
 	   rep : 1,
 	   topic: "Multimedia Big Data",
 	   paperPDF : "publications/DAGC_INFOCOM2023.pdf",
+	   erratumPDF : "publications/Erratum_DAGC_INFOCOM2023.pdf",
 	   paperAbstract: "<p>Gradient compression algorithms are widely used to alleviate the communication bottleneck in distributed ML. However, existing gradient compression algorithms suffer from accuracy degradation in Non-IID scenarios because a uniform compression scheme is used to compress gradients at workers with different data distributions and volumes, since workers with larger volumes of data are forced to adapt to the same aggressive compression ratios as others. Assigning different compression ratios to workers with different data distributions and volumes is thus a promising solution.In this study, we first derive a function from capturing the correlation between the number of training iterations for a model to converge to the same accuracy, and the compression ratios at different workers; This function particularly shows that workers with larger data volumes should be assigned with higher compression ratios to guarantee better accuracy. Then, we formulate the assignment of compression ratios to the workers as an $n$-variables chi-square nonlinear optimization problem under fixed and limited total communication constrain. We propose an adaptive gradients compression strategy called DAGC, which assigns each worker a different compression ratio according to their data volumes. Our experiments confirm that DAGC can achieve better performance facing highly imbalanced data volume distribution and restricted communication.</p>",
 	 },
 	 
@@ -2795,4 +2796,3 @@ var magazineArticles = new Array (
 		bibitem: "<p>@article{wenwu-mmmagzine15,<br />	Author = {Wenwu Zhu and Peng Cui and Zhi Wang and Gang Hua},<br />	Journal = {IEEE MultiMedia},<br />	Title = {Multimedia Big Data Computing},<br />	Year = {2015}}</p>",
     }
 );
-
