@@ -24,11 +24,7 @@
 <div class="publication"{% if card_url != "" %} data-card-url="{{ card_url }}" role="link" tabindex="0"{% endif %}>
     <div class="pub-image">
         {% if pub.video %}
-        <video autoplay muted loop playsinline preload="metadata"
-            {% if pub.video_poster %}poster="{{ site.baseurl }}/self-evolving-embodied-agents-group/assets/images/publications/{{ pub.video_poster }}"{% endif %}
-            aria-label="{{ pub.title | escape }}">
-            <source src="{{ site.baseurl }}/self-evolving-embodied-agents-group/assets/videos/publications/{{ pub.video }}" type="video/mp4">
-        </video>
+        {% include seea/video.html pub=pub %}
         {% elsif pub.image %}
         {% assign publication_image = 'publications/' | append: pub.image %}
         {% include seea/image.html path=publication_image alt=pub.title fit=pub.image_fit %}

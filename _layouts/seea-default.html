@@ -437,13 +437,6 @@
             line-height: 1.4;
         }
 
-        .pub-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.35rem;
-            margin: 0.45rem 0;
-        }
-
         .pub-venue {
             font-style: italic;
             color: #444444;
@@ -626,6 +619,7 @@
 
         .carousel-img {
             width: 100%;
+            height: auto;
             flex-shrink: 0;
             display: block;
             object-fit: cover;
@@ -866,6 +860,13 @@
             color: #ffffff;
         }
 
+        .footer-address {
+            max-width: 960px;
+            margin: 0.8rem auto 0;
+            padding: 0 1.5rem;
+            font-style: normal;
+        }
+
         /* 2x2 Research Grid */
         .research-grid {
             display: grid;
@@ -931,6 +932,13 @@
             gap: 0.4rem;
         }
 
+        .pub-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin: 0.6rem 0;
+        }
+
         .research-tag {
             font-size: 0.72rem;
             font-weight: 500;
@@ -971,9 +979,46 @@
 
     <footer>
         <span>MMLab@SIGS, 2026</span>
+        <address class="footer-address">
+            <span class="lang-en">17th Floor, Information Building, Tsinghua Shenzhen International Graduate School<br>
+                Tsinghua Campus, Xili University Town, Nanshan District, Shenzhen, Guangdong, China 518055</span>
+            <span class="lang-zh">广东省深圳市南山区西丽大学城清华园区<br>
+                清华大学深圳国际研究生院信息楼 17 楼 · 邮编：518055</span>
+        </address>
     </footer>
 
     <script>
+        // Load and play publication previews only while visible.
+        const previewMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+        const visiblePreviews = new Map();
+        function updatePreview(video) {
+            if (!visiblePreviews.get(video) || document.hidden || previewMotion.matches) {
+                video.pause();
+                return;
+            }
+            const source = video.querySelector('source[data-src]');
+            if (source) {
+                source.src = source.dataset.src;
+                source.removeAttribute('data-src');
+                video.load();
+            }
+            video.muted = true;
+            video.play().catch(() => {});
+        }
+        const previewObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                visiblePreviews.set(entry.target, entry.isIntersecting);
+                updatePreview(entry.target);
+            });
+        }, { threshold: 0.05 });
+        document.querySelectorAll('video.publication-preview').forEach(video => {
+            visiblePreviews.set(video, false);
+            previewObserver.observe(video);
+        });
+        function updatePreviews() { visiblePreviews.forEach((visible, video) => updatePreview(video)); }
+        document.addEventListener('visibilitychange', updatePreviews);
+        previewMotion.addEventListener('change', updatePreviews);
+
         document.getElementById('lang-btn').addEventListener('click', function () {
             if (document.body.classList.contains('lang-en')) {
                 document.body.classList.replace('lang-en', 'lang-zh');

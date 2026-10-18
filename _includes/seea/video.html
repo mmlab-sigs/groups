@@ -1,0 +1,8 @@
+{% assign video_pub = include.pub %}
+{% assign poster_path = 'publications/' | append: video_pub.video_poster %}
+{% assign poster_variant = site.data.seea.image_variants[poster_path] %}
+<video class="publication-preview" muted loop playsinline preload="none"
+    poster="{{ site.baseurl }}/self-evolving-embodied-agents-group/assets/images/{% if video_pub.video_poster %}{% if poster_variant %}optimized/{{ poster_path }}.webp{% else %}{{ poster_path }}{% endif %}{% else %}optimized/video-posters/{{ video_pub.video }}.webp{% endif %}"
+    aria-label="{{ video_pub.title | escape }}">
+    <source data-src="{{ site.baseurl }}/self-evolving-embodied-agents-group/assets/videos/publications/{{ video_pub.video }}" type="video/mp4">
+</video>

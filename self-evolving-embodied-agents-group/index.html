@@ -330,8 +330,7 @@ layout: seea-default
             </p>
         </div>
         <div class="about-photo">
-            <img src="{{ site.baseurl }}/self-evolving-embodied-agents-group/assets/images/about_photo.jpg"
-                alt="Lab Photo">
+            {% include seea/image.html path="about_photo.jpg" alt="Lab Photo" %}
         </div>
     </div>
 </div>
@@ -342,6 +341,10 @@ layout: seea-default
         const ctx = canvas.getContext('2d');
         let width, height;
         let particles = [];
+        let frameId = null;
+        let lastFrame = 0;
+        let heroVisible = true;
+        const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
         function resize() {
             width = canvas.width = canvas.offsetWidth;
@@ -359,9 +362,9 @@ layout: seea-default
                 this.baseRadius = Math.random() * 1.5 + 0.5;
                 this.radius = this.baseRadius;
             }
-            update() {
-                this.x += this.vx;
-                this.y += this.vy;
+            update(step) {
+                this.x += this.vx * step;
+                this.y += this.vy * step;
                 if (this.x < 0 || this.x > width) this.vx *= -1;
                 if (this.y < 0 || this.y > height) this.vy *= -1;
             }
@@ -394,11 +397,11 @@ layout: seea-default
             mouse.y = null;
         });
 
-        function animate() {
+        function drawFrame(step) {
             ctx.clearRect(0, 0, width, height);
 
             for (let i = 0; i < particles.length; i++) {
-                particles[i].update();
+                particles[i].update(step);
                 particles[i].draw();
 
                 // Mouse interaction repulsion/attraction
@@ -419,8 +422,9 @@ layout: seea-default
                 for (let j = i + 1; j < particles.length; j++) {
                     let dx = particles[i].x - particles[j].x;
                     let dy = particles[i].y - particles[j].y;
-                    let distance = Math.sqrt(dx * dx + dy * dy);
-                    if (distance < 100) {
+                    const distanceSquared = dx * dx + dy * dy;
+                    if (distanceSquared < 10000) {
+                        const distance = Math.sqrt(distanceSquared);
                         ctx.beginPath();
                         ctx.strokeStyle = `rgba(100, 200, 255, ${0.25 - distance / 400})`;
                         ctx.lineWidth = 0.6;
@@ -430,16 +434,46 @@ layout: seea-default
                     }
                 }
             }
-            requestAnimationFrame(animate);
+        }
+
+        function animate(time) {
+            frameId = requestAnimationFrame(animate);
+            const elapsed = time - lastFrame;
+            if (lastFrame && elapsed < 1000 / 30 - 1) return;
+            drawFrame(lastFrame ? Math.min(elapsed, 100) / (1000 / 60) : 1);
+            lastFrame = time;
+        }
+
+        function updateAnimation() {
+            const shouldRun = heroVisible && !document.hidden && !motion.matches;
+            if (shouldRun && frameId === null) {
+                lastFrame = 0;
+                frameId = requestAnimationFrame(animate);
+            } else if (!shouldRun && frameId !== null) {
+                cancelAnimationFrame(frameId);
+                frameId = null;
+            }
         }
 
         init();
-        animate();
+        drawFrame(0);
+        updateAnimation();
+        const heroObserver = new IntersectionObserver(entries => {
+            heroVisible = entries[0].isIntersecting;
+            updateAnimation();
+        });
+        heroObserver.observe(canvas);
+        document.addEventListener('visibilitychange', updateAnimation);
+        motion.addEventListener('change', updateAnimation);
 
         // Re-init on resize to adjust particle density
+        let resizeTimer;
         window.addEventListener('resize', function () {
-            clearTimeout(window.resizeTimer);
-            window.resizeTimer = setTimeout(init, 200);
+            clearTimeout(resizeTimer);
+            resizeTimer = setTimeout(function () {
+                init();
+                drawFrame(0);
+            }, 200);
         });
     });
 </script>
@@ -588,13 +622,7 @@ layout: seea-default
 <div class="publication" {% if card_url !="" %} data-card-url="{{ card_url }}" role="link" tabindex="0" {% endif %}>
     <div class="pub-image">
         {% if pub.video %}
-        <video autoplay muted loop playsinline preload="metadata" {% if pub.video_poster
-            %}poster="{{ site.baseurl }}/self-evolving-embodied-agents-group/assets/images/publications/{{ pub.video_poster }}"
-            {% endif %} aria-label="{{ pub.title | escape }}">
-            <source
-                src="{{ site.baseurl }}/self-evolving-embodied-agents-group/assets/videos/publications/{{ pub.video }}"
-                type="video/mp4">
-        </video>
+        {% include seea/video.html pub=pub %}
         {% elsif pub.image %}
         {% assign publication_image = 'publications/' | append: pub.image %}
         {% include seea/image.html path=publication_image alt=pub.title fit=pub.image_fit %}
@@ -646,8 +674,7 @@ layout: seea-default
 <div class="team-section">
     <!-- Zhi Wang -->
     <div class="team-member">
-        <img src="{{ site.baseurl }}/self-evolving-embodied-agents-group/assets/images/team/zhi_wang.jpg" alt="Zhi Wang"
-            class="team-photo" style="object-position: 70% 20%;" loading="lazy">
+        {% include seea/image.html path="team/zhi_wang.jpg" alt="Zhi Wang" class="team-photo" style="object-position: 70% 20%;" %}
         <div class="team-info">
             <h4>Zhi Wang (王智)</h4>
             <p>
@@ -672,8 +699,7 @@ layout: seea-default
 <div class="team-section">
     <!-- Jingyan Jiang -->
     <div class="team-member">
-        <img src="{{ site.baseurl }}/self-evolving-embodied-agents-group/assets/images/team/jingyan_jiang.jpg"
-            alt="Jingyan Jiang" class="team-photo" loading="lazy" style="object-position: 70% 20%;">
+        {% include seea/image.html path="team/jingyan_jiang.jpg" alt="Jingyan Jiang" class="team-photo" style="object-position: 70% 20%;" %}
         <div class="team-info">
             <h4>Jingyan Jiang (姜婧妍)</h4>
             <p>
@@ -769,12 +795,9 @@ layout: seea-default
 <div class="carousel-container" id="teamCarousel">
     <div class="carousel-track" id="carouselTrack">
         <!-- Add more photos here. Recommended naming convention: group_photo_1.jpg, group_photo_2.jpg, etc. -->
-        <img src="{{ site.baseurl }}/self-evolving-embodied-agents-group/assets/images/team/group_photo.jpg"
-            alt="Team Group Photo 1" class="carousel-img" loading="lazy">
-        <img src="{{ site.baseurl }}/self-evolving-embodied-agents-group/assets/images/team/group_photo2.jpg"
-            alt="Team Group Photo 2" class="carousel-img" loading="lazy">
-        <img src="{{ site.baseurl }}/self-evolving-embodied-agents-group/assets/images/team/group_photo3.jpg"
-            alt="Team Group Photo 3" class="carousel-img" loading="lazy">
+        {% include seea/image.html path="team/group_photo.jpg" alt="Team Group Photo 1" class="carousel-img" defer=true %}
+        {% include seea/image.html path="team/group_photo2.jpg" alt="Team Group Photo 2" class="carousel-img" defer=true %}
+        {% include seea/image.html path="team/group_photo3.jpg" alt="Team Group Photo 3" class="carousel-img" defer=true %}
     </div>
 
     <button class="carousel-btn carousel-prev" id="carouselPrev">&#10094;</button>
@@ -784,7 +807,7 @@ layout: seea-default
 </div>
 
 <script>
-    /* Simple carousel — no clones, just index-based sliding */
+    /* Boundary copies keep both directions continuous when the carousel wraps. */
     (function () {
         var track = document.getElementById('carouselTrack');
         var container = document.getElementById('teamCarousel');
@@ -798,15 +821,42 @@ layout: seea-default
         var total = imgs.length;
         if (total === 0) return;
 
-        var idx = 0;
+        var idx = total > 1 ? 1 : 0;
+        var animating = false;
+        var settleTimer;
+
+        if (total > 1) {
+            var firstCopy = imgs[0].cloneNode(true);
+            var lastCopy = imgs[total - 1].cloneNode(true);
+            [firstCopy, lastCopy].forEach(function (copy) {
+                copy.setAttribute('aria-hidden', 'true');
+                copy.alt = '';
+            });
+            track.insertBefore(lastCopy, imgs[0]);
+            track.appendChild(firstCopy);
+        }
+        var slides = track.querySelectorAll('.carousel-img');
+        var slideCount = slides.length;
+
+        // Warm every slide only when the gallery is near the viewport.
+        var photoObserver = new IntersectionObserver(function (entries) {
+            if (!entries[0].isIntersecting) return;
+            for (var p = 0; p < slides.length; p++) {
+                slides[p].loading = 'eager';
+                slides[p].src = slides[p].dataset.src;
+                slides[p].removeAttribute('data-src');
+            }
+            photoObserver.disconnect();
+        }, { rootMargin: '300px' });
+        photoObserver.observe(container);
 
         /* Size each image and track */
         track.style.display = 'flex';
-        track.style.width = (total * 100) + '%';
+        track.style.width = (slideCount * 100) + '%';
         track.style.transition = 'transform 0.5s ease';
-        for (var i = 0; i < total; i++) {
-            imgs[i].style.width = (100 / total) + '%';
-            imgs[i].style.flexShrink = '0';
+        for (var i = 0; i < slideCount; i++) {
+            slides[i].style.width = (100 / slideCount) + '%';
+            slides[i].style.flexShrink = '0';
         }
 
         function go(animate) {
@@ -815,38 +865,66 @@ layout: seea-default
             } else {
                 track.style.transition = 'none';
             }
-            var pct = idx * (100 / total);
+            var pct = idx * (100 / slideCount);
             track.style.transform = 'translateX(-' + pct + '%)';
             /* dots */
+            var active = total > 1 ? (idx - 1 + total) % total : 0;
             var dots = dotsBox.children;
             for (var d = 0; d < dots.length; d++) {
-                dots[d].style.background = (d === idx) ? '#ffffff' : 'rgba(255,255,255,0.4)';
-                dots[d].style.transform = (d === idx) ? 'scale(1.2)' : 'scale(1)';
+                dots[d].style.background = (d === active) ? '#ffffff' : 'rgba(255,255,255,0.4)';
+                dots[d].style.transform = (d === active) ? 'scale(1.2)' : 'scale(1)';
             }
         }
+
+        function settle() {
+            if (!animating) return;
+            clearTimeout(settleTimer);
+            if (idx === 0) {
+                idx = total;
+                go(false);
+            } else if (idx === total + 1) {
+                idx = 1;
+                go(false);
+            }
+            // Commit the invisible reset before allowing another transition.
+            void track.offsetWidth;
+            animating = false;
+        }
+
+        function move(target) {
+            if (animating || total < 2 || target === idx) return;
+            idx = target;
+            animating = true;
+            go(true);
+            // Keep controls usable if a browser drops the transitionend event.
+            settleTimer = setTimeout(settle, 600);
+        }
+
+        track.addEventListener('transitionend', function (e) {
+            if (e.target === track && e.propertyName === 'transform') settle();
+        });
 
         /* Build dots */
         for (var j = 0; j < total; j++) {
             var dot = document.createElement('span');
             dot.style.cssText = 'display:inline-block;width:10px;height:10px;border-radius:50%;cursor:pointer;transition:all 0.3s;margin:0 5px;';
-            (function (n) { dot.onclick = function () { idx = n; go(true); }; })(j);
+            (function (n) { dot.onclick = function () { move(n + 1); }; })(j);
             dotsBox.appendChild(dot);
         }
 
         go(false); /* initial position */
+        void track.offsetWidth;
 
         /* button handlers */
         nextBtn.onclick = function (e) {
             e.preventDefault();
             e.stopPropagation();
-            idx = (idx + 1) % total;
-            go(true);
+            move(idx + 1);
         };
         prevBtn.onclick = function (e) {
             e.preventDefault();
             e.stopPropagation();
-            idx = (idx - 1 + total) % total;
-            go(true);
+            move(idx - 1);
         };
 
     })();

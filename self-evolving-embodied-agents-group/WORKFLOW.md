@@ -4,8 +4,8 @@
 
 本项目是 **Self-Evolving Embodied Agents Group** 的学术主页，基于 Jekyll 构建，部署于 GitHub Pages。
 
-- **线上地址**: https://N50s.github.io/Self-Evolving-Embodied-Agents-Group/
-- **仓库地址**: https://github.com/N50s/Self-Evolving-Embodied-Agents-Group
+- **线上地址**: https://mmlab-sigs.github.io/groups/self-evolving-embodied-agents-group/
+- **仓库地址**: https://github.com/mmlab-sigs/groups
 
 ---
 
@@ -39,11 +39,11 @@
 bundle exec jekyll serve --livereload
 ```
 
-浏览器访问 http://127.0.0.1:4000/Self-Evolving-Embodied-Agents-Group/，修改文件后页面会自动刷新。
+浏览器访问 http://127.0.0.1:4000/groups/self-evolving-embodied-agents-group/，修改文件后页面会自动刷新。
 
 ### 2. 添加新闻
 
-编辑 `_data/news.yml`，在文件顶部添加一条：
+编辑 `_data/seea/news.yml`，在文件顶部添加一条：
 
 ```yaml
 - date: "2026-03"
@@ -55,7 +55,7 @@ bundle exec jekyll serve --livereload
 
 **步骤一**：将论文配图放入 `assets/images/publications/`
 
-**步骤二**：编辑 `_data/publications.yml`，添加一个条目：
+**步骤二**：编辑 `_data/seea/publications.yml`，添加一个条目：
 
 ```yaml
 - title: "Paper Title"
@@ -79,7 +79,7 @@ bundle exec jekyll serve --livereload
 
 ### 5. 修改页面样式
 
-- **全局样式**（导航栏、字体、卡片、论文列表等）→ 编辑 `_layouts/default.html` 中的 `<style>` 标签
+- **全局样式**（导航栏、字体、卡片、论文列表等）→ 编辑 `_layouts/seea-default.html` 中的 `<style>` 标签
 - **首页专属样式**（Hero 区域、研究方向卡片等）→ 编辑 `index.html` 顶部的 `<style>` 标签
 
 ### 6. 中英文切换
@@ -106,6 +106,29 @@ git push origin main
 - `_archive/` 存放了历史临时文件，确认不需要后可以删除
 - 图片文件名建议使用英文小写 + 下划线，例如 `my_paper.png`
 - 修改 `_config.yml` 后需要**重启** Jekyll 服务器才能生效
+
+## 图片与视频性能维护
+
+在 `mmlab-groups` 仓库根目录运行以下命令，生成展示用图片与视频封面，原始素材会保留：
+
+```bash
+python3 scripts/optimize-images.py  # 需要 Pillow
+python3 scripts/video-posters.py   # 需要 Pillow 与 opencv-python
+```
+
+新增或替换图片后重新运行图片脚本；新增或替换视频后重新生成封面。发布时一并提交
+`assets/images/optimized/` 和 `_data/seea/image_variants.json`。
+页面通过 `seea/image.html` 使用 WebP 副本和尺寸信息；照片墙接近视野时加载，视频只在可见时加载和播放。
+首屏粒子动画在屏幕外、后台页面或启用减少动态效果时暂停。
+
+本地构建并启动预览后，可用 Node.js 与 Playwright 验证性能和轮播：
+
+```bash
+node tests/performance.cjs <首页预览URL> --check
+node tests/carousel.cjs <首页预览URL>
+```
+
+如果使用已安装的 Chrome，可在命令前加 `PLAYWRIGHT_CHROMIUM_CHANNEL=chrome`。
 
 ## 首页 Selected 固定队列
 
