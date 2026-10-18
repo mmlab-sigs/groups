@@ -1,0 +1,106 @@
+{
+  "publications/Asset_1.png": {
+    "width": 1000,
+    "height": 215
+  },
+  "publications/Beyond the Exploration-Exploitation Trade-off.png": {
+    "width": 999,
+    "height": 501
+  },
+  "publications/Embodied Motion Imagination.png": {
+    "width": 1000,
+    "height": 409
+  },
+  "publications/Music-Aligned Holistic 3D Dance Generation via Hierarchical Motion Modeling.png": {
+    "width": 999,
+    "height": 427
+  },
+  "publications/Neural Collapse in Test-Time Adaptation.png": {
+    "width": 1000,
+    "height": 315
+  },
+  "publications/Test-Time Distillation for Continual Model Adaptation.png": {
+    "width": 1000,
+    "height": 403
+  },
+  "publications/anchorgen_pipeline.png": {
+    "width": 1000,
+    "height": 563
+  },
+  "publications/curvspec_overview.png": {
+    "width": 1000,
+    "height": 416
+  },
+  "publications/dsl_overview.png": {
+    "width": 887,
+    "height": 398
+  },
+  "publications/eihmr_overview.png": {
+    "width": 1000,
+    "height": 535
+  },
+  "publications/icme-25-icme-overview1.png": {
+    "width": 1000,
+    "height": 718
+  },
+  "publications/image 1.png": {
+    "width": 1000,
+    "height": 317
+  },
+  "publications/image 2.png": {
+    "width": 999,
+    "height": 277
+  },
+  "publications/image 3.png": {
+    "width": 999,
+    "height": 388
+  },
+  "publications/image 4.png": {
+    "width": 1000,
+    "height": 356
+  },
+  "publications/image 5.png": {
+    "width": 1000,
+    "height": 457
+  },
+  "publications/image.png": {
+    "width": 780,
+    "height": 505
+  },
+  "publications/kyML.png": {
+    "width": 1000,
+    "height": 497
+  },
+  "publications/lungmix_overview.png": {
+    "width": 999,
+    "height": 699
+  },
+  "publications/neural_collapse_tta.png": {
+    "width": 1000,
+    "height": 315
+  },
+  "publications/overviews.png": {
+    "width": 1000,
+    "height": 245
+  },
+  "publications/rfquant.png": {
+    "width": 1000,
+    "height": 636
+  },
+  "publications/tail_aware_ptq_3d_geometry_models.png": {
+    "width": 999,
+    "height": 510
+  },
+  "publications/ttabc_overview.png": {
+    "width": 900,
+    "height": 900
+  },
+  "publications/understanding_bias_terms_in_neural_representation.png": {
+    "width": 998,
+    "height": 826
+  },
+  "publications/vggt-dt.png": {
+    "width": 999,
+    "height": 575
+  }
+}

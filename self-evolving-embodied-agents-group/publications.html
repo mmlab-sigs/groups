@@ -12,6 +12,7 @@ title: All Publications
 </p>
 
 {% assign sorted_pubs = site.data.seea.publications | sort: 'date' | reverse %}
+{% capture preprints_section %}
 <h2 id="preprints"><span class="lang-en">Preprints</span><span class="lang-zh">预印本</span></h2>
 
 {% assign preprint_count = 0 %}
@@ -31,6 +32,7 @@ title: All Publications
 {% if preprint_count == 0 %}
 <p><span class="lang-en">No preprints yet.</span><span class="lang-zh">暂时没有预印本。</span></p>
 {% endif %}
+{% endcapture %}
 
 {% assign year_sections = "2026,2025,2024" | split: "," %}
 {% for year in year_sections %}
@@ -54,5 +56,8 @@ title: All Publications
 {% endfor %}
 {% if year_count == 0 %}
 <p><span class="lang-en">No papers in {{ year }}.</span><span class="lang-zh">{{ year }} 年暂无论文。</span></p>
+{% endif %}
+{% if year == '2026' %}
+{{ preprints_section }}
 {% endif %}
 {% endfor %}

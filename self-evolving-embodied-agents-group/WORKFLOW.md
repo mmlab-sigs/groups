@@ -106,3 +106,27 @@ git push origin main
 - `_archive/` 存放了历史临时文件，确认不需要后可以删除
 - 图片文件名建议使用英文小写 + 下划线，例如 `my_paper.png`
 - 修改 `_config.yml` 后需要**重启** Jekyll 服务器才能生效
+
+## 首页 Selected 固定队列
+
+Selected 固定展示 8 篇，由 `_data/seea/selected_queue.json` 保存入队顺序和历史，
+`_data/seea/publications.yml` 中的 `selected` 与 `selected_rank` 是对应的展示字段。
+新论文先核实小组一作/共同一作归属，再判断是否直接对应具身数据、
+多模态感知与世界模型、时空决策与机器人学习、智能体持续学习等方向；
+仅有通用技术词重叠不足以进入精选。将判断写入 `selection_eligible` 与
+`selection_reason`。弱相关论文仍加入全部成果列表。
+
+对新收录、相关性已确认的论文，以从旧到新的到达顺序执行：
+
+```bash
+python3 scripts/update-selected.py --enqueue <source_id> [<source_id> ...]  # 需要 PyYAML
+python3 scripts/update-selected.py --check
+python3 tests/selected_queue.py
+```
+
+每次入队放在最前，超长时移除最末尾的非固定论文。SizeGS（`mm25_SizeGS25`）
+始终保留，只随新论文插入向后移动，到第 8 位后一直留在队尾。
+其余论文保持相对顺序；退出精选只清除展示标记，不从完整列表删除。
+重复检查、元数据/封面/录用状态更新不会重新入队或置顶，已出队论文也不会
+被自动重新加入。不要按日期重新排序整个队列，尤其不能用仅年份记录的占位日期排序。
+自动更新必须一并提交队列 JSON、论文展示字段和必要脚本，构建后核验数量、顺序与 SizeGS。

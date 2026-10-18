@@ -1,0 +1,7 @@
+{% if include.pub.tags.size > 0 %}
+<div class="pub-tags">
+    {% for tag in include.pub.tags %}
+    <span class="research-tag">{{ tag | escape }}</span>
+    {% endfor %}
+</div>
+{% endif %}

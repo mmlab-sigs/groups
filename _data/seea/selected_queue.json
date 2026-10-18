@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "capacity": 8,
+  "pinned_source_ids": [
+    "mm25_SizeGS25"
+  ],
+  "source_ids": [
+    "neurips26-eihmr",
+    "neurips26-dsl",
+    "neurips26-ttabc",
+    "eccv2026-robostream",
+    "cvpr26-nctta",
+    "cvpr26-igen",
+    "aaai2026-moetta",
+    "mm25_SizeGS25"
+  ],
+  "admitted_source_ids": [
+    "eccv2026-robostream",
+    "cvpr26-nctta",
+    "cvpr26-igen",
+    "aaai2026-moetta",
+    "mm25_SizeGS25",
+    "iccv25_music",
+    "neurips25-FIND",
+    "cvpr25-cosmic",
+    "neurips26-ttabc",
+    "neurips26-dsl",
+    "neurips26-eihmr"
+  ],
+  "policy": "New eligible papers enter the front. On overflow, remove the last non-pinned paper. Preserve existing relative order; never re-enqueue an admitted paper automatically."
+}

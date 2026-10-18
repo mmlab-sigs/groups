@@ -1,0 +1,6 @@
+{% assign image_variant = site.data.seea.image_variants[include.path] %}
+<img {% if include.defer %}data-src{% else %}src{% endif %}="{{ site.baseurl }}/self-evolving-embodied-agents-group/assets/images/{% if image_variant %}optimized/{{ include.path }}.webp{% else %}{{ include.path }}{% endif %}"
+    {% if image_variant %}width="{{ image_variant.width }}" height="{{ image_variant.height }}"{% endif %}
+    alt="{{ include.alt | escape }}" loading="lazy" decoding="async"
+    {% if include.class %}class="{{ include.class | escape }}"{% endif %}
+    {% if include.style %}style="{{ include.style | escape }}"{% elsif include.fit == 'contain' %}style="object-fit: contain;"{% endif %}>

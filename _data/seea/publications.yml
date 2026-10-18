@@ -1,10 +1,10 @@
 - video: igen.mp4
   selected: true
-  selected_rank: 3
+  selected_rank: 6
   embodied: true
   date: '2025-12-01'
   title: 'IGen: Scalable Data Generation for Robot Learning from Open-World Images'
-  venue_html: <strong>CVPR 2026</strong> (CCF-A)
+  venue_html: <strong>CVPR</strong> 2026 (CCF-A)
   links:
     - label: Project
       url: https://chenghaogu.github.io/IGen/
@@ -13,13 +13,14 @@
     - label: Code
       url: https://github.com/ChenghaoGu/IGen_Robot
   abstract: '本文提出 IGen，一种面向机器人学习的可扩展数据生成框架，可从开放世界图像中自动生成逼真的视觉观测与可执行动作，从而在无需人工遥操作数据的情况下训练有效的操作策略。'
+  source_id: cvpr26-igen
 - video: RoboStream-preview.mp4
   selected: true
-  selected_rank: 1
+  selected_rank: 4
   embodied: true
   date: '2026-03-13'
   title: 'RoboStream: Weaving Spatio-Temporal Reasoning with Memory in Vision-Language Models for Robotics'
-  venue_html: <strong>ECCV 2026</strong>
+  venue_html: <strong>ECCV</strong> 2026
   links:
     - label: Project
       url: https://robostream123.github.io/
@@ -28,7 +29,9 @@
     - label: Code
       url: https://github.com/yu2hi13/RoboStream
   abstract: 'RoboStream 提出面向机器人操作的时空推理与记忆增强视觉语言模型框架，引入时空融合 Token 实现持久目标定位，构建因果时空图追踪状态转移，无需训练即可在 RLBench 长时域任务上达到 90.5% 成功率，在真实世界方块操作任务中达到 44.4% 成功率。'
+  source_id: eccv2026-robostream
 - selected: false
+  selected: false
   image: Embodied Motion Imagination.png
   embodied: true
   date: '2026-03-12'
@@ -37,6 +40,7 @@
   preprint_under_review: true
   abstract: '本文提出 EIHMR 框架，针对移动相机单目视频中相机运动与人体运动耦合导致的全局 3D 人体重建困难问题，通过“固定视角”的局部运动优化与运动感知 SLAM 协同建模，实现相机轨迹与人体姿态的互相强化。方法利用场景深度与运动重投影生成稳定几何特征，显著提升长序列中的轨迹精度与运动一致性，在 EMDB 等数据集上取得更优全局重建效果。'
 - selected: false
+  selected: false
   image: anchorgen_pipeline.png
   embodied: true
   date: '2026-03-12'
@@ -45,10 +49,11 @@
   preprint_under_review: true
   abstract: 'AnchorGen 是一种关键帧感知的几何锚定视频生成框架，用于提升机器人动作条件视频的三维一致性。方法通过自监督二维-三维对比学习自动发现接触与状态变化等重要关键帧，并以稀疏几何特征作为结构化条件注入多模态扩散模型，在真实机器人数据上显著提升生成质量与空间一致性。'
 - selected: false
+  selected: false
   image: 'Beyond the Exploration-Exploitation Trade-off.png'
   date: '2025-09-28'
   title: 'Semantic-Space Exploration and Exploitation in RLVR for LLM Reasoning'
-  venue_html: <strong>Findings of ACL 2026</strong>
+  venue_html: <strong>Findings of ACL</strong> 2026
   links:
     - label: Project
       url: https://hf618.github.io/VERL.github.io
@@ -60,11 +65,11 @@
       url: https://github.com/hf618/VERL
   abstract: '本文提出从隐藏状态语义空间重新审视大模型推理中“探索-利用权衡”，指出该权衡源于 token 级度量偏差。作者引入有效秩及其速度、加速度刻画探索与利用动态，并提出 VERL 方法，通过优势函数塑形实现两者协同提升。实验表明该方法在多模型与推理任务上显著提升准确率与泛化能力。'
 - selected: true
-  selected_rank: 6
+  selected: false
   image: 'Music-Aligned Holistic 3D Dance Generation via Hierarchical Motion Modeling.png'
   date: '2025-07-20'
   title: 'Music-Aligned Holistic 3D Dance Generation via Hierarchical Motion Modeling'
-  venue_html: <strong>ICCV 2025</strong> (CCF-A)
+  venue_html: <strong>ICCV</strong> 2025 (CCF-A)
   links:
     - label: Project
       url: https://xjli360.github.io/SoulDance/
@@ -73,11 +78,12 @@
     - label: Code
       url: https://github.com/xjli360/SoulDance-Official
   abstract: '本文提出面向音乐驱动全身三维舞蹈生成的 SoulNet 框架，并构建高精度 SoulDance 数据集。方法通过分层残差向量量化建模身体、手部与面部的细粒度运动依赖，结合音乐条件生成模块与跨模态检索先验，实现动作与音乐的时序同步与语义一致。实验表明模型在生成质量、协调性与对齐性能上显著优于现有方法。'
+  source_id: iccv25_music
 - image: lungmix_overview.png
   selected: false
   date: '2025-04-06'
   title: 'Lungmix: A Mixup-Based Strategy for Generalization in Respiratory Sound Classification'
-  venue_html: <strong>ICASSP 2025</strong>
+  venue_html: <strong>ICASSP</strong> 2025
   links:
     - label: Paper
       url: https://zwang.inflexionlab.org/publications/Lungmix_CRV4.pdf
@@ -87,6 +93,7 @@
       url: https://doi.org/10.1109/ICASSP49660.2025.10888016
   abstract: '本文提出 Lungmix，以混合增强策略缓解呼吸音分类中的域偏移与噪声问题，并在多个呼吸音数据集上验证了更强的泛化能力。'
 - selected: false
+  selected: false
   image: vggt-dt.png
   embodied: true
   date: '2025-09-23'
@@ -98,10 +105,11 @@
       url: https://arxiv.org/abs/2509.18778
   abstract: 'VGGT-DP 提出基于视觉几何基础模型和肌觉反馈的机器人控制框架，采用视觉基础模型 VGGT 作为感知编码器，并引入肌觉引导的视觉学习策略以增强空间对齐。通过帧级 token 复用和随机剪枝降低多视输入的推理开销，在 MetaWorld 任务上显著超越 Diffusion Policy 等基线。'
 - selected: false
+  selected: false
   image: kyML.png
   date: '2024-12-01'
   title: 'SkyML: A MLaaS Federation Design for Multicloud-Based Multimedia Analytics'
-  venue_html: <strong>IEEE Transactions on Multimedia 2025</strong> (CCF-B)
+  venue_html: <strong>IEEE Transactions on Multimedia</strong> 2025 (CCF-B)
   links:
     - label: Paper
       url: https://shuzhaoxie.github.io/data/24-tmm-skyml.pdf
@@ -109,10 +117,11 @@
       url: https://dl.acm.org/doi/10.1109/TMM.2024.3521768
   abstract: '本文提出 SkyML 多云机器学习服务联邦框架，通过在用户侧构建 MLaaS broker，根据任务特征动态选择并协同多个云服务，实现多媒体分析任务的性能与成本优化。系统联合建模服务能力、网络延迟与资源价格，提出高效调度与组合策略，在真实工作负载下显著提升任务完成时延与服务质量，为跨云智能分析提供可扩展系统方案。'
 - selected: false
+  selected: false
   image: understanding_bias_terms_in_neural_representation.png
   date: '2025-12-01'
   title: 'Understanding Bias Terms in Neural Representation'
-  venue_html: <strong>NeurIPS 2025</strong> (CCF-A)
+  venue_html: <strong>NeurIPS</strong> 2025 (CCF-A)
   links:
     - label: Paper
       url: https://shuzhaoxie.github.io/data/25-nips-feainr.pdf
@@ -120,10 +129,11 @@
       url: https://github.com/zwx-open/Featuring-INR
   abstract: '本文研究神经表示学习中偏置项的作用机制，分析偏置设计对表示能力、训练稳定性与泛化性能的影响，并为隐式神经表示模型的结构设计提供新的理解。'
 - selected: false
+  selected: false
   image: icme-25-icme-overview1.png
   date: '2025-07-01'
   title: 'Expansive Supervision for Neural Radiance Field'
-  venue_html: <strong>ICME 2025</strong>
+  venue_html: <strong>ICME</strong> 2025
   links:
     - label: Paper
       url: https://shuzhaoxie.github.io/data/24-arxiv-expansive.pdf
@@ -131,10 +141,11 @@
       url: https://github.com/zwx-open/Expansive-Supervision
   abstract: '本文提出面向 Neural Radiance Field 的扩展监督方法，通过更丰富有效的监督信号提升场景表示质量与重建性能，从而改善新视角合成结果。'
 - selected: false
+  selected: false
   image: rfquant.png
   date: '2024-06-01'
   title: 'RFQuant: Retraining-free Model Quantization via One-Shot Weight-Coupling Learning'
-  venue_html: <strong>CVPR 2024</strong> (CCF-A)
+  venue_html: <strong>CVPR</strong> 2024 (CCF-A)
   links:
     - label: Paper
       url: https://shuzhaoxie.github.io/data/24-cvpr-rfquant.pdf
@@ -147,10 +158,10 @@
   abstract: '本文提出一种无需重训练的模型量化方法 RFQuant，通过一次性权重耦合学习在保持模型精度的同时显著降低量化成本，为高效部署提供了实用方案。'
 - image: image 5.png
   selected: true
-  selected_rank: 4
+  selected_rank: 7
   date: '2025-11-14'
   title: 'MoETTA: Test-Time Adaptation Under Mixed Distribution Shifts with MoE-LayerNorm'
-  venue_html: <strong>AAAI 2026</strong> (CCF-A)
+  venue_html: <strong>AAAI</strong> 2026 (CCF-A)
   links:
     - label: arXiv
       url: https://arxiv.org/abs/2511.13760v1
@@ -158,14 +169,15 @@
       url: https://github.com/AnikiFan/MoETTA
   abstract: 针对真实场景中复杂的混合分布偏移，提出 MoETTA 框架，引入专家混合(MoE)架构为不同域偏移提供结构解耦的多专家系统。在全新构建的 Potpourri
     基准上全面超越现有基线。
+  source_id: aaai2026-moetta
 - image: image 4.png
   selected: true
-  selected_rank: 5
+  selected_rank: 8
   best_paper: true
   date: '2024-12-08'
   title: 'SizeGS: Size-aware Compression of 3D Gaussian Splatting via Mixed Integer
     Programming'
-  venue_html: <strong>ACM MM 2025</strong> (CCF-A)
+  venue_html: <strong>ACM MM</strong> 2025 (CCF-A)
   links:
     - label: Project
       url: https://shuzhaoxie.github.io/sizegs/
@@ -175,11 +187,12 @@
       url: https://github.com/mmlab-sigs/SizeGS
   abstract: 基于混合整数规划的尺寸感知压缩框架，旨在通过快速搜索超参数将 3DGS 压缩至预定大小。能在一分钟内搜索到满足尺寸约束的最佳参数，实现 SOTA
     级别的离线压缩性能。
+  source_id: mm25_SizeGS25
 - image: tail_aware_ptq_3d_geometry_models.png
   selected: false
   date: '2026-02-02'
   title: 'Tail-Aware Post-Training Quantization for 3D Geometry Models'
-  venue_html: '<strong>arXiv 2026</strong>'
+  venue_html: '<strong>arXiv</strong> 2026'
   preprint_under_review: true
   links:
     - label: arXiv
@@ -187,31 +200,31 @@
   abstract: '本文提出面向 3D 几何模型的尾部分布感知后训练量化方法 TAPTQ，通过渐进式 coarse-to-fine 校准集构建、三分搜索量化区间优化和 TRE 引导的模块补偿，在提升量化精度的同时显著降低校准开销。'
 - image: neural_collapse_tta.png
   selected: true
-  selected_rank: 2
+  selected_rank: 5
   date: '2025-12-11'
   title: 'Neural Collapse in Test-Time Adaptation'
-  venue_html: <strong>CVPR 2026</strong> (CCF-A)
+  venue_html: <strong>CVPR</strong> 2026 (CCF-A)
   links:
     - label: Paper
       url: https://openaccess.thecvf.com/content/CVPR2026/html/Chen_Neural_Collapse_in_Test-Time_Adaptation_CVPR_2026_paper.html
     - label: arXiv
       url: https://arxiv.org/abs/2512.10421
   abstract: '研究测试时自适应（TTA）中的神经坍塌现象，分析模型在分布变化环境下特征表示与分类边界的变化规律。通过理论与实验分析，揭示神经坍塌对模型稳定性和泛化能力的影响，并探讨其在测试阶段持续适应过程中的作用机制，为提升模型在动态环境中的鲁棒性提供参考。'
+  source_id: cvpr26-nctta
 - image: 'Test-Time Distillation for Continual Model Adaptation.png'
   selected: false
   date: '2025-12-11'
   title: 'Test-Time Distillation for Continual Model Adaptation'
-  venue_html: <strong>CVPR 2026</strong> (CCF-A)
+  venue_html: <strong>CVPR</strong> 2026 (CCF-A)
   links:
     - label: arXiv
       url: https://arxiv.org/abs/2506.02671
   abstract: '研究持续测试时自适应（CTTA）中模型在分布变化下性能退化与漂移的问题。通过在测试阶段引入蒸馏机制，并利用冻结的视觉—语言模型提供稳定的教师信号，为目标模型提供外部监督，从而减少自监督误差累积。该方法提升了模型在持续分布变化环境中的稳定性与适应能力。'
 - image: Asset_1.png
-  selected: true
-  selected_rank: 7
+  selected: false
   date: '2025-06-07'
   title: 'Feature-Based Instance Neighbor Discovery: Advanced Stable Test-Time Adaptation in Dynamic World'
-  venue_html: <strong>NeurIPS 2025</strong> (CCF-A)
+  venue_html: <strong>NeurIPS</strong> 2025 (CCF-A)
   links:
     - label: Paper
       url: https://proceedings.neurips.cc/paper_files/paper/2025/hash/c9867d5a22653ce98b02595061e40f12-Abstract-Conference.html
@@ -221,6 +234,7 @@
       url: https://github.com/Peanut-255/FIND
   abstract: 提出 DYN 框架，通过逐层实例统计聚类(LISC)和聚类感知批量归一化(CABN)实现动态测试时适应。作为首个无需反向传播的方法，处理批次内多重分布展现卓越鲁棒性，最高提升
     35% 泛化性能。
+  source_id: neurips25-FIND
 - image: image 2.png
   selected: false
   date: '2025-07-10'
@@ -236,7 +250,7 @@
   selected: false
   date: '2024-12-13'
   title: 'EVOS: Efficient Implicit Neural Training via EVOlutionary Selector'
-  venue_html: <strong>CVPR 2025</strong> (CCF-A)
+  venue_html: <strong>CVPR</strong> 2025 (CCF-A)
   links:
     - label: Project
       url: https://weixiang-zhang.github.io/proj-evos/
@@ -247,12 +261,11 @@
   abstract: 提出动态样本选择框架 EVOS，将样本坐标视为进化个体，通过稀疏适应度评估、间隔采样与缓存机制，大幅降低计算量。结合频率引导交叉和增强无偏变异，克服频谱偏差，训练时间减少
     48%-66%。
 - image: overviews.png
-  selected: true
-  selected_rank: 8
+  selected: false
   date: '2025-03-31'
   title: 'COSMIC: Clique-Oriented Semantic Multi-space Integration for Robust CLIP
     Test-Time Adaptation'
-  venue_html: <strong>CVPR 2025</strong> (CCF-A)
+  venue_html: <strong>CVPR</strong> 2025 (CCF-A)
   links:
     - label: Project
       url: https://hf618.github.io/COSMIC_Project
@@ -262,11 +275,12 @@
       url: https://github.com/hf618/COSMIC
   abstract: 针对视觉语言模型在测试时领域适应的性能退化，提出了创新 COSMIC 框架，通过多粒度、跨模态语义缓存和基于图的查询机制，显著增强模型适应能力。跨域测试任务性能提升
     15.81%。
+  source_id: cvpr25-cosmic
 - image: image.png
   selected: false
   date: '2024-12-12'
   title: Enhancing Implicit Neural Representations via Symmetric Power Transformation
-  venue_html: <strong>AAAI 2025</strong> (CCF-A)
+  venue_html: <strong>AAAI</strong> 2025 (CCF-A)
   links:
     - label: Project
       url: https://weixiang-zhang.github.io/proj-symtrans/
@@ -281,7 +295,7 @@
   date: '2024-09-15'
   title: 'MesonGS: Post-training Compression of 3D Gaussians via Efficient Attribute
     Transformation'
-  venue_html: <strong>ECCV 2024</strong>
+  venue_html: <strong>ECCV</strong> 2024
   links:
     - label: Project
       url: https://shuzhaoxie.github.io/mesongs/
@@ -290,4 +304,152 @@
     - label: Code
       url: https://github.com/ShuzhaoXie/MesonGS
   abstract: 一种高效的后训练 3D 高斯压缩编解码器。引入视点相关与无关重要性度量标准，结合属性变换（如RAHT）和块量化策略，在大幅压缩体积的同时保留高质量渲染。
-  
+- source_id: neurips26-ttabc
+  selected: true
+  selected_rank: 3
+  title: What Drives Test-Time Adaptation for CLIP? A Controlled Empirical Study from an Update Perspective
+  venue_html: <strong>NeurIPS</strong> 2026 · Evaluations and Datasets Track (CCF-A)
+  date: '2026-06-12'
+  authors:
+  - Jiazhen Huang
+  - Xiao Chen
+  - Zhiming Liu
+  - Yaru Sun
+  - Jingyan Jiang
+  - Zhi Wang
+  group_first_authors:
+  - Jiazhen Huang
+  authorship_evidence: First author in the paper and source author list.
+  source_url: https://mmlab-sigs.github.io/groups/zwang/publications.html
+  links:
+  - label: arXiv
+    url: https://arxiv.org/abs/2606.14299
+  - label: Code
+    url: https://github.com/walawalagoose/TTABC
+  tags:
+  - Test-Time Adaptation
+  - Vision-Language Models
+  - Distribution Shift
+  - Benchmark
+  abstract: 本文构建 TTABC，统一评测 20 余种 CLIP 测试时自适应方法，按参数、状态和推理更新分为三类。受控实验表明，适应收益主要来自测试时证据与可靠代理，重度优化未必必要；不同分布偏移下没有普遍最优的适应范式。
+  image: ttabc_overview.png
+  image_fit: contain
+  image_source: https://arxiv.org/html/2606.14299v2/1_intro.png
+  selection_eligible: true
+  selection_reason: Directly studies test-time adaptation, a core continuous-learning direction of the group.
+- source_id: acmmm26-curvspec
+  selected: false
+  title: 'CurvSpec: Adaptive Multi-Curvature Learning for Partial Relevant Video Retrieval'
+  venue_html: <strong>ACM MM</strong> 2026 (CCF-A)
+  date: '2026-09-29'
+  authors:
+  - Zhen Liu
+  - Letian Li
+  - Jinpeng Wang
+  - Shuzhao Xie
+  - Yuzhi Huang
+  - Jingyan Jiang
+  - Zhi Wang
+  group_first_authors:
+  - Letian Li
+  authorship_evidence: 'PDF page 1: Zhen Liu and Letian Li share the * marker; footnote states "Contributed equally to this
+    research."'
+  source_url: https://mmlab-sigs.github.io/groups/zwang/publications.html
+  links:
+  - label: Paper
+    url: https://doi.org/10.1145/3767308.3835167
+  - label: arXiv
+    url: https://arxiv.org/abs/2609.36815
+  tags:
+  - Video Retrieval
+  - Multimodal Learning
+  - Hyperbolic Geometry
+  - Semantic Centroids
+  abstract: CurvSpec 面向部分相关视频检索，针对短暂相关片段被全局表示稀释，以及固定几何空间难以适应视频结构的问题，联合欧几里得与可学习曲率的双曲注意力，并通过语义质心进行细粒度匹配，在三个公开视频检索基准上验证了有效性。
+  image: curvspec_overview.png
+  image_fit: contain
+  image_source: https://arxiv.org/html/2609.36815v1/method.png
+  selection_eligible: false
+  selection_reason: General video retrieval is related to multimodal learning but has a weaker direct connection to self-evolving embodied agents.
+- source_id: neurips26-dsl
+  selected: true
+  selected_rank: 2
+  title: Treat Domain-Specific Languages as Design Variables in LLM Agents
+  venue_html: <strong>NeurIPS</strong> 2026 · Position Paper Track (CCF-A)
+  date: '2026-01-01'
+  authors:
+  - Letian Li
+  - Wenyuan Jiang
+  - Xin Yang
+  - Shuzhao Xie
+  - Chenghao Gu
+  - Yu Meng
+  - Zhengxiao He
+  - Zhi Wang
+  group_first_authors:
+  - Letian Li
+  co_first_authors:
+  - Letian Li
+  - Wenyuan Jiang
+  - Xin Yang
+  authorship_evidence: User-provided PDF page 1 marks Letian Li, Wenyuan Jiang and Xin Yang with equal-contribution asterisks. Letian Li is a group member.
+  source_url: https://mmlab-sigs.github.io/groups/zwang/publications.html
+  links:
+  - label: NeurIPS
+    url: https://neurips.cc/virtual/2026/poster/140069
+  - label: OpenReview
+    url: https://openreview.net/forum?id=QjRcgONOvF
+  tags:
+  - LLM Agents
+  - Domain-Specific Languages
+  - Executable Interfaces
+  abstract: 本文主张将领域专用语言及其执行验证框架视为 LLM 智能体的设计变量，在语义推理与外部规则系统之间建立可检查的接口。通过高层抽象与显式约束缩短意图到动作的路径、提前排除无效动作，并从生命周期、应用领域及编码、SQL、图表生成案例讨论接口设计的影响。
+  date_precision: year
+  image: dsl_overview.png
+  image_fit: contain
+  image_source: User-provided full-text PDF, Figure 2 on page 5.
+  cover_pending: false
+  official_page: https://neurips.cc/virtual/2026/poster/140069
+  pdf_candidate_url: https://openreview.net/pdf?id=QjRcgONOvF
+  pdf_access_status: Full text verified from user-provided PDF on 2026-10-14; public OpenReview PDF access remains unverified.
+  selection_eligible: true
+  selection_reason: Directly studies the design of reliable executable interfaces for LLM agents.
+- source_id: neurips26-eihmr
+  selected: true
+  selected_rank: 1
+  title: 'EIHMR: Collaborative Human-Camera Estimation for Global Human Mesh Recovery'
+  venue_html: <strong>NeurIPS</strong> 2026 (CCF-A)
+  date: '2026-01-01'
+  date_precision: year
+  authors:
+  - Junchen Ge
+  - Zhengqi Zhang
+  - Hanglei Jin
+  - Shuzhao Xie
+  - Yuzhi Huang
+  - Jingwei Xu
+  - Jingyan Jiang
+  - Zhi Wang
+  group_first_authors:
+  - Junchen Ge
+  authorship_evidence: First author in the PI source author list. The user-provided PDF is anonymous and does not independently verify authorship. Retained as a separate paper per user instruction.
+  source_url: https://mmlab-sigs.github.io/groups/zwang/publications.html
+  links:
+  - label: NeurIPS
+    url: https://neurips.cc/virtual/2026/poster/153762
+  - label: OpenReview
+    url: https://openreview.net/forum?id=IrOkEc6m95
+  tags:
+  - Human Mesh Recovery
+  - Camera Motion Estimation
+  - 3D Reconstruction
+  abstract: EIHMR 面向移动相机单目视频中的全局三维人体运动恢复，协同估计人体与相机运动。在固定关键帧视角下，通过深度与接触约束细化人体轨迹，再将人体重渲染为静态网格，为运动感知 SLAM 提供几何匹配线索；在 EMDB 与 3DPW 上评估人体姿态，并在 EMDB2 上评估相机及全局人体轨迹。
+  image: eihmr_overview.png
+  image_fit: contain
+  image_source: User-provided full-text PDF, Figure 1 on page 3.
+  cover_pending: false
+  official_page: https://neurips.cc/virtual/2026/poster/153762
+  pdf_candidate_url: https://openreview.net/pdf?id=IrOkEc6m95
+  pdf_access_status: Full text verified from user-provided anonymous PDF on 2026-10-14; authenticated OpenReview access returned permission denied on 2026-10-13.
+  selection_eligible: true
+  selection_reason: Directly supports embodied perception through collaborative global human motion and camera reconstruction.

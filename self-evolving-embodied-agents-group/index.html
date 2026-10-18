@@ -596,8 +596,8 @@ layout: seea-default
                 type="video/mp4">
         </video>
         {% elsif pub.image %}
-        <img src="{{ site.baseurl }}/self-evolving-embodied-agents-group/assets/images/publications/{{ pub.image }}"
-            alt="{{ pub.title | escape }}" loading="lazy">
+        {% assign publication_image = 'publications/' | append: pub.image %}
+        {% include seea/image.html path=publication_image alt=pub.title fit=pub.image_fit %}
         {% else %}
         <div class="pub-image-placeholder">
             <span class="lang-en">Cover coming soon</span>
@@ -625,6 +625,7 @@ layout: seea-default
             [<a href="{{ link.url }}" target="_blank">{{ link.label }}</a>]
             {% endfor %}
         </div>
+        {% include seea/publication-tags.html pub=pub %}
         <p class="pub-abstract">
             {{ pub.abstract }}
         </p>
